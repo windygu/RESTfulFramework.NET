@@ -19,8 +19,3 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RES
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.csprojResolveAssemblyReference.cache
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb

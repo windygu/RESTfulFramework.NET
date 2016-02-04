@@ -21,8 +21,3 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFr
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.pdb
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.dll
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.pdb
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.csprojResolveAssemblyReference.cache
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.dll
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.pdb
