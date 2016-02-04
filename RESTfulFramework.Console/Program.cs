@@ -25,10 +25,10 @@ namespace RESTfulFramework.Console
             if (wHost.State != CommunicationState.Opened)
             {
                 wHost.Open();
-                System.Console.WriteLine("已启动控制台RESTfull服务。");
+                System.Console.WriteLine("已启动控制台RESTful服务。");
             }
             else {
-                System.Console.WriteLine("启动控制台RESTfull服务失败。");
+                System.Console.WriteLine("启动控制台RESTful服务失败。");
             }
             System.Console.ReadKey();
 

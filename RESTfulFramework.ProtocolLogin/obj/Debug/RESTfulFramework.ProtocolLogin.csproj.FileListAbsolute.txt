@@ -13,3 +13,8 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Lo
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\RESTfulFramework.ProtocolLogin.csprojResolveAssemblyReference.cache
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Login.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Login.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Login.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Login.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\RESTfulFramework.ProtocolLogin.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Login.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Login.pdb

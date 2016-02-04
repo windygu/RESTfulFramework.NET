@@ -8,3 +8,8 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfu
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.csprojResolveAssemblyReference.cache
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.pdb

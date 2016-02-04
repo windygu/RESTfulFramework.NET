@@ -18,3 +18,7 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\bin\Debug\RESTfulF
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\bin\Debug\RESTfulFramework.IDataCheckPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\obj\Debug\RESTfulFramework.IDataCheckPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\obj\Debug\RESTfulFramework.IDataCheckPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\bin\Debug\RESTfulFramework.IDataCheckPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\bin\Debug\RESTfulFramework.IDataCheckPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\obj\Debug\RESTfulFramework.IDataCheckPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IDataCheckPlugin\obj\Debug\RESTfulFramework.IDataCheckPlugin.pdb

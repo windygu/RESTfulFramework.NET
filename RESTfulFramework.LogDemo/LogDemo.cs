@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace RESTfulFramework.LogDemo
 {
@@ -11,6 +8,7 @@ namespace RESTfulFramework.LogDemo
     public class LogDemo : ILogPlugin.ILog
     {
         private delegate void WriteString();
+        private static object LockObj { get; set; } = new object();
         public void WriteLog(object logInfo)
         {
             /*您可以定义您的高性能日志记录器，此例子仅做参考*/
@@ -18,12 +16,17 @@ namespace RESTfulFramework.LogDemo
 
             var ay = new WriteString(() =>
             {
-                using (var sw = new StreamWriter(
-                  Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"log{DateTime.Now.ToString("yyyyMMdd")}.txt"),true))
+                lock (LockObj)
                 {
-                    sw.WriteLine(str);
+                    using (var sw = new StreamWriter(
+                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"log{DateTime.Now.ToString("yyyyMMdd")}.txt"), true))
+                    {
+                        sw.WriteLine(str);
 
+                    }
+                    Console.WriteLine(str);
                 }
+
             });
             ay.BeginInvoke(new AsyncCallback((o) => { }), ay);
 

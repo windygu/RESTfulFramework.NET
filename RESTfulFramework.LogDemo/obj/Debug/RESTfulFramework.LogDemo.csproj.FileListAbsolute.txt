@@ -8,3 +8,8 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfu
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.csprojResolveAssemblyReference.cache
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.pdb

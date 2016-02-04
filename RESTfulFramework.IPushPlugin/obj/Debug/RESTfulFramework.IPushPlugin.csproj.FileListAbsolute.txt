@@ -18,3 +18,7 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\bin\Debug\RESTfulFramew
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\bin\Debug\RESTfulFramework.IPushPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\obj\Debug\RESTfulFramework.IPushPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\obj\Debug\RESTfulFramework.IPushPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\bin\Debug\RESTfulFramework.IPushPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\bin\Debug\RESTfulFramework.IPushPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\obj\Debug\RESTfulFramework.IPushPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IPushPlugin\obj\Debug\RESTfulFramework.IPushPlugin.pdb

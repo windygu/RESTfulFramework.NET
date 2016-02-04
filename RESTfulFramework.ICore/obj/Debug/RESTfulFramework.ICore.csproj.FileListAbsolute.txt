@@ -20,3 +20,7 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.ICore\bin\Debug\RESTfulFramework.IC
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.csprojResolveAssemblyReference.cache
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\bin\Debug\RESTfulFramework.ICore.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\bin\Debug\RESTfulFramework.ICore.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.pdb

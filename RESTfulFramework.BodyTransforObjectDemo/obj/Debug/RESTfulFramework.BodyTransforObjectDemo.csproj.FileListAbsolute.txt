@@ -15,3 +15,8 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfu
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.csprojResolveAssemblyReference.cache
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.BodyTransforObjectDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.BodyTransforObjectDemo.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.BodyTransforObjectDemo\obj\Debug\RESTfulFramework.BodyTransforObjectDemo.pdb

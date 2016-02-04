@@ -58,11 +58,56 @@ namespace RESTfulFramework.Core
                 var directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CorePlugin");
                 var catalog = new DirectoryCatalog(directory);
                 var container = new CompositionContainer(catalog);
-                try { container.ComposeParts(LogPlugin); } catch (Exception ex) { LogPlugin.Log?.WriteLog($"导入LogPlugin插件出错，异常原因{ex.Message}"); }
-                try { container.ComposeParts(JsonSerialzerPlugin); } catch (Exception ex) { LogPlugin.Log?.WriteLog($"导入JsonSerialzerPlugin插件出错，异常原因{ex.Message}"); }
-                try { container.ComposeParts(DataCheckPlugin); } catch (Exception ex) { LogPlugin.Log?.WriteLog($"导入DataCheckPlugin插件出错，异常原因{ex.Message}"); }
-                try { container.ComposeParts(BodyTransforObjectPlugin); } catch (Exception ex) { LogPlugin.Log?.WriteLog($"导入BodyTransforObjectPlugin插件出错，异常原因{ex.Message}"); }
-                try { container.ComposeParts(UserStatePlugin); } catch (Exception ex) { LogPlugin.Log?.WriteLog($"导入UserStatePlugin插件出错，异常原因{ex.Message}"); }
+
+                try
+                {
+                    container.ComposeParts(LogPlugin);
+                    LogPlugin.Log?.WriteLog($"已导入LogPlugin插件");
+                }
+                catch (Exception)
+                {
+                    LogPlugin.Log?.WriteLog($"未导入LogPlugin插件");
+                }
+
+                try
+                {
+                    container.ComposeParts(JsonSerialzerPlugin);
+                    LogPlugin.Log?.WriteLog($"已导入JsonSerialzerPlugin插件");
+                }
+                catch (Exception)
+                {
+                    LogPlugin.Log?.WriteLog($"未导入JsonSerialzerPlugin插件");
+                }
+
+                try
+                {
+                    container.ComposeParts(DataCheckPlugin);
+                    LogPlugin.Log?.WriteLog($"已导入DataCheckPlugin插件");
+                }
+                catch (Exception)
+                {
+                    LogPlugin.Log?.WriteLog($"未导入DataCheckPlugin插件");
+                }
+
+                try
+                {
+                    container.ComposeParts(BodyTransforObjectPlugin);
+                    LogPlugin.Log?.WriteLog($"已导入BodyTransforObjectPlugin插件");
+                }
+                catch (Exception)
+                {
+                    LogPlugin.Log?.WriteLog($"未导入BodyTransforObjectPlugin插件");
+                }
+
+                try
+                {
+                    container.ComposeParts(UserStatePlugin);
+                    LogPlugin.Log?.WriteLog($"已导入UserStatePlugin插件");
+                }
+                catch (Exception)
+                {
+                    LogPlugin.Log?.WriteLog($"未导入UserStatePlugin插件");
+                }
             }
             catch (Exception) { }
 
@@ -83,16 +128,10 @@ namespace RESTfulFramework.Core
                         container.ComposeParts(myProtocol);
                         ProtocolList.Add(fileName.Replace(".dll", "").Replace(".DLL", ""), myProtocol.Protocol);
                     }
-                    catch (Exception ex)
-                    {
-                        LogPlugin.Log?.WriteLog(ex.Message);
-                    }
+                    catch (Exception ex) { }
                 }
             }
-            catch (Exception ex)
-            {
-                LogPlugin.Log?.WriteLog(ex.Message);
-            }
+            catch (Exception ex) { }
             #endregion
 
             #region 加载扩展组件
@@ -116,10 +155,7 @@ namespace RESTfulFramework.Core
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                LogPlugin.Log?.WriteLog(ex.Message);
-            }
+            catch (Exception ex) { }
             #endregion
 
         }
@@ -132,7 +168,7 @@ namespace RESTfulFramework.Core
 
             try
             {
-                LogPlugin.Log?.WriteLog($"{{{body}}}{{{token}}}{{{protocol}}}{{{timestamp}}}{{{sign}}}");
+                LogPlugin.Log?.WriteLog($"{body}\r\n{token}\r\n{protocol}\r\n{timestamp}\r\n{sign}}}");
 
                 #region 设置头部信息
                 if (WebOperationContext.Current != null)
@@ -188,7 +224,7 @@ namespace RESTfulFramework.Core
                 if (ProtocolList.ContainsKey(protocol))
                 {
                     var result = ProtocolList[protocol].SetupProtocol(bodyObject, protocol, user);
-                    LogPlugin.Log?.WriteLog($"{{{result}}}");
+                    LogPlugin.Log?.WriteLog(result);
                     return JsonSerialzerPlugin.JsonSerialzer.SerializeObject(result).ToStream();
                 }
                 else
