@@ -125,3 +125,6 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\RESTfulFramework.
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\RESTfulFramework.ILogPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\RESTfulFramework.IUserPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\obj\Debug\RESTfulFramework.Console.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\RESTfulFramework.Console.exe.config
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\obj\Debug\RESTfulFramework.Console.exe
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\obj\Debug\RESTfulFramework.Console.pdb
