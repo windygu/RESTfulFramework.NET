@@ -1,0 +1,10 @@
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.pdb
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.pdb

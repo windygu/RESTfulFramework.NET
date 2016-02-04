@@ -1,0 +1,10 @@
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.pdb
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.DataCheckDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.DataCheckDemo\obj\Debug\RESTfulFramework.DataCheckDemo.pdb

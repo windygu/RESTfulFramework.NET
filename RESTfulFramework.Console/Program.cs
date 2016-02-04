@@ -1,0 +1,37 @@
+﻿using System;
+using System.Configuration;
+using System.ServiceModel;
+using System.ServiceModel.Description;
+
+namespace RESTfulFramework.Console
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var wHost = new System.ServiceModel.Web.WebServiceHost(typeof(Core.DataService), new Uri( ConfigurationManager.AppSettings["baseUrl"]));
+            var httpBinding = new WebHttpBinding();
+            wHost.AddServiceEndpoint(typeof(ICore.IDataService), httpBinding, ConfigurationManager.AppSettings["relativeUrl"]);
+
+            if (wHost.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
+            {
+                //行为 
+                var behavior = new ServiceMetadataBehavior { HttpGetEnabled = true };
+                //元数据地址 
+                wHost.Description.Behaviors.Add(behavior);
+            }
+
+            //启动 
+            if (wHost.State != CommunicationState.Opened)
+            {
+                wHost.Open();
+                System.Console.WriteLine("已启动控制台RESTfull服务。");
+            }
+            else {
+                System.Console.WriteLine("启动控制台RESTfull服务失败。");
+            }
+            System.Console.ReadKey();
+
+        }
+    }
+}

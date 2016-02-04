@@ -1,0 +1,10 @@
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.pdb
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.dll
+F:\cqj\RESTfulFrameword.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.LogDemo.pdb
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.csprojResolveAssemblyReference.cache
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.dll
+F:\cqj\RESTfulFramework.NET\RESTfulFramework.LogDemo\obj\Debug\RESTfulFramework.LogDemo.pdb
