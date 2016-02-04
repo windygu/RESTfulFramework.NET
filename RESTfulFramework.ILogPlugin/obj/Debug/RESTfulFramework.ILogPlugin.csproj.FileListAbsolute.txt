@@ -20,3 +20,8 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramewo
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.pdb

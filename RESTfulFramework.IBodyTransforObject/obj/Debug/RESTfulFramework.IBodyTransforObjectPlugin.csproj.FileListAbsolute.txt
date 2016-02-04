@@ -18,3 +18,7 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTf
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb

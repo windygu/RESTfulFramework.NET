@@ -18,3 +18,7 @@ F:\cqj\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\bin\Debug\RESTfulFramew
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\bin\Debug\RESTfulFramework.IUserPlugin.pdb
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\obj\Debug\RESTfulFramework.IUserPlugin.dll
 F:\cqj\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\obj\Debug\RESTfulFramework.IUserPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\bin\Debug\RESTfulFramework.IUserPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\bin\Debug\RESTfulFramework.IUserPlugin.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\obj\Debug\RESTfulFramework.IUserPlugin.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IUserPlugin\obj\Debug\RESTfulFramework.IUserPlugin.pdb
