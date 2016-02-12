@@ -13,3 +13,8 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\b
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.JsonSerializerDemo.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.csprojResolveAssemblyReference.cache
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.JsonSerializerDemo\obj\Debug\RESTfulFramework.JsonSerializerDemo.pdb

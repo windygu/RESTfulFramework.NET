@@ -28,12 +28,12 @@ namespace RESTfulFramework.Core
 
         #region 组件定义
 
-        private static LogDefine LogPlugin { get; set; }
-        private static JsonSerialzerDefine JsonSerialzerPlugin { get; set; }
-        private static DataCheckDefine DataCheckPlugin { get; set; }
-        private static BodyTransforObjectDefine BodyTransforObjectPlugin { get; set; }
+        static LogDefine LogPlugin { get; set; }
+        static JsonSerialzerDefine JsonSerialzerPlugin { get; set; }
+        static DataCheckDefine DataCheckPlugin { get; set; }
+        static BodyTransforObjectDefine BodyTransforObjectPlugin { get; set; }
 
-        private static UserDefine UserStatePlugin;
+        static UserDefine UserStatePlugin;
 
         static Dictionary<string, IExpand> RequestExpandPluginList { get; set; } = new Dictionary<string, IExpand>();
 
@@ -64,7 +64,7 @@ namespace RESTfulFramework.Core
                     container.ComposeParts(LogPlugin);
                     LogPlugin.Log?.WriteLog($"已导入LogPlugin插件");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LogPlugin.Log?.WriteLog($"未导入LogPlugin插件");
                 }
@@ -74,7 +74,7 @@ namespace RESTfulFramework.Core
                     container.ComposeParts(JsonSerialzerPlugin);
                     LogPlugin.Log?.WriteLog($"已导入JsonSerialzerPlugin插件");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LogPlugin.Log?.WriteLog($"未导入JsonSerialzerPlugin插件");
                 }
@@ -84,7 +84,7 @@ namespace RESTfulFramework.Core
                     container.ComposeParts(DataCheckPlugin);
                     LogPlugin.Log?.WriteLog($"已导入DataCheckPlugin插件");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LogPlugin.Log?.WriteLog($"未导入DataCheckPlugin插件");
                 }
@@ -94,7 +94,7 @@ namespace RESTfulFramework.Core
                     container.ComposeParts(BodyTransforObjectPlugin);
                     LogPlugin.Log?.WriteLog($"已导入BodyTransforObjectPlugin插件");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LogPlugin.Log?.WriteLog($"未导入BodyTransforObjectPlugin插件");
                 }
@@ -104,7 +104,7 @@ namespace RESTfulFramework.Core
                     container.ComposeParts(UserStatePlugin);
                     LogPlugin.Log?.WriteLog($"已导入UserStatePlugin插件");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LogPlugin.Log?.WriteLog($"未导入UserStatePlugin插件");
                 }
@@ -163,12 +163,12 @@ namespace RESTfulFramework.Core
 
 
 
-        public Stream Get(string body, string token, string protocol, string timestamp, string sign)
+        public Stream Get(string body, string token, string api, string type, string timestamp, string sign)
         {
 
             try
             {
-                LogPlugin.Log?.WriteLog($"{body}\r\n{token}\r\n{protocol}\r\n{timestamp}\r\n{sign}}}");
+                LogPlugin.Log?.WriteLog($"{body}\r\n{token}\r\n{api}\r\n{timestamp}\r\n{sign}}}");
 
                 #region 设置头部信息
                 if (WebOperationContext.Current != null)
@@ -184,13 +184,15 @@ namespace RESTfulFramework.Core
                         var requestData = item.Value.Expand(new IExpandPlugin.Model.RequestData
                         {
                             body = body,
-                            protocol = protocol,
+                            api = api,
+                            type = type,
                             timestamp = timestamp,
                             sign = sign,
                             token = token
                         });
                         body = requestData.body;
-                        protocol = requestData.protocol;
+                        api = requestData.api;
+                        type = requestData.type;
                         timestamp = requestData.timestamp;
                         sign = requestData.sign;
                         token = requestData.token;
@@ -199,7 +201,7 @@ namespace RESTfulFramework.Core
                 #endregion
 
                 #region  检查数据完整性(签名)
-                var signResult = DataCheckPlugin.DataCheck?.CheckSign(body, token, protocol, sign, timestamp);
+                var signResult = DataCheckPlugin.DataCheck?.CheckSign(body, token, api, type, sign, timestamp);
                 if (signResult == false)
                 {
                     return JsonSerialzerPlugin.JsonSerialzer?.SerializeObject(
@@ -221,9 +223,9 @@ namespace RESTfulFramework.Core
                 #endregion
 
                 #region  调用协议
-                if (ProtocolList.ContainsKey(protocol))
+                if (ProtocolList.ContainsKey(type))
                 {
-                    var result = ProtocolList[protocol].SetupProtocol(bodyObject, protocol, user);
+                    var result = ProtocolList[type].SetupProtocol(bodyObject, api, type, user);
                     LogPlugin.Log?.WriteLog(result);
                     return JsonSerialzerPlugin.JsonSerialzer.SerializeObject(result).ToStream();
                 }
@@ -254,12 +256,12 @@ namespace RESTfulFramework.Core
             }
         }
 
-        public Stream Post(Stream stream, string token, string protocol, string timestamp, string sign)
+        public Stream Post(Stream stream, string token, string api, string type, string timestamp, string sign)
         {
             //获取流数据
             string body;
             using (var sr = new StreamReader(stream)) { body = sr.ReadToEnd(); }
-            return Get(body, token, protocol, timestamp, sign);
+            return Get(body, token, api, type, timestamp, sign);
         }
     }
 }

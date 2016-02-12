@@ -24,3 +24,7 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugi
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\bin\Debug\RESTfulFramework.ILogPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ILogPlugin\obj\Debug\RESTfulFramework.ILogPlugin.pdb

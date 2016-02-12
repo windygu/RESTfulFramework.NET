@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.Console", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RESTfulFramework.ProtocolPluginDemo", "RESTfulFramework.ProtocolPluginDemo", "{654646C3-81E5-435F-8EB0-6AACA2851ABE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.ProtocolLogin", "RESTfulFramework.ProtocolLogin\RESTfulFramework.ProtocolLogin.csproj", "{90D71112-C207-41BD-930D-8D98ABD78C1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.ProtocolAccount", "RESTfulFramework.ProtocolLogin\RESTfulFramework.ProtocolAccount.csproj", "{90D71112-C207-41BD-930D-8D98ABD78C1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RESTfulFramework.CorePluginDemo", "RESTfulFramework.CorePluginDemo", "{190B4255-1D77-4600-9E37-2300BCB0DB4A}"
 EndProject
@@ -44,6 +44,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.DataCheckDemo", "RESTfulFramework.DataCheckDemo\RESTfulFramework.DataCheckDemo.csproj", "{E0120AF9-423E-4D95-A18E-AC92902FC785}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.UserDemo", "RESTfulFramework.UserDemo\RESTfulFramework.UserDemo.csproj", "{FCD31368-EEB4-4565-BB6D-3F33C089B498}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RESTfulFramework.CommonDemo", "RESTfulFramework.CommonDemo", "{E0028E76-0E16-4DFF-ADDC-677750546CBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlModel", "D:\GitHub\MySqlModel\MySqlModel\MySqlModel.csproj", "{4384B6CD-64BF-4D93-B342-66DD2FDC5611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.Common", "RESTfulFramework.Tool\RESTfulFramework.Common.csproj", "{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +125,14 @@ Global
 		{FCD31368-EEB4-4565-BB6D-3F33C089B498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCD31368-EEB4-4565-BB6D-3F33C089B498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCD31368-EEB4-4565-BB6D-3F33C089B498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4384B6CD-64BF-4D93-B342-66DD2FDC5611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4384B6CD-64BF-4D93-B342-66DD2FDC5611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4384B6CD-64BF-4D93-B342-66DD2FDC5611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4384B6CD-64BF-4D93-B342-66DD2FDC5611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,5 +152,6 @@ Global
 		{88A72E75-8B4C-45AA-BE1A-FEF979BB9370} = {190B4255-1D77-4600-9E37-2300BCB0DB4A}
 		{E0120AF9-423E-4D95-A18E-AC92902FC785} = {190B4255-1D77-4600-9E37-2300BCB0DB4A}
 		{FCD31368-EEB4-4565-BB6D-3F33C089B498} = {190B4255-1D77-4600-9E37-2300BCB0DB4A}
+		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE} = {E0028E76-0E16-4DFF-ADDC-677750546CBD}
 	EndGlobalSection
 EndGlobal

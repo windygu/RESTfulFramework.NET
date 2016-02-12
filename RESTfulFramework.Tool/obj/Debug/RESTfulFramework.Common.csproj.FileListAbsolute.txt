@@ -1,0 +1,4 @@
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Tool\bin\Debug\RESTfulFramework.Common.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Tool\bin\Debug\RESTfulFramework.Common.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Tool\obj\Debug\RESTfulFramework.Common.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Tool\obj\Debug\RESTfulFramework.Common.pdb

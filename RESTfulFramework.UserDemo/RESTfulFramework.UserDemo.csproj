@@ -48,9 +48,9 @@
       <Project>{376b689d-9a28-414d-8808-5c2a6655908b}</Project>
       <Name>RESTfulFramework.IUserPlugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.ProtocolLogin\RESTfulFramework.ProtocolLogin.csproj">
+    <ProjectReference Include="..\RESTfulFramework.ProtocolLogin\RESTfulFramework.ProtocolAccount.csproj">
       <Project>{90d71112-c207-41bd-930d-8d98abd78c1f}</Project>
-      <Name>RESTfulFramework.ProtocolLogin</Name>
+      <Name>RESTfulFramework.ProtocolAccount</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

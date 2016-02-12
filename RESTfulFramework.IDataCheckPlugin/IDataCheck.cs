@@ -2,6 +2,6 @@
 {
     public interface IDataCheck
     {
-        bool CheckSign(object body,string token, string protocol, string sign, string timestamp);
+        bool CheckSign(object body, string token, string api, string remark, string sign, string timestamp);
     }
 }

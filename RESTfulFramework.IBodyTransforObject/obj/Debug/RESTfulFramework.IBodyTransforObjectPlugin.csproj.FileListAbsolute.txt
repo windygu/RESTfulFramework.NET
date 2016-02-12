@@ -22,3 +22,7 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTran
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\bin\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IBodyTransforObject\obj\Debug\RESTfulFramework.IBodyTransforObjectPlugin.pdb

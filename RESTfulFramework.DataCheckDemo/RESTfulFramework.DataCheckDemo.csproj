@@ -48,6 +48,10 @@
       <Project>{d7478ffd-a03f-4252-8585-db3158a8f6b4}</Project>
       <Name>RESTfulFramework.IDataCheckPlugin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.Tool\RESTfulFramework.Common.csproj">
+      <Project>{13685f7d-fad1-437f-a0b3-bc54f3f892fe}</Project>
+      <Name>RESTfulFramework.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

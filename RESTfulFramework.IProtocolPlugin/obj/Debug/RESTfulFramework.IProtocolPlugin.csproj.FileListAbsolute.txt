@@ -25,3 +25,7 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocol
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.pdb

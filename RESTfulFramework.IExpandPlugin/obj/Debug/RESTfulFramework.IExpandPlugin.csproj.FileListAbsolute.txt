@@ -22,3 +22,7 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPl
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\bin\Debug\RESTfulFramework.IExpandPlugin.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\obj\Debug\RESTfulFramework.IExpandPlugin.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\obj\Debug\RESTfulFramework.IExpandPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\bin\Debug\RESTfulFramework.IExpandPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\bin\Debug\RESTfulFramework.IExpandPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\obj\Debug\RESTfulFramework.IExpandPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IExpandPlugin\obj\Debug\RESTfulFramework.IExpandPlugin.pdb

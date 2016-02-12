@@ -13,3 +13,8 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\b
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.UserDemo.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\CorePlugin\RESTfulFramework.UserDemo.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.csprojResolveAssemblyReference.cache
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.UserDemo\obj\Debug\RESTfulFramework.UserDemo.pdb

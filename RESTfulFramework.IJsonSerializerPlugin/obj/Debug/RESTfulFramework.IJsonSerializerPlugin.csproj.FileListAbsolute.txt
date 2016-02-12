@@ -23,3 +23,7 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSeri
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb

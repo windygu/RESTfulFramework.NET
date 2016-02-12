@@ -6,8 +6,6 @@ namespace RESTfulFramework.IExpandPlugin
     {
         RequestData Expand(RequestData requestData);
 
-        void SetIndex(int index);
-
         int GetIndex();
 
     }

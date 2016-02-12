@@ -31,7 +31,9 @@ namespace RESTfulFramework.Console
                 System.Console.WriteLine("启动控制台RESTful服务失败。");
             }
             System.Console.ReadKey();
-
+            wHost.Close();
         }
+
+       
     }
 }

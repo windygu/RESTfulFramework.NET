@@ -9,7 +9,7 @@ namespace RESTfulFramework.UserDemo
         public object GetUser(string token)
         {
             /*根据token取用户信息，当分布式时，您可以使用redis，此处仅作参考*/
-            return ProtocolLogin.Login.GetUserState("demotoken");
+            return ProtocolAccount.Account.GetUserState(token);
         }
     }
 }
