@@ -51,6 +51,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlModel", "D:\GitHub\MyS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.Common", "RESTfulFramework.Tool\RESTfulFramework.Common.csproj", "{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RESTfulFramework.Html5Demo", "RESTfulFramework.Html5Demo\", "{9069BD1F-E168-440D-B3F0-4060533C6FEA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19783"
+		Debug.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19783\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19783"
+		Release.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19783\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "19783"
+		SlnRelativePath = "RESTfulFramework.Html5Demo\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +154,10 @@ Global
 		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13685F7D-FAD1-437F-A0B3-BC54F3F892FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9069BD1F-E168-440D-B3F0-4060533C6FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9069BD1F-E168-440D-B3F0-4060533C6FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9069BD1F-E168-440D-B3F0-4060533C6FEA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9069BD1F-E168-440D-B3F0-4060533C6FEA}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

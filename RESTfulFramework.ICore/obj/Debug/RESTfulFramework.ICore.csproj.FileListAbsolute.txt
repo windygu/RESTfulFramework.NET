@@ -28,3 +28,4 @@ C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\bin\Debug\RESTfulFramework.ICore.pdb
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.dll
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ICore\obj\Debug\RESTfulFramework.ICore.csprojResolveAssemblyReference.cache

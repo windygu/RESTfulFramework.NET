@@ -6,6 +6,7 @@ using System.Configuration;
 using MySqlModel;
 using RESTfulFramework.Common;
 using System.Linq;
+using RESTfulFramework.ProtocolAccount.Model;
 
 namespace RESTfulFramework.ProtocolAccount
 {
@@ -140,31 +141,34 @@ namespace RESTfulFramework.ProtocolAccount
                 if (api == "SmsCode")
                 {
                     var account = result.GetValue<string>("account");
-                    //验证帐号是否存在
-                    var resultUser = DbSql.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM users WHERE account='{account}';");
-                    if (resultUser != null && resultUser.Any())
+     
+                    //产生随机6位数数字
+                    var randomCode = RandomEx.CreateSmsCode();
+                    //保存
+                    SetUserSmsCode(account, randomCode);
+                    //发送短信
+
+                    //发送序列号短信给用户
+                    var sms = new SmsApi.WsAPIs();
+                    var content = ConfigurationManager.AppSettings["VerificationSmsTemplate"].Replace("{code}", randomCode);
+                    var resultXml = sms.Send("rest", "123456_abc", account, content, null);
+                    var xmlResult = resultXml.GetObjectByXmlString<XMLResult>();
+                    if (xmlResult.Result == "1")
                     {
-                        //产生随机6位数数字
-                        var randomCode = RandomEx.CreateSmsCode();
-                        //保存
-                        SetUserSmsCode(account, randomCode);
-                        //发送短信
-                        /************发送短信代码************/
                         return new Result<object>
                         {
                             Code = CodeEnum.Sucess,
-                            Msg = "短信验证码已发送"
+                            Msg = xmlResult.Description
                         };
                     }
-                    else
-                    {
-                        //帐号不存在
+                    else {
                         return new Result<object>
                         {
-                            Code = CodeEnum.AccountException,
-                            Msg = "帐号不存在"
+                            Code = CodeEnum.Sucess,
+                            Msg = xmlResult.Description
                         };
                     }
+
                 }
                 #endregion
             }
@@ -191,7 +195,7 @@ namespace RESTfulFramework.ProtocolAccount
             {
                 return UsersState[token];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }

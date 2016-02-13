@@ -29,3 +29,4 @@ C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProt
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\bin\Debug\RESTfulFramework.IProtocolPlugin.pdb
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.dll
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IProtocolPlugin\obj\Debug\RESTfulFramework.IProtocolPlugin.csprojResolveAssemblyReference.cache

@@ -27,3 +27,4 @@ C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJson
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\bin\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.dll
 C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.pdb
+C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.IJsonSerializerPlugin\obj\Debug\RESTfulFramework.IJsonSerializerPlugin.csprojResolveAssemblyReference.cache

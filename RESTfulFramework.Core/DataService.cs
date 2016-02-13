@@ -172,7 +172,11 @@ namespace RESTfulFramework.Core
 
                 #region 设置头部信息
                 if (WebOperationContext.Current != null)
+                {
+                    WebOperationContext.Current.OutgoingResponse.Headers.Add("Access-Control-Allow-Origin", "*");
                     WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
+                }
+
                 #endregion
 
                 #region 扩展组件的干涉
