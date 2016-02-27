@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET", "RESTfulFramework.NET\RESTfulFramework.NET.csproj", "{1135927D-460B-4E04-B60C-C0E2000A3CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.UserService", "RESTfulFramework.NET.UserService\RESTfulFramework.NET.UserService.csproj", "{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.DataService", "RESTfulFramework.NET.DataService\RESTfulFramework.NET.DataService.csproj", "{25786102-BC9E-4779-BD15-035573334E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.ComponentModel", "RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj", "{AC3C5127-74CB-4D39-8D60-2609217A272E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Security", "RESTfulFramework.NET.Security\RESTfulFramework.NET.Security.csproj", "{239D7260-0B2A-46B7-B931-C2954E33A0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Units", "RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj", "{D203BB50-4A56-4B9D-B341-9928B09E822D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Business", "RESTfulFramework.NET.Business\RESTfulFramework.NET.Business.csproj", "{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Common", "RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj", "{F153AB9F-269D-4269-96F1-45455EB6DAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.UserService.ConsoleWCF", "RESTfulFramework.NET.UserService.ConsoleWCF\RESTfulFramework.NET.UserService.ConsoleWCF.csproj", "{FDC36EB0-C2C2-4CD1-AF6F-AD3DF56E31DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.DataService.ConsoleWCF", "RESTfulFramework.NET.DataService.ConsoleWCF\RESTfulFramework.NET.DataService.ConsoleWCF.csproj", "{5C551919-2606-4948-B02F-FB26B23D7892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.DataService.IISWCF", "RESTfulFramework.NET.DataService.IISWCF\RESTfulFramework.NET.DataService.IISWCF.csproj", "{6777F46E-04CB-45DB-940F-B91D495945E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.UserService.IISWCF", "RESTfulFramework.NET.UserService.IISWCF\RESTfulFramework.NET.UserService.IISWCF.csproj", "{06131B15-77B2-4C5D-8A6E-EC12FCB9A9F7}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RESTfulFramework.Html5Demo", "RESTfulFramework.Html5Demo\", "{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6764"
+		Debug.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6764\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6764"
+		Release.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6764\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6764"
+		SlnRelativePath = "RESTfulFramework.Html5Demo\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1135927D-460B-4E04-B60C-C0E2000A3CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1135927D-460B-4E04-B60C-C0E2000A3CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1135927D-460B-4E04-B60C-C0E2000A3CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1135927D-460B-4E04-B60C-C0E2000A3CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25786102-BC9E-4779-BD15-035573334E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25786102-BC9E-4779-BD15-035573334E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25786102-BC9E-4779-BD15-035573334E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25786102-BC9E-4779-BD15-035573334E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3C5127-74CB-4D39-8D60-2609217A272E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3C5127-74CB-4D39-8D60-2609217A272E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3C5127-74CB-4D39-8D60-2609217A272E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3C5127-74CB-4D39-8D60-2609217A272E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239D7260-0B2A-46B7-B931-C2954E33A0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239D7260-0B2A-46B7-B931-C2954E33A0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239D7260-0B2A-46B7-B931-C2954E33A0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239D7260-0B2A-46B7-B931-C2954E33A0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC36EB0-C2C2-4CD1-AF6F-AD3DF56E31DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC36EB0-C2C2-4CD1-AF6F-AD3DF56E31DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC36EB0-C2C2-4CD1-AF6F-AD3DF56E31DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC36EB0-C2C2-4CD1-AF6F-AD3DF56E31DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C551919-2606-4948-B02F-FB26B23D7892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C551919-2606-4948-B02F-FB26B23D7892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C551919-2606-4948-B02F-FB26B23D7892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C551919-2606-4948-B02F-FB26B23D7892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6777F46E-04CB-45DB-940F-B91D495945E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6777F46E-04CB-45DB-940F-B91D495945E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6777F46E-04CB-45DB-940F-B91D495945E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6777F46E-04CB-45DB-940F-B91D495945E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06131B15-77B2-4C5D-8A6E-EC12FCB9A9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06131B15-77B2-4C5D-8A6E-EC12FCB9A9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06131B15-77B2-4C5D-8A6E-EC12FCB9A9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06131B15-77B2-4C5D-8A6E-EC12FCB9A9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PluginsConfig>
+  <Plugin Name="Test.Demo.TestPlugin" Path="Plugin\Test.Demo.dll" />
+  <Plugin Name="Test.Demo.TestPlugin2" Path="Plugin\Test.Demo.dll" />
+</PluginsConfig>

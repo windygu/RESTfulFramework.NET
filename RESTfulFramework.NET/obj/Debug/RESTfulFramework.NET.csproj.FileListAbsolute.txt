@@ -1,0 +1,16 @@
+F:\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.dll
+F:\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.pdb
+F:\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.dll
+F:\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb
+D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.dll
+D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.pdb
+D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.dll
+D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb

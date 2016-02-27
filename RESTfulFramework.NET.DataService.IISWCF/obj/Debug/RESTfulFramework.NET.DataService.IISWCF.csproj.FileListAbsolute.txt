@@ -1,0 +1,14 @@
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\obj\Debug\RESTfulFramework.NET.DataService.IISWCF.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\obj\Debug\RESTfulFramework.NET.DataService.WCF.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\obj\Debug\RESTfulFramework.NET.DataService.WCF.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.DataService.WCF.dll.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.DataService.WCF.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.DataService.WCF.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\PluginPackage.Configurator.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\PluginPackage.Container.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\PluginPackage.Core.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\PluginPackage.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.ComponentModel.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.DataService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.ComponentModel.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\RESTfulFramework.NET.DataService.pdb
