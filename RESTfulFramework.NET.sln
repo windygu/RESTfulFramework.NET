@@ -48,6 +48,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RESTfulFramework.Html5Demo"
 		SlnRelativePath = "RESTfulFramework.Html5Demo\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Service", "RESTfulFramework.NET.Service\RESTfulFramework.NET.Service.csproj", "{BFDB6044-9560-4C8C-853F-67B3A5917226}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,10 @@ Global
 		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
