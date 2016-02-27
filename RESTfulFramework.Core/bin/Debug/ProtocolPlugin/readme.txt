@@ -1,2 +1,0 @@
-﻿此文件夹放置协议组件的dll。
-dll文件名必须与protocol的值一致，即如果URL中的protocol=update,那么dll文件名为update.dll

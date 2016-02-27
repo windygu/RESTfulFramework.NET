@@ -1,6 +1,0 @@
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Account.dll.config
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Account.dll
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.Console\bin\Debug\ProtocolPlugin\Account.pdb
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\RESTfulFramework.ProtocolAccount.csprojResolveAssemblyReference.cache
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Account.dll
-C:\Users\waitaction\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.ProtocolLogin\obj\Debug\Account.pdb
