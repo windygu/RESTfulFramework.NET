@@ -2,12 +2,11 @@
 
 namespace RESTfulFramework.NET.Business
 {
-    public class select : ITokenApi<RequestModel, ResponseModel>
+    public class selectinfo : IInfoApi<RequestModel, ResponseModel>
     {
         public ResponseModel RunApi(RequestModel source)
         {
-            return null;
-
+            return new ResponseModel { Code = 1, Msg = "测试" };
         }
     }
 }

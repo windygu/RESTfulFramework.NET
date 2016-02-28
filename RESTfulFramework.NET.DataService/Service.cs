@@ -1,6 +1,8 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using PluginPackage.Core;
 using System.IO;
+using RESTfulFramework.NET.Units.Model;
+using System;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -11,13 +13,17 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
 
-    public abstract class Service< TRequestModel, TResponseModel>
+    public abstract class Service<TRequestModel, TResponseModel>
        : IService
        where TRequestModel : RequestModel, new()
        where TResponseModel : ResponseModel, new()
     {
 
-        
+        protected static ILogManager LogManager { get; set; }
+
+        protected TRequestModel RequestModel { get; set; }
+
+
         /// <summary>
         /// GET通用接口
         /// </summary>
@@ -30,7 +36,7 @@ namespace RESTfulFramework.NET.DataService
         public virtual Stream Get(string body, string token, string api, string timestamp, string sign)
         {
 
-            var requestModel = new TRequestModel
+            RequestModel = new TRequestModel
             {
                 Body = StringToObject(body),
                 Token = token,
@@ -39,10 +45,11 @@ namespace RESTfulFramework.NET.DataService
                 Sign = sign,
                 Tag = body
             };
-            var securityResult = SecurityCheck(ref requestModel);
+            var securityResult = SecurityCheck(RequestModel);
             if (!securityResult) return ResponseModelToStream(new TResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
 
-            TResponseModel result = GetContainer().GetPluginInstance<IApiPlugin<TRequestModel, TResponseModel>>(api).RunApi(requestModel);
+            TResponseModel result = GetContainer().GetPluginInstance<ITokenApi<TRequestModel, TResponseModel>>(api).RunApi(RequestModel);
+
             return ResponseModelToStream(result);
         }
 
@@ -57,16 +64,33 @@ namespace RESTfulFramework.NET.DataService
         /// <returns>返回流</returns>
         public virtual Stream Post(Stream stream, string token, string api, string timestamp, string sign)
         {
-            var requestModel = StreamToRequestModel(stream);
-            return Get(ObjectToString(requestModel.Body), requestModel.Token, requestModel.Api, requestModel.Timestamp, requestModel.Sign);
+            var body = StreamToString(stream);
+            return Get(body, token, api, timestamp, sign);
+        }
+        public Stream PostInfo(Stream stream, string api)
+        {
+            var body = StreamToString(stream);
+            return GetInfo(body, api);
         }
 
+        public Stream GetInfo(string body, string api)
+        {
+            RequestModel = new TRequestModel
+            {
+                Body = StringToObject(body),
+                Api = api,
+                Tag = body
+            };
+
+            TResponseModel result = GetContainer().GetPluginInstance<IInfoApi<TRequestModel, TResponseModel>>(api).RunApi(RequestModel);
+            return ResponseModelToStream(result);
+        }
         /// <summary>
         /// 安全检查
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract bool SecurityCheck(ref TRequestModel requestModel);
+        public abstract bool SecurityCheck(TRequestModel requestModel);
 
         /// <summary>
         /// 获取组件容器
@@ -87,7 +111,7 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         /// <param name="stream">流</param>
         /// <returns>对像模型</returns>
-        public abstract TRequestModel StreamToRequestModel(Stream stream);
+        public abstract string StreamToString(Stream stream);
 
         /// <summary>
         /// 对像转为字符串，重写这个方法时，需要注意的是与StringToObject方法能互转
@@ -98,7 +122,6 @@ namespace RESTfulFramework.NET.DataService
         /// 字符串转为对像，重写这个方法时，需要注意的是与ObjectToString方法能互转
         /// </summary>
         public abstract object StringToObject(string str);
-
 
 
     }

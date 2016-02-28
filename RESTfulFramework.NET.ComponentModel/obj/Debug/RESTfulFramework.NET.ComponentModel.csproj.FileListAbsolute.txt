@@ -20,3 +20,4 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\bin\Debug\RES
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.csprojResolveAssemblyReference.cache

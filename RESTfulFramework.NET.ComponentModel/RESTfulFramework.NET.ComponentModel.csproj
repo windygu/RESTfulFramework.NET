@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code.cs" />
-    <Compile Include="IApiPlugin.cs" />
+    <Compile Include="IInfoApi.cs" />
+    <Compile Include="ITokenApi.cs" />
     <Compile Include="IConfigManager.cs" />
     <Compile Include="IDBHelper.cs" />
     <Compile Include="IJsonSerialzer.cs" />

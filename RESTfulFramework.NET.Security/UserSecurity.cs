@@ -10,7 +10,7 @@ namespace RESTfulFramework.NET.Security
         private static IUserCache<UserInfo> UserCache { get; set; }
         static UserSecurity()
         {
-            UserCache = Factory.GetInstance<IUserCache<UserInfo>>(); 
+            UserCache = Factory.GetInstance<IUserCache<UserInfo>>();
         }
         public bool SecurityCheck(RequestModel requestModel)
         {
@@ -18,8 +18,9 @@ namespace RESTfulFramework.NET.Security
             {
                 var userInfo = UserCache.GetUserInfo(requestModel.Token);
                 if (userInfo == null) return false;
+                requestModel.UserInfo = userInfo;
             }
-            catch 
+            catch
             {
                 return false;
             }

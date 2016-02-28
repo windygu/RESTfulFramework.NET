@@ -8,6 +8,7 @@
   <Plugin Name="RESTfulFramework.NET.Units.DBHelper" Path="bin\Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.SmsManager" Path="bin\Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.PushManager" Path="bin\Units\RESTfulFramework.NET.Units.dll" />
+  <Plugin Name="RESTfulFramework.NET.Units.LogManager" Path="bin\Units\RESTfulFramework.NET.Units.dll" />
   <!--安全-->
   <Plugin Name="RESTfulFramework.NET.Security.SecurityService" Path="bin\Security\RESTfulFramework.NET.Security.dll" />
   <!--业务-->
@@ -15,5 +16,6 @@
   <Plugin Name="RESTfulFramework.NET.Business.delete" Path="bin\Business\RESTfulFramework.NET.Business.dll" />
   <Plugin Name="RESTfulFramework.NET.Business.update" Path="bin\Business\RESTfulFramework.NET.Business.dll" />
   <Plugin Name="RESTfulFramework.NET.Business.select" Path="bin\Business\RESTfulFramework.NET.Business.dll" />
+  <Plugin Name="RESTfulFramework.NET.Business.selectinfo" Path="bin\Business\RESTfulFramework.NET.Business.dll" />
   <!--<Plugin Name="Test.Demo.TestPlugin2" Path="Plugin\Test.Demo.dll" />-->
 </PluginsConfig>

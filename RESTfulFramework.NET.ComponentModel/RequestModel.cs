@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using RESTfulFramework.NET.Units.Model;
+using System.Runtime.Serialization;
 
 namespace RESTfulFramework.NET.ComponentModel
 {
@@ -17,5 +18,7 @@ namespace RESTfulFramework.NET.ComponentModel
         public string Sign { get; set; }
 
         public object Tag { get; set; }
+
+        public UserInfo UserInfo { get; set; }
     }
 }
