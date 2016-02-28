@@ -50,8 +50,12 @@ D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Bu
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\Business\RESTfulFramework.NET.Business.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\Business\RESTfulFramework.NET.Business.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.pdb
+D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll
+D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb

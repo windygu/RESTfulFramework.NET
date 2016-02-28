@@ -28,9 +28,6 @@ D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\REST
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.Configurator.dll
@@ -39,3 +36,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPacka
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb

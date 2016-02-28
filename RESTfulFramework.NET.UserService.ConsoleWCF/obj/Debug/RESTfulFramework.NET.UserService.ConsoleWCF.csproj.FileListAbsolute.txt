@@ -22,8 +22,6 @@ D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWC
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.csprojResolveAssemblyReference.cache
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.exe
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.exe
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\Debug\PluginConfig.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.exe.config
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.exe
@@ -46,3 +44,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\D
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\Debug\ServiceStack.Text.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\bin\Debug\ServiceStack.Common.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.exe
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.UserService.ConsoleWCF.pdb

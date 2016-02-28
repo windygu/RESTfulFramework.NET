@@ -18,7 +18,7 @@ namespace RESTfulFramework.NET.Units
             JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
         }
 
-        public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["restfullframework"].ToString();
+        public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
 
         public int ExcuteSql(string sql)
         {

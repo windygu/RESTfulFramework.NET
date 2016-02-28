@@ -1,4 +1,3 @@
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.exe.config
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.exe
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.pdb
@@ -12,5 +11,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\D
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\PluginPackage.Core.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\PluginPackage.Container.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\bin\Debug\PluginPackage.Configurator.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.exe
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.ConsoleWCF\obj\Debug\RESTfulFramework.NET.DataService.ConsoleWCF.pdb

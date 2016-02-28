@@ -70,8 +70,6 @@ D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
 D:\GitHub\其它\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.Common.dll
@@ -86,3 +84,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\Servic
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Redis.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Text.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb

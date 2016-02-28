@@ -22,9 +22,15 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Units\R
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll.config
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.IISWCF\bin\Units\RESTfulFramework.NET.Units.dll.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.IISWCF\bin\Units\RESTfulFramework.NET.Units.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService.IISWCF\bin\Units\RESTfulFramework.NET.Units.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
+D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll.config
+D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll
+D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb

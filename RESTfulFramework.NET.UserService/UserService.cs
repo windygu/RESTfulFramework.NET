@@ -115,6 +115,7 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>退出结果</returns>
         public ResponseModel LoginOut(string token)
         {
+ 
             if (UserCache.RemoveUserInfo(token)) return new ResponseModel { Code = Code.Sucess, Msg = "您已退出。" };
             if (UserCache.ContainsUserInfo(token)) return new ResponseModel { Code = Code.SystemException, Msg = "退出失败，请重试。" };
             else return new ResponseModel { Code = Code.TokenError, Msg = "token不存在，或已退出。" };
