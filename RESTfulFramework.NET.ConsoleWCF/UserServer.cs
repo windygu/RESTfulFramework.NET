@@ -1,12 +1,8 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Text;
-using RESTfulFramework.NET.UserService;
 using System.ServiceModel.Web;
 using ServiceStack.Redis;
 
@@ -81,8 +77,6 @@ namespace RESTfulFramework.NET.Service
                 ConsoleWriteWarinInfo(ex.Message);
             }
         }
-
-
 
 
         public void Close()

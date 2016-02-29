@@ -47,6 +47,8 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Commo
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb

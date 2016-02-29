@@ -16,6 +16,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.N
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\bin\Debug\RESTfulFramework.NET.pdb
-C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET\obj\Debug\RESTfulFramework.NET.pdb

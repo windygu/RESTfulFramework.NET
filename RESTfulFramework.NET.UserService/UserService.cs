@@ -74,11 +74,11 @@ namespace RESTfulFramework.NET.UserService
         public ResponseModel Login2(string username, string sign, string timestamp, string clientid)
         {
             //从数据库取用户
-            Dictionary<string, object> user = DbHelper.QuerySql<Dictionary<string, object>>($"SELECT * FROM `user` WHERE account_name='{username}';");
+            List<Dictionary<string, object>> user = DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}';");
             if (user == null) return new ResponseModel { Code = Code.AccountException, Msg = "用户不存在。" };
 
             //校验签名
-            var _sign = Md5.GetMd5(username + user["passwrod"].ToString() + timestamp + ConfigInfo.AccountSecretKey, Encoding.UTF8);
+            var _sign = Md5.GetMd5(username + user[0]["passwrod"].ToString() + timestamp + ConfigInfo.AccountSecretKey, Encoding.UTF8);
             if (sign != _sign) return new ResponseModel { Code = Code.SignErron, Msg = "签名不正确。" };
 
             //产生TOKEN
@@ -87,12 +87,12 @@ namespace RESTfulFramework.NET.UserService
             //写入redis服务
             var redisuser = new UserInfo
             {
-                account_name = user["account_name"].ToString(),
-                account_type_id = user["account_type"].ToString(),
-                create_time = Convert.ToDateTime(user["create_time"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
-                id = Guid.Parse(user["id"].ToString()),
-                passwrod = user["passwrod"].ToString(),
-                real_name = user["realname"].ToString(),
+                account_name = user[0]["account_name"].ToString(),
+                account_type_id = user[0]["account_type"].ToString(),
+                create_time = Convert.ToDateTime(user[0]["create_time"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
+                id = Guid.Parse(user[0]["id"].ToString()),
+                passwrod = user[0]["passwrod"].ToString(),
+                real_name = user[0]["realname"].ToString(),
                 client_id = clientid
             };
 
@@ -115,7 +115,7 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>退出结果</returns>
         public ResponseModel LoginOut(string token)
         {
- 
+
             if (UserCache.RemoveUserInfo(token)) return new ResponseModel { Code = Code.Sucess, Msg = "您已退出。" };
             if (UserCache.ContainsUserInfo(token)) return new ResponseModel { Code = Code.SystemException, Msg = "退出失败，请重试。" };
             else return new ResponseModel { Code = Code.TokenError, Msg = "token不存在，或已退出。" };
@@ -135,7 +135,7 @@ namespace RESTfulFramework.NET.UserService
             if (!ConfigInfo.SmsCodeDictionary.Contains(new KeyValuePair<string, string>(username, smscode)))
                 return new ResponseModel { Code = Code.ValCodeError, Msg = "验证码错误" };
 
-            if (DbHelper.QuerySql<Dictionary<string, object>>($"SELECT * FROM `user` WHERE account_name='{username}'") != null) return new ResponseModel { Code = Code.AccountExsit, Msg = "帐号已存在" };
+            if (DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}'") != null) return new ResponseModel { Code = Code.AccountExsit, Msg = "帐号已存在" };
 
             var userid = Guid.NewGuid();
             var resultInt = DbHelper.ExcuteSql($"INSERT INTO `user` (id,account_name,passwrod,account_type,realname) VALUES ('{userid}','{username}','{password}','手机','{realname}')");
@@ -161,14 +161,14 @@ namespace RESTfulFramework.NET.UserService
                 ConfigInfo.SmsCodeDictionary.Add(phone, rendomCode);
 
             //发送验证码
-            //var reslut = SmsManager.SendSms(phone, content);
-            var result = PushManager.PushInfo(new PushInfo
-            {
-                CliendId = "28b10506ba167e0ab4e9fba606dd035e",
-                Title = "注册验证码",
-                Content = content,
-                Descript = content
-            });
+            var result = SmsManager.SendSms(phone, content);
+            //var result = PushManager.PushInfo(new PushInfo
+            //{
+            //    CliendId = "28b10506ba167e0ab4e9fba606dd035e",
+            //    Title = "注册验证码",
+            //    Content = content,
+            //    Descript = content
+            //});
 
 
             //返回结果

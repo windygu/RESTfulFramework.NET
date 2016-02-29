@@ -13,10 +13,13 @@ namespace RESTfulFramework.NET.Units
         public DBHelper() { }
 
         private static IJsonSerialzer JsonSerialzer { get; set; }
+        //private static ILogManager LogManager { get; set; }
         static DBHelper()
         {
             JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
+            //LogManager = Factory.GetInstance<ILogManager>();
         }
+
 
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
 
@@ -47,26 +50,18 @@ namespace RESTfulFramework.NET.Units
 
         public T QuerySql<T>(string sql) where T : class
         {
-            try
-            {
+            var dbconnection = new MySqlConnection(ConnectionString);
+            var dbcommand = new MySqlCommand();
+            dbcommand.Connection = dbconnection;
+            var dba = new MySqlDataAdapter(dbcommand);
+            if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
+            dbcommand.CommandText = $"{sql};";
+            var dt = new DataTable();
+            dba.Fill(dt);
+            var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
+            dbconnection.Close();
+            return JsonSerialzer.DeserializeObject<T>(json);
 
-
-                var dbconnection = new MySqlConnection(ConnectionString);
-                var dbcommand = new MySqlCommand();
-                dbcommand.Connection = dbconnection;
-                var dba = new MySqlDataAdapter(dbcommand);
-                if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
-                dbcommand.CommandText = $"{sql};";
-                var dt = new DataTable();
-                dba.Fill(dt);
-                var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
-                dbconnection.Close();
-                return JsonSerialzer.DeserializeObject<T>(json);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
         }
     }
 }

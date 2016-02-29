@@ -9,7 +9,7 @@ namespace RESTfulFramework.NET.Units
 {
     public class ConfigManager : IConfigManager<SysConfigModel>
     {
-        private string ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
         private List<SysConfigModel> ConfigModels { get; set; }
         public ConfigManager()
         {

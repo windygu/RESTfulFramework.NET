@@ -34,6 +34,10 @@ D:\GitHub\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.dll
 D:\GitHub\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Security\RESTfulFramework.NET.Security.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Security\RESTfulFramework.NET.Security.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Security\RESTfulFramework.NET.Security.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb

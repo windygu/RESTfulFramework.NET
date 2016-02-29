@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\RESTfulFramework.NET.ConsoleWCF\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -30,17 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PluginPackage">
-      <HintPath>..\PluginPackage\PluginPackage.dll</HintPath>
+    <Reference Include="PluginPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="PluginPackage.Configurator">
-      <HintPath>..\PluginPackage\PluginPackage.Configurator.dll</HintPath>
+    <Reference Include="PluginPackage.Configurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Configurator.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="PluginPackage.Container">
-      <HintPath>..\PluginPackage\PluginPackage.Container.dll</HintPath>
+    <Reference Include="PluginPackage.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Container.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="PluginPackage.Core">
-      <HintPath>..\PluginPackage\PluginPackage.Core.dll</HintPath>
+    <Reference Include="PluginPackage.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ServiceStack.Common, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Common.4.0.52\lib\net40\ServiceStack.Common.dll</HintPath>

@@ -37,6 +37,12 @@ D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll.config
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Units\RESTfulFramework.NET.Units.dll.config
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Units\RESTfulFramework.NET.Units.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Units\RESTfulFramework.NET.Units.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Units\RESTfulFramework.NET.Units.dll.config
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Units\RESTfulFramework.NET.Units.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Units\RESTfulFramework.NET.Units.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
