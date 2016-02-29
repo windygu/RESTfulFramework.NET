@@ -21,3 +21,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\bin\Debug\RES
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb

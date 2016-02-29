@@ -54,3 +54,16 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfu
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.DataService.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.DataService.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\PluginPackage.Configurator.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\PluginPackage.Container.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\PluginPackage.Core.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\PluginPackage.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.Common.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.Common.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
+C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb
