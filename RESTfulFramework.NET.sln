@@ -19,27 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Common", "RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj", "{F153AB9F-269D-4269-96F1-45455EB6DAD9}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RESTfulFramework.Html5Demo", "RESTfulFramework.Html5Demo\", "{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_6764"
-		Debug.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6764\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_6764"
-		Release.AspNetCompiler.PhysicalPath = "RESTfulFramework.Html5Demo\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6764\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "6764"
-		SlnRelativePath = "RESTfulFramework.Html5Demo\"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.ConsoleWCF", "RESTfulFramework.NET.ConsoleWCF\RESTfulFramework.NET.ConsoleWCF.csproj", "{BFDB6044-9560-4C8C-853F-67B3A5917226}"
 EndProject
 Global
@@ -80,10 +59,6 @@ Global
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{C23508EF-7AB5-4ABC-BF4D-73AE548AE5E4}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDB6044-9560-4C8C-853F-67B3A5917226}.Release|Any CPU.ActiveCfg = Release|Any CPU

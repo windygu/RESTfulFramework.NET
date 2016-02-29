@@ -21,3 +21,6 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Conso
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\obj\Debug\RESTfulFramework.NET.ConsoleWCF.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\obj\Debug\RESTfulFramework.NET.Service.exe
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\obj\Debug\RESTfulFramework.NET.Service.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Service.exe.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\obj\Debug\RESTfulFramework.NET.Service.exe
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\obj\Debug\RESTfulFramework.NET.Service.pdb
