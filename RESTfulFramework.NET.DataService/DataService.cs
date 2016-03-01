@@ -84,7 +84,7 @@ namespace RESTfulFramework.NET.DataService
         public override Stream ResponseModelToStream(ResponseModel responseModel)
         {
             var resultStr = ObjectToString(responseModel);
-            LogManager.WriteLog($"接收请求：body={RequestModel.Tag}&token={RequestModel.Token}&api={RequestModel.Api}&timestamp={RequestModel.Timestamp}&sign={RequestModel.Sign} 输出结果：{resultStr}");
+            LogManager.WriteLog($"接收请求：body={RequestModel?.Tag}&token={RequestModel?.Token}&api={RequestModel?.Api}&timestamp={RequestModel?.Timestamp}&sign={RequestModel?.Sign} 输出结果：{resultStr}");
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
 
