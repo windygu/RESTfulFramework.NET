@@ -21,7 +21,7 @@ namespace RESTfulFramework.NET.Service
 
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("  官网：  www.RESTfulFramework.net");
+
 
             Console.ReadKey();
 

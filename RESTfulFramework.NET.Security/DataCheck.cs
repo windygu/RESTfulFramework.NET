@@ -10,14 +10,15 @@ namespace RESTfulFramework.NET.Security
     {
         public bool SecurityCheck(RequestModel requestModel)
         {
-            int timestamp;
+            long timestamp;
             try
             {
-                timestamp = int.Parse(requestModel.Timestamp);
+                
+                timestamp = requestModel.Timestamp.Length==12? long.Parse(requestModel.Timestamp)/100: long.Parse(requestModel.Timestamp);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("时间戳格式不正确。");
+                throw new Exception($"时间戳格式不正确。{ex.Message}");
             }
 
             var epoch = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;

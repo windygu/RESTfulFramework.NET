@@ -51,3 +51,7 @@ obj/
 bin/
 Debug/
 packages/
+*.pdb
+*.pdb
+RESTfulFramework.NET.Common/obj/Debug/RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+*.cache
