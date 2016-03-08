@@ -129,8 +129,8 @@ namespace RESTfulFramework.NET.UserService
             ////判断验证码
             if (!ConfigInfo.SmsCodeDictionary.Contains(new KeyValuePair<string, string>(username, smscode)))
                 return new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
-
-            if (DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}'") != null) return new UserResponseModel<string> { Code = Code.AccountExsit, Msg = "帐号已存在" };
+            var result = DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}'");
+            if (result!=null && result.Any()) return new UserResponseModel<string> { Code = Code.AccountExsit, Msg = "帐号已存在" };
 
             var userid = Guid.NewGuid();
             var resultInt = DbHelper.ExcuteSql($"INSERT INTO `user` (id,account_name,passwrod,account_type,realname) VALUES ('{userid}','{username}','{password}','手机','{realname}')");
