@@ -50,7 +50,7 @@ namespace RESTfulFramework.NET.UserService
         {
             var redis = new RedisClient(ConfigInfo.RedisAddress, int.Parse(ConfigInfo.RedisPort));
             var user = redis.Get<UserInfo>(token);
-            return new UserResponseModel<UserInfo>  { Code = Code.Sucess, Msg = user };
+            return new UserResponseModel<UserInfo> { Code = Code.Sucess, Msg = user };
         }
 
         /// <summary>
@@ -157,17 +157,9 @@ namespace RESTfulFramework.NET.UserService
 
             //发送验证码
             //var result = SmsManager.SendSms(phone, content);
-            var result = PushManager.PushInfo(new PushInfo
-            {
-                CliendId = "28b10506ba167e0ab4e9fba606dd035e",
-                Title = "注册验证码",
-                Content = content,
-                Descript = content
-            });
-
 
             //返回结果
-            if (result)
+            if (SendSms(phone, content))
                 return new UserResponseModel<string> { Code = Code.Sucess, Msg = "已发送验证码。" };
             else
                 return new UserResponseModel<string> { Code = Code.SmsCodeFail, Msg = "短信验证码发送失败。" }; //发送失败
@@ -180,6 +172,18 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>返回结果</returns>
         public UserResponseModel<string> SmsCodeExist(string code) => ConfigInfo.SmsCodeDictionary.ContainsValue(code) ? new UserResponseModel<string> { Code = Code.Sucess, Msg = "验证码存在" } : new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
 
+        protected virtual bool SendSms(string phone, string content)
+        {
+
+            var result = PushManager.PushInfo(new PushInfo
+            {
+                CliendId = "28b10506ba167e0ab4e9fba606dd035e",
+                Title = "注册验证码",
+                Content = content,
+                Descript = content
+            });
+            return result;
+        }
 
     }
 }
