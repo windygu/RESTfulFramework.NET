@@ -21,7 +21,7 @@ namespace RESTfulFramework.NET.DataService
 
         protected static ILogManager LogManager { get; set; }
 
-        protected TRequestModel RequestModel { get; set; }
+        //protected TRequestModel RequestModel { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace RESTfulFramework.NET.DataService
         public virtual Stream Get(string body, string token, string api, string timestamp, string sign)
         {
 
-            RequestModel = new TRequestModel
+            var requestModel = new TRequestModel
             {
                 Body = StringToObject(body),
                 Token = token,
@@ -45,10 +45,11 @@ namespace RESTfulFramework.NET.DataService
                 Sign = sign,
                 Tag = body
             };
-            var securityResult = SecurityCheck(RequestModel);
+            var securityResult = SecurityCheck(requestModel);
             if (!securityResult) return ResponseModelToStream(new TResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
 
-            TResponseModel result = GetContainer().GetPluginInstance<ITokenApi<TRequestModel, TResponseModel>>(api).RunApi(RequestModel);
+         
+            TResponseModel result = ApiHandler(requestModel);
 
             return ResponseModelToStream(result);
         }
@@ -67,22 +68,28 @@ namespace RESTfulFramework.NET.DataService
             var body = StreamToString(stream);
             return Get(body, token, api, timestamp, sign);
         }
+
+        /// <summary>
+        /// 获取信息通用接口(不用token)
+        /// </summary>
         public Stream PostInfo(Stream stream, string api)
         {
             var body = StreamToString(stream);
             return GetInfo(body, api);
         }
-
+        /// <summary>
+        /// 获取信息通用接口(不用token)
+        /// </summary>
         public Stream GetInfo(string body, string api)
         {
-            RequestModel = new TRequestModel
+            var requestModel = new TRequestModel
             {
                 Body = StringToObject(body),
                 Api = api,
                 Tag = body
             };
 
-            TResponseModel result = GetContainer().GetPluginInstance<IInfoApi<TRequestModel, TResponseModel>>(api).RunApi(RequestModel);
+            TResponseModel result = ApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
         /// <summary>
@@ -123,6 +130,11 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public abstract object StringToObject(string str);
 
+
+        /// <summary>
+        /// 处理请求
+        /// </summary>
+        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<ITokenApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
 
     }
 }
