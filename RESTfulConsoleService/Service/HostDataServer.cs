@@ -1,19 +1,19 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using ServiceStack.Redis;
+using RESTfulFramework.NET.DataService;
 using System;
 using System.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Web;
 
-namespace RESTfulFramework.NET.Service
+namespace RESTfulConsoleService.Service
 {
-    public class DataServer
+    public class HostDataServer
     {
         private WebServiceHost WHost { get; set; }
         private string DataServiceBaseUrl { get; set; }
         private string DataServiceRelativeUrl { get; set; }
-        public DataServer()
+        public HostDataServer()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace RESTfulFramework.NET.Service
                 else
                     Console.WriteLine($"DataService相对地址：{DataServiceRelativeUrl}");
 
-                WHost = new WebServiceHost(typeof(DataService.DataService), new Uri(DataServiceBaseUrl));
+                WHost = new WebServiceHost(typeof(RESTfulDataService), new Uri(DataServiceBaseUrl));
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace RESTfulFramework.NET.Service
             try
             {
                 var httpBinding = new WebHttpBinding();
-                WHost.AddServiceEndpoint(typeof(RESTfulFramework.NET.ComponentModel.IService), httpBinding, DataServiceRelativeUrl);
+                WHost.AddServiceEndpoint(typeof(IService), httpBinding, DataServiceRelativeUrl);
 
                 if (WHost.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
                 {
@@ -109,34 +109,7 @@ namespace RESTfulFramework.NET.Service
                 {
                     ConsoleWriteWarinInfo($"配置文件连接字符串未设置，例如： <add name=\"RESTfulFrameworkConnection\" connectionString=\"server=127.0.0.1;port=3308;Data id=root;password=123456abc;persistsecurityinfo=True;database=restfulframework\"/>");
                 }
-
-                //检测redis配置
-                var configManager = PluginPackage.Factory.GetInstance<IConfigManager<SysConfigModel>>();
-                string redisAddress = null;
-                string redisPort = null;
-
-                try
-                {
-                    redisAddress = configManager.GetValue("redis_address").value;
-                    Console.WriteLine($"Redis地址：{redisAddress}");
-                    redisPort = configManager.GetValue("redis_port").value;
-                    Console.WriteLine($"Redis端口：{redisPort}");
-                }
-                catch (Exception ex)
-                {
-                    ConsoleWriteWarinInfo($"无法获取redis地址及端口,错误信息:{ex.Message}");
-                }
-
-                try
-                {
-                    var redisClient = new RedisClient(redisAddress, int.Parse(redisPort));
-                    redisClient.SetValue("test", "test");
-                    Console.WriteLine($"Redis服务正常。");
-                }
-                catch (Exception ex)
-                {
-                    ConsoleWriteWarinInfo($"Redis未启动或Redis地址、端口错误,错误信息:{ex.Message}");
-                }
+            
                 TipInfo();
             }
             catch (Exception ex)
