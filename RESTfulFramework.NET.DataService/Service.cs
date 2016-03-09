@@ -36,22 +36,31 @@ namespace RESTfulFramework.NET.DataService
         public virtual Stream Get(string body, string token, string api, string timestamp, string sign)
         {
 
-            var requestModel = new TRequestModel
+            try
             {
-                Body = StringToObject(body),
-                Token = token,
-                Api = api,
-                Timestamp = timestamp,
-                Sign = sign,
-                Tag = body
-            };
-            var securityResult = SecurityCheck(requestModel);
-            if (!securityResult) return ResponseModelToStream(new TResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
+                var requestModel = new TRequestModel
+                {
+                    Body = StringToObject(body),
+                    Token = token,
+                    Api = api,
+                    Timestamp = timestamp,
+                    Sign = sign,
+                    Tag = body
+                };
+                var securityResult = SecurityCheck(requestModel);
+                if (!securityResult) return ResponseModelToStream(new TResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
 
-         
-            TResponseModel result = ApiHandler(requestModel);
 
-            return ResponseModelToStream(result);
+                TResponseModel result = ApiHandler(requestModel);
+
+                return ResponseModelToStream(result);
+            }
+            catch (Exception ex)
+            {
+
+                return ResponseModelToStream(new TResponseModel { Code = Code.SystemException, Msg = ex.Message });
+
+            }
         }
 
         /// <summary>
