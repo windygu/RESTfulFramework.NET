@@ -1,7 +1,6 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using PluginPackage.Core;
 using System.IO;
-using RESTfulFramework.NET.Units.Model;
 using System;
 
 namespace RESTfulFramework.NET.DataService
@@ -20,9 +19,6 @@ namespace RESTfulFramework.NET.DataService
     {
 
         protected static ILogManager LogManager { get; set; }
-
-        //protected TRequestModel RequestModel { get; set; }
-
 
         /// <summary>
         /// GET通用接口

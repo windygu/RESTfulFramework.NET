@@ -70,3 +70,5 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Busin
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Business\RESTfulFramework.NET.Business.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Business\RESTfulFramework.NET.Business.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Business\RESTfulFramework.NET.Business.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Business\RESTfulFramework.NET.Business.pdb

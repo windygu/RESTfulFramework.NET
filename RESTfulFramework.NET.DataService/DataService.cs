@@ -18,15 +18,19 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 序列化器组件
         /// </summary>
-        private static IJsonSerialzer Serialzer { get; set; }
+        private static IJsonSerialzer Serialzer { get; set; } = new JsonSerialzer();
 
         public DataService()
         {
             if (Container == null)
             {
-                Container = GetContainer();
-                Serialzer = Container.GetPluginInstance<IJsonSerialzer>();
-                LogManager = Container.GetPluginInstance<ILogManager>();
+                try
+                {
+                    Container = GetContainer();
+                    Serialzer = Container.GetPluginInstance<IJsonSerialzer>();
+                    LogManager = Container.GetPluginInstance<ILogManager>();
+                }
+                catch (Exception ex) { }
             }
 
             #region 设置头部信息
@@ -84,13 +88,13 @@ namespace RESTfulFramework.NET.DataService
         public override Stream ResponseModelToStream(ResponseModel responseModel)
         {
             var resultStr = ObjectToString(responseModel);
-            LogManager.WriteLog($"输出结果：{resultStr}");
+            LogManager?.WriteLog($"输出结果：{resultStr}");
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
         protected override ResponseModel ApiHandler(RequestModel requestModel)
         {
             var responseModel = base.ApiHandler(requestModel);
-            LogManager.WriteLog($"接收请求：body={requestModel?.Tag}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}");
+            LogManager?.WriteLog($"接收请求：body={requestModel?.Tag}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}");
             return responseModel;
         }
 
