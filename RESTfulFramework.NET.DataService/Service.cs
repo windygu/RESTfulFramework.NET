@@ -97,6 +97,19 @@ namespace RESTfulFramework.NET.DataService
             TResponseModel result = InfoApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
+
+        public Stream GetStream(string body, string api)
+        {
+            var requestModel = new TRequestModel
+            {
+                Body = StringToObject(body),
+                Api = api,
+                Tag = body
+            };
+
+            Stream result = StreamApiHandler(requestModel);
+            return result;
+        }
         /// <summary>
         /// 安全检查
         /// </summary>
@@ -145,5 +158,8 @@ namespace RESTfulFramework.NET.DataService
         /// 取信息请求(不用验证)
         /// </summary>
         protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<IInfoApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
+
+
+        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<IStreamApi<TRequestModel>>(requestModel.Api).RunApi(requestModel);
     }
 }

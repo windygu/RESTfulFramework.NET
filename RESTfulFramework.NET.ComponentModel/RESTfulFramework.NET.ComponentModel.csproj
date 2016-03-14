@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Code.cs" />
     <Compile Include="IInfoApi.cs" />
+    <Compile Include="IStreamApi.cs" />
     <Compile Include="ITokenApi.cs" />
     <Compile Include="IConfigManager.cs" />
     <Compile Include="IDBHelper.cs" />

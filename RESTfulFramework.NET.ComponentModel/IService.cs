@@ -28,6 +28,10 @@ namespace RESTfulFramework.NET.ComponentModel
         [OperationContract]
         [WebGet(UriTemplate = "/getinfo?body={body}&api={api}")]
         Stream GetInfo(string body, string api);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/getstream?body={body}&api={api}")]
+        Stream GetStream(string body, string api);
         #endregion
     }
 }
