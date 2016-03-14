@@ -94,7 +94,7 @@ namespace RESTfulFramework.NET.DataService
                 Tag = body
             };
 
-            TResponseModel result = ApiHandler(requestModel);
+            TResponseModel result = InfoApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
         /// <summary>
@@ -137,9 +137,13 @@ namespace RESTfulFramework.NET.DataService
 
 
         /// <summary>
-        /// 处理请求
+        /// 处理TOKEN请求
         /// </summary>
         protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<ITokenApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
 
+        /// <summary>
+        /// 取信息请求(不用验证)
+        /// </summary>
+        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<IInfoApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
     }
 }
