@@ -49,19 +49,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RESTfulFramework.NET.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.0\lib\RESTfulFramework.NET.Common.dll</HintPath>
+      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.2\lib\RESTfulFramework.NET.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RESTfulFramework.NET.ComponentModel, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.ComponentModel.1.0.5\lib\RESTfulFramework.NET.ComponentModel.dll</HintPath>
+      <HintPath>..\packages\RESTfulFramework.NET.ComponentModel.1.0.6\lib\RESTfulFramework.NET.ComponentModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RESTfulFramework.NET.DataService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.0\lib\RESTfulFramework.NET.DataService.dll</HintPath>
+      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.2\lib\RESTfulFramework.NET.DataService.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RESTfulFramework.NET.UserService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.0\lib\RESTfulFramework.NET.UserService.dll</HintPath>
+      <HintPath>..\packages\RESTfulFramework.NET.Core.1.1.2\lib\RESTfulFramework.NET.UserService.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

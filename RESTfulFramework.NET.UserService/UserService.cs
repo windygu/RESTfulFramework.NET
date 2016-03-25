@@ -78,7 +78,7 @@ namespace RESTfulFramework.NET.UserService
         {
             //从数据库取用户
             List<Dictionary<string, object>> user = DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}';");
-            if (user == null && !user.Any()) return new UserResponseModel<TokenModel> { Code = Code.AccountException, Msg = new TokenModel { Token = "用户不存在", UserId = "" } };
+            if (user == null || !user.Any()) return new UserResponseModel<TokenModel> { Code = Code.AccountException, Msg = new TokenModel { Token = "用户不存在", UserId = "" } };
 
             //校验签名
             var _sign = Md5.GetMd5(username + user[0]["passwrod"].ToString() + timestamp + ConfigInfo.AccountSecretKey, Encoding.UTF8);
