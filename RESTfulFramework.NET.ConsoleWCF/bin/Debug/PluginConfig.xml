@@ -5,7 +5,7 @@
   <Plugin Name="RESTfulFramework.NET.Units.JsonSerialzer" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.UserCache" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.ConfigManager" Path="Units\RESTfulFramework.NET.Units.dll" />
-  <Plugin Name="RESTfulFramework.NET.Units.DBHelper" Path="Units\RESTfulFramework.NET.Units.dll" />
+  <Plugin Name="RESTfulFramework.NET.Units.SqliteDBHelper" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.SmsManager" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.PushManager" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.LogManager" Path="Units\RESTfulFramework.NET.Units.dll" />

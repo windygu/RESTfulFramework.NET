@@ -17,10 +17,19 @@ namespace RESTfulFramework.NET.Units
         static PushManager()
         {
             var configManager = Factory.GetInstance<IConfigManager<SysConfigModel>>();
-            Host = configManager.GetValue("getui_host").value;
-            AppKey = configManager.GetValue("getui_appkey").value;
-            MasterSecret = configManager.GetValue("getui_mastersecret").value;
-            AppID = configManager.GetValue("getui_appid").value;
+            try
+            {
+                Host = configManager?.GetValue("getui_host").value;
+                AppKey = configManager?.GetValue("getui_appkey").value;
+                MasterSecret = configManager?.GetValue("getui_mastersecret").value;
+                AppID = configManager?.GetValue("getui_appid").value;
+            }
+            catch (System.Exception ex)
+            {
+
+                 
+            }
+           
         }
 
         public bool PushInfo(PushInfo info)

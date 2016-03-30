@@ -31,7 +31,7 @@ namespace RESTfulFramework.NET.Units
                         {
                             key = item["key"].ToString(),
                             value = item["value"].ToString(),
-                            remark = item["remark"].ToString()
+                            remark = item["remark"]?.ToString()
                         });
                     }
                     return ConfigModels.FirstOrDefault(s => s.key == key);
