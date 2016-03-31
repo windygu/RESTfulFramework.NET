@@ -84,6 +84,7 @@ namespace RESTfulFramework.NET.UserService
             var _sign = Md5.GetMd5(username + user[0]["passwrod"].ToString() + timestamp + ConfigInfo.AccountSecretKey, Encoding.UTF8);
             if (sign != _sign) return new UserResponseModel<TokenModel> { Code = Code.SignErron, Msg = new TokenModel { Token = "签名不正确", UserId = "" } };
 
+
             //产生TOKEN
             var token = Convert.ToBase64String(Encoding.UTF8.GetBytes(Md5.GetMd5(sign + Guid.NewGuid(), Encoding.UTF8)));
 

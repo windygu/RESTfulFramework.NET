@@ -10,8 +10,9 @@ namespace RESTfulFramework.NET.Security
             long timestamp;
             try
             {
-                
-                timestamp = requestModel.Timestamp.Length==12? long.Parse(requestModel.Timestamp)/100: long.Parse(requestModel.Timestamp);
+
+                if (requestModel.Timestamp.Length != 13 && requestModel.Timestamp.Length != 10) throw new Exception($"时间戳格式不正确。正确的时间戳应该是13位或者10位。{requestModel.Timestamp.Length}");
+                timestamp = requestModel.Timestamp.Length == 13 ? long.Parse(requestModel.Timestamp) / 1000 : long.Parse(requestModel.Timestamp);
             }
             catch (Exception ex)
             {
@@ -19,7 +20,7 @@ namespace RESTfulFramework.NET.Security
             }
 
             var epoch = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
-            if ((epoch - timestamp) > 600)
+            if (Math.Abs((epoch - timestamp)) > 600)
             {
                 return false;
             }

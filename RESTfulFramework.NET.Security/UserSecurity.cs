@@ -1,6 +1,7 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using RESTfulFramework.NET.Units.Model;
 using PluginPackage;
+using System;
 
 namespace RESTfulFramework.NET.Security
 {
@@ -20,9 +21,9 @@ namespace RESTfulFramework.NET.Security
                 if (userInfo == null) return false;
                 requestModel.UserInfo = userInfo;
             }
-            catch
+            catch(Exception ex)
             {
-                return false;
+                throw new System.Exception($"查询不到指定的Token数据。{ex.Message}");
             }
 
             return true;
