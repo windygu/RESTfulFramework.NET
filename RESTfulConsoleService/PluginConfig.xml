@@ -1,24 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<PluginsConfig>   
-  <!--
-  
-  1.配置组件信息
-  <Plugin Name="包含命名空间的类名(如:Test.Demo.TestPlugin)" Path="dll所在的路径" />
-  
-  2.在代码中调用
-  ITestInterface demo = PluginPackage.Factory.GetInstance<ITestInterface>();
-  
-  3.如果后续您的程序有需求变改，您只需改动  <Plugin Name="包含命名空间的类名(如:Test.Demo.TestPlugin)" Path="dll所在的路径" /> 即可
-    
-  -->
+<PluginsConfig>
+
   <!--部件-->
   <Plugin Name="RESTfulFramework.NET.Units.JsonSerialzer" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.UserCache" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.ConfigManager" Path="Units\RESTfulFramework.NET.Units.dll" />
-  <Plugin Name="RESTfulFramework.NET.Units.DBHelper" Path="Units\RESTfulFramework.NET.Units.dll" />
+  <Plugin Name="RESTfulFramework.NET.Units.SqliteDBHelper" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.SmsManager" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.PushManager" Path="Units\RESTfulFramework.NET.Units.dll" />
   <Plugin Name="RESTfulFramework.NET.Units.LogManager" Path="Units\RESTfulFramework.NET.Units.dll" />
   <!--安全-->
   <Plugin Name="RESTfulFramework.NET.Security.SecurityService" Path="Security\RESTfulFramework.NET.Security.dll" />
+  <!--业务-->
+  <Plugin Name="RESTfulFramework.NET.Business.add" Path="Business\RESTfulFramework.NET.Business.dll" />
+  <Plugin Name="RESTfulFramework.NET.Business.delete" Path="Business\RESTfulFramework.NET.Business.dll" />
+  <Plugin Name="RESTfulFramework.NET.Business.update" Path="Business\RESTfulFramework.NET.Business.dll" />
+  <Plugin Name="RESTfulFramework.NET.Business.select" Path="Business\RESTfulFramework.NET.Business.dll" />
+  <Plugin Name="RESTfulFramework.NET.Business.selectinfo" Path="Business\RESTfulFramework.NET.Business.dll" />
+  <!--<Plugin Name="Test.Demo.TestPlugin2" Path="Plugin\Test.Demo.dll" />-->
 </PluginsConfig>
