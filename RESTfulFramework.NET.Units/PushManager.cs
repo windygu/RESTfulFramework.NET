@@ -3,7 +3,6 @@ using RESTfulFramework.NET.Common.Model;
 using com.igetui.api.openservice.igetui.template;
 using com.igetui.api.openservice;
 using com.igetui.api.openservice.igetui;
-using PluginPackage;
 using com.igetui.api.openservice.payload;
 
 namespace RESTfulFramework.NET.Units
@@ -16,7 +15,7 @@ namespace RESTfulFramework.NET.Units
         private static string AppID { get; set; }
         static PushManager()
         {
-            var configManager = Factory.GetInstance<IConfigManager<SysConfigModel>>();
+            var configManager = UnitsFactory.ConfigManager;
             try
             {
                 Host = configManager?.GetValue("getui_host").value;
@@ -26,8 +25,7 @@ namespace RESTfulFramework.NET.Units
             }
             catch (System.Exception ex)
             {
-
-                 
+                UnitsFactory.LogManager.WriteLog(ex.Message);                 
             }
            
         }

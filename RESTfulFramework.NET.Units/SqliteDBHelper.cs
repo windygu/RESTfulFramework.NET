@@ -1,26 +1,24 @@
-﻿using PluginPackage;
-using RESTfulFramework.NET.ComponentModel;
+﻿using RESTfulFramework.NET.ComponentModel;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
 
 namespace RESTfulFramework.NET.Units
 {
     public class SqliteDBHelper : IDBHelper
     {
-        public SqliteDBHelper() { }
 
-        private static IJsonSerialzer JsonSerialzer { get; set; }
-        //private static ILogManager LogManager { get; set; }
-        static SqliteDBHelper()
+        public static IJsonSerialzer JsonSerialzer { get; set; }
+        public static ILogManager LogManager { get; set; }
+
+        public SqliteDBHelper()
         {
-            JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
-            //LogManager = Factory.GetInstance<ILogManager>();
+            JsonSerialzer = UnitsFactory.JsonSerialzer;
+            LogManager = UnitsFactory.LogManager;
         }
+
 
 
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
@@ -53,16 +51,29 @@ namespace RESTfulFramework.NET.Units
         public T QuerySql<T>(string sql) where T : class
         {
             var dbconnection = new SQLiteConnection(ConnectionString);
-            var dbcommand = new SQLiteCommand();
-            dbcommand.Connection = dbconnection;
-            var dba = new SQLiteDataAdapter(dbcommand);
-            if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
-            dbcommand.CommandText = $"{sql};";
-            var dt = new DataTable();
-            dba.Fill(dt);
-            var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
-            dbconnection.Close();
-            return JsonSerialzer.DeserializeObject<T>(json);
+            try
+            {
+                var dbcommand = new SQLiteCommand();
+                dbcommand.Connection = dbconnection;
+                var dba = new SQLiteDataAdapter(dbcommand);
+                if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
+                dbcommand.CommandText = $"{sql};";
+                var dt = new DataTable();
+                dba.Fill(dt);
+                var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
+                dba.Dispose();
+                return JsonSerialzer.DeserializeObject<T>(json);
+            }
+            catch (Exception ex)
+            {
+                LogManager.WriteLog(ex.Message);
+                throw ex;
+            }
+            finally
+            {
+                dbconnection.Close();
+            }
+
 
         }
     }

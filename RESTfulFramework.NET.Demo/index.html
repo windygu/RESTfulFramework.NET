@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html manifest="demo.appcache">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RESTfulFramework接口测试工具</title>
+    <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <link href="Content/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
+    <link href="Content//jquery.jsonview.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="Scripts/jquery-2.2.2.min.js"></script>
+    <script src="Scripts/jquery.mobile-1.4.5.min.js"></script>
+    <div data-role="page" data-theme="b">
+        <div data-role="header">
+            <h3>接口测试工具</h3>
+        </div>
+        <div data-role="content">
+
+            <!--请求内容-->
+            <section>
+                <label>请求内容：</label>
+                <textarea></textarea>
+            </section>
+
+            <!--接口列表-->
+            <section>
+                <div class="ui-grid-a">
+                    <label id="apiNameListLabel" for="apiNameList" class="ui-block-a">接口名称：</label>
+                    <div class="ui-block-b">
+                        <select id="apiNameList">
+                            <option>登陆</option>
+                            <option>注册</option>
+                            <option>退出</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--请求方式-->
+                <div class="ui-grid-a">
+                    <label id="apiRequestModeLabel" for="apiRequestMode" class="ui-block-a">请求方式：</label>
+                    <div class="ui-block-b">
+                        <select id="apiRequestMode">
+                            <option>POST</option>
+                            <option>GET</option>
+                        </select>
+                    </div>
+
+                </div>
+            </section>
+
+            <!--响应内容-->
+            <section>
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>响应内容</h3>
+                    <div id="responseView"></div>
+                </div>
+
+
+            </section>
+
+            <!--操作-->
+            <section>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="addApiButton" href="#dialogAddInterfacePage" data-rel="dialog" data-role="button">添加接口</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button">测试接口</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <section id="dialogAddInterfacePage" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h3>添加接口</h3>
+        </div>
+        <div data-role="content" class="ui-content">
+            <div>
+                <input type="text" placeholder="接口名称" />
+                <input type="text" placeholder="接口API名" />
+                <textarea placeholder="请求数据"></textarea>
+
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <button type="button">确定</button>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#" data-role="button" data-rel="back">取消</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="Scripts/JsonView/jquery.jsonview.js"></script>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery.md5.js"></script>
+    <script src="TypeScript/Sign.js"></script>
+    <script src="TypeScript/ConfigInfo.js"></script>
+    <script src="TypeScript/HttpHelper.js"></script>
+    <script src="TypeScript/UserHttpHelper.js"></script>
+    <script>
+        function setMiddle(element) {
+            var parentElement = $(element).parent();
+            parentElement.css("line-height", parentElement.height() + "px")
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            setMiddle(document.getElementById("apiNameListLabel"));
+            setMiddle(document.getElementById("apiRequestModeLabel"));
+
+
+            $("#addApiButton").click(function () {
+                var userHttp = new UserHttpHelper();
+                userHttp.Login("18024454137", "123456", function (data, textStatus) {
+                    if (textStatus == "success") {
+                        $("#responseView").JSONView(data);
+                    }
+
+                })
+            });
+        });
+    </script>
+</body>
+</html>

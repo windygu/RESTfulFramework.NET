@@ -36,9 +36,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPacka
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.Configurator.dll
@@ -52,7 +49,10 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Conso
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.Common.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb

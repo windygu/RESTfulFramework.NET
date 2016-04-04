@@ -17,8 +17,8 @@ namespace RESTfulFramework.NET.UserService
         private static IDBHelper DbHelper { get; set; }
         private static ISmsManager SmsManager { get; set; }
         private static IUserCache<UserInfo> UserCache { get; set; }
-
         private static IPushManager<PushInfo> PushManager { get; set; }
+
         public UserService()
         {
             #region 设置头部信息
@@ -32,12 +32,16 @@ namespace RESTfulFramework.NET.UserService
         }
         static UserService()
         {
-            DbHelper = Factory.GetInstance<IDBHelper>();
-            SmsManager = Factory.GetInstance<ISmsManager>();
-            UserCache = Factory.GetInstance<IUserCache<UserInfo>>();
-            PushManager = Factory.GetInstance<IPushManager<PushInfo>>();
+            try
+            {
+                DbHelper = Factory.GetInstance<IDBHelper>();
+                SmsManager = Factory.GetInstance<ISmsManager>();
+                UserCache = Factory.GetInstance<IUserCache<UserInfo>>();
+                PushManager = Factory.GetInstance<IPushManager<PushInfo>>();
+                ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
+            }
+            catch (Exception){}
 
-            ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
         }
 
 
@@ -184,7 +188,7 @@ namespace RESTfulFramework.NET.UserService
                 Descript = content
             });
             return result;
-        } 
+        }
 
         protected virtual bool ValidateSmsCode(string phone, string smscode) => ConfigInfo.SmsCodeDictionary.Contains(new KeyValuePair<string, string>(phone, smscode));
 

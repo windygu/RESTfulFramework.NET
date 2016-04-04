@@ -10,12 +10,14 @@ namespace RESTfulFramework.NET.Units
     {
 
         public LocalUserCache() { }
-        private static Dictionary<string, UserInfo> Client { get; set; }
-
+    
+        private static Dictionary<string, UserInfo> Client { get; set; } = new Dictionary<string, UserInfo>();
+ 
         static LocalUserCache()
         {
             //所有用户基本信息缓存redis
-            var users = Factory.GetInstance<IDBHelper>().QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
+            var dbHelper = Factory.GetInstance<IDBHelper>();
+            var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
                 var redisuser = new UserInfo

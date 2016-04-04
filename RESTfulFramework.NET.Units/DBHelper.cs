@@ -13,11 +13,9 @@ namespace RESTfulFramework.NET.Units
         public DBHelper() { }
 
         private static IJsonSerialzer JsonSerialzer { get; set; }
-        //private static ILogManager LogManager { get; set; }
         static DBHelper()
         {
             JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
-            //LogManager = Factory.GetInstance<ILogManager>();
         }
 
 
@@ -61,7 +59,6 @@ namespace RESTfulFramework.NET.Units
             var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
             dbconnection.Close();
             return JsonSerialzer.DeserializeObject<T>(json);
-
         }
     }
 }

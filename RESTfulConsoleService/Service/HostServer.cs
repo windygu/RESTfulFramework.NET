@@ -13,22 +13,21 @@ namespace RESTfulConsoleService.Service
     {
         private WebServiceHost WHost { get; set; }
         private string DataServiceBaseUrl { get; set; }
-        private string DataServiceRelativeUrl { get; set; }
+    
         public HostDataServer()
         {
-            DataServiceBaseUrl = ConfigurationManager.AppSettings["DataServiceBaseUrl"];
-            DataServiceRelativeUrl = ConfigurationManager.AppSettings["DataServiceRelativeUrl"];
-            if (string.IsNullOrEmpty(DataServiceBaseUrl)) throw new Exception($"配置文件DataServiceBaseUrl未设置，例如：<add key=\"DataServiceBaseUrl\" value=\"http://localhost:8736\"/>");
-            if (string.IsNullOrEmpty(DataServiceRelativeUrl)) throw new Exception($"配置文件DataServiceRelativeUrl未设置，例如：<add key=\"DataServiceRelativeUrl\" value=\"/DataService\" />");
+            DataServiceBaseUrl = ConfigInfo.DataServiceBaseUrl;
+      
+            if (string.IsNullOrEmpty(DataServiceBaseUrl)) throw new Exception($"配置文件DataServiceBaseUrl未设置，例如：<add key=\"DataServiceBaseUrl\" value=\"http://localhost:8736/DataService\"/>"); 
             WHost = new WebServiceHost(typeof(RESTfulDataService), new Uri(DataServiceBaseUrl));
         }
 
         public bool Start()
         {
             //检测配置文件数据库配置
-            if (string.IsNullOrEmpty(ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString())) throw new Exception($"配置文件连接字符串未设置，例如： <add name=\"RESTfulFrameworkConnection\" connectionString=\"server=127.0.0.1;port=3308;Data id=root;password=123456abc;persistsecurityinfo=True;database=restfulframework\"/>");
+            if (string.IsNullOrEmpty(ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString())) throw new Exception($"配置文件连接字符串未设置（支持MySql、Sqlite），例如： <add name=\"RESTfulFrameworkConnection\" connectionString=\"server=127.0.0.1;port=3308;Data id=root;password=123456abc;persistsecurityinfo=True;database=restfulframework\"/>");
             var httpBinding = new WebHttpBinding();
-            WHost.AddServiceEndpoint(typeof(IService), httpBinding, DataServiceRelativeUrl);
+            WHost.AddServiceEndpoint(typeof(IService), httpBinding, DataServiceBaseUrl);
             if (WHost.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
             {
                 var behavior = new ServiceMetadataBehavior { HttpGetEnabled = true };
@@ -49,23 +48,21 @@ namespace RESTfulConsoleService.Service
     {
         private WebServiceHost WHost { get; set; }
         private string UserServiceBaseUrl { get; set; }
-        private string UserServiceRelativeUrl { get; set; }
+  
         public HostUserServer()
         {
-            UserServiceBaseUrl = ConfigurationManager.AppSettings["UserServiceBaseUrl"];
-            UserServiceRelativeUrl = ConfigurationManager.AppSettings["UserServiceRelativeUrl"];
-            if (string.IsNullOrEmpty(UserServiceBaseUrl)) throw new Exception($"配置文件UserServiceBaseUrl未设置，例如：<add key=\"UserServiceBaseUrl\" value=\"http://localhost:8737\"/>");
-            if (string.IsNullOrEmpty(UserServiceRelativeUrl)) throw new Exception($"配置文件UserServiceRelativeUrl未设置，例如：<add key=\"UserServiceRelativeUrl\" value=\"/UserService\" />");
+            UserServiceBaseUrl = ConfigInfo.UserServiceBaseUrl;
+            if (string.IsNullOrEmpty(UserServiceBaseUrl)) throw new Exception($"配置文件UserServiceBaseUrl未设置，例如：<add key=\"UserServiceBaseUrl\" value=\"http://localhost:8737/UserService\"/>");      
             WHost = new WebServiceHost(typeof(UserService), new Uri(UserServiceBaseUrl));
         }
 
         public bool Start()
         {
             //检测配置文件数据库配置
-            if (string.IsNullOrEmpty(ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString())) throw new Exception($"配置文件连接字符串未设置，例如： <add name=\"RESTfulFrameworkConnection\" connectionString=\"server=127.0.0.1;port=3308;user id=root;password=123456abc;persistsecurityinfo=True;database=restfulframework\"/>");
+            if (string.IsNullOrEmpty(ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString())) throw new Exception($"配置文件连接字符串未设置（支持MySql、Sqlite），例如： <add name=\"RESTfulFrameworkConnection\" connectionString=\"server=127.0.0.1;port=3308;user id=root;password=123456abc;persistsecurityinfo=True;database=restfulframework\"/>");
 
             var httpBinding = new WebHttpBinding();
-            WHost.AddServiceEndpoint(typeof(IUserService), httpBinding, UserServiceRelativeUrl);
+            WHost.AddServiceEndpoint(typeof(IUserService), httpBinding, UserServiceBaseUrl);
 
             if (WHost.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
             {

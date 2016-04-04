@@ -55,3 +55,15 @@ packages/
 *.pdb
 RESTfulFramework.NET.Common/obj/Debug/RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 *.cache
+*.pdb
+RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.dll
+*.cache
+RESTfulFramework.NET.Common/obj/Debug/RESTfulFramework.NET.Common.dll
+RESTfulFramework.NET.ComponentModel/obj/Debug/RESTfulFramework.NET.ComponentModel.pdb
+RESTfulFramework.NET.ConsoleWCF/bin/Debug/RESTfulFramework.NET.Service.exe
+*.dll
+RESTfulFramework.NET.ConsoleWCF/obj/Debug/RESTfulFramework.NET.ConsoleWCF.csprojResolveAssemblyReference.cache
+*.pdb
+RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
+*.dll
+*.dll

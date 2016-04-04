@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Security\</OutputPath>
+    <OutputPath>..\RESTfulConsoleService\bin\Debug\Security\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

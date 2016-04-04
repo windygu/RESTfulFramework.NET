@@ -37,7 +37,7 @@ namespace RESTfulFramework.NET.Units
                     return ConfigModels.FirstOrDefault(s => s.key == key);
                 }
                 else {
-                    throw new Exception("无该配置信息");
+                    throw new Exception("数据库表sys_config为空，加载基础配置信息失败。");
                 }
             }
             else {

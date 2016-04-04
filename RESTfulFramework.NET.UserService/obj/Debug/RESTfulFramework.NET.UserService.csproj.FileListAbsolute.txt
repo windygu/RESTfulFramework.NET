@@ -83,9 +83,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfu
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Common.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Redis.xml
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Text.xml
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.Common.dll
@@ -104,7 +101,10 @@ C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Conso
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
