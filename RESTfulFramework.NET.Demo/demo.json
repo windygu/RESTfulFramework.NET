@@ -1,0 +1,59 @@
+﻿{
+  "Entity": {
+    "task_details": true
+  },
+  "Condition": {
+    "ConditionPart": {
+      "task_details": {
+        "task_name": "办公",
+        "task_create_time": "2016",
+        "Operator": {
+          "LinkOperator": "AND",
+          "CompareOperator": "Equ"
+        }
+      },
+      "task_details$conflict$1": {
+        "task_over_time": "2016",
+        "Operator": {
+          "CompareOperator": "LIKE"
+        }
+      },
+      "Operator": {
+        "LinkOperator": "OR"
+      }
+    },
+    "ConditionPart$conflict$1": {
+      "task_details": {
+        "task_name": "办公",
+        "task_create_time": "2016",
+        "Operator": {
+          "LinkOperator": "AND",
+          "CompareOperator": "Equ"
+        }
+      },
+      "task_details$conflict$1": {
+        "task_over_time": "2016",
+        "Operator": {
+          "CompareOperator": "LIKE"
+        }
+      },
+      "Operator": {
+        "LinkOperator": "OR"
+      }
+    },
+    "Operator": {
+      "LinkOperator": "OR"
+    }
+  },
+  "ResponseModel": {
+    "task_info": {
+      "task_name": true,
+      "task_descript": true
+    },
+    "task_time": {
+      "create_time": true,
+      "over_time": true
+    }
+  },
+  "Version": "1.0.0"
+}
