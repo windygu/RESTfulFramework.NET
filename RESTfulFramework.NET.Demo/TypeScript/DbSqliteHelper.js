@@ -14,9 +14,13 @@ var DbSqliteHelper = (function () {
         return str;
     };
     DbSqliteHelper.prototype.GetAllTestInfo = function (callbackFunction) {
+    
         var httpHelper = new HttpHelper();
+
         var url = httpHelper.BulidGetDataInfoUrl(JSON.stringify({}), "GetApiInfo");
+  
         $.getJSON(url, function (data, textStatus, jqXHR) {
+           
             callbackFunction(data, textStatus, jqXHR);
         });
     };

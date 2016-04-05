@@ -8,25 +8,22 @@
     <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
     <link href="Content/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
     <link href="Content//jquery.jsonview.css" rel="stylesheet" />
-
+</head>
+<body>
     <script src="Scripts/jquery-2.2.2.min.js"></script>
     <script src="Scripts/JsonView/jquery.jsonview.js"></script>
     <script src="Scripts/jquery.md5.js"></script>
     <script src="Scripts/jquery.mobile-1.4.5.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
-
-
     <script src="TypeScript/Sign.js"></script>
     <script src="TypeScript/ConfigInfo.js"></script>
     <script src="TypeScript/HttpHelper.js"></script>
     <script src="TypeScript/UserHttpHelper.js"></script>
     <script src="TypeScript/DbSqliteHelper.js"></script>
     <script src="TypeScript/DataHttpHelper.js"></script>
+    <script>
 
-
-</head>
-<body>
-
+    </script>
     <div data-role="page" data-theme="b" ng-controller="ApiInfoController">
         <div data-role="header">
             <h3>接口测试工具</h3>
@@ -63,7 +60,12 @@
 
             <!--响应内容-->
             <section>
-                <div data-role="collapsible" data-collapsed="false">
+                <style>
+                    #responseDiv > div {
+                        background-color: black;
+                    }
+                </style>
+                <div id="responseDiv" data-role="collapsible" data-collapsed="false">
                     <h3>响应内容</h3>
                     <div id="responseView"></div>
                 </div>
@@ -146,6 +148,7 @@
         ConfigInfo.BaseDataServiceUrl = localStorage.BaseDataServiceUrl;
         ConfigInfo.BaseUserServiceUrl = localStorage.BaseUserServiceUrl;
         ConfigInfo.SecretKey = localStorage.SecretKey;
+      
     </script>
     <script>
         $(document).ready(function () {
@@ -207,11 +210,13 @@
                                 $.getJSON(apiInfos[i].url, "", function (data, textStatus, jqHRX) {
 
                                     $("#responseView").JSONView(data);
+                                    //$("#responseView *").attr("data-role", "none");
                                 });
                             }
                             else {
                                 dataHttpHelper.GetJson(apiInfos[i].body, apiInfos[i].api, apiInfos[i].token, function (data, textStatus, jqXHR) {
                                     $("#responseView").JSONView(data);
+                                    //$("#responseView *").attr("data-role", "none");
                                 });
                             }
                         }
@@ -233,15 +238,15 @@
 
         var agModele = angular.module("app", []);
         agModele.controller("ApiInfoController", function ($scope) {
-
+           
             //取api信息列表
             var db = new DbSqliteHelper();
+       
             db.GetAllTestInfo(function (data, textStatus, jqXHR) {
-
+      
                 if (textStatus == "success") {
                     if (data.Code > 0) {
                         apiInfos = data.Msg;
-                        //alert( apiInfos[0].name);
                         $scope.apiInfoList = apiInfos;
                         $scope.$apply();
                     }
