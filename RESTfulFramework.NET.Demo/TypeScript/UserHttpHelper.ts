@@ -7,4 +7,4 @@ class UserHttpHelper extends HttpHelper {
                 ResultFunction(data, textStatus);
         });
     }
-}
+} 

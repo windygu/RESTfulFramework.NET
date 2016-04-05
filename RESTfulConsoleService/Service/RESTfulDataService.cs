@@ -12,9 +12,18 @@ namespace RESTfulConsoleService.Service
         {
             var ass = Assembly.GetExecutingAssembly();
             var apiType = ass.GetType($"{ConfigInfo.ApiNamespace}.{requestModel.Api}");
-            var tokenApi = Activator.CreateInstance(apiType) as ITokenApi<RequestModel, ResponseModel>;
+            ITokenApi<RequestModel, ResponseModel> tokenApi;
+            tokenApi = Activator.CreateInstance(apiType) as ITokenApi<RequestModel, ResponseModel>;
             return tokenApi.RunApi(requestModel);
         }
- 
+
+        protected override ResponseModel InfoApiHandler(RequestModel requestModel)
+        {
+            var ass = Assembly.GetExecutingAssembly();
+            var apiType = ass.GetType($"{ConfigInfo.ApiNamespace}.{requestModel.Api}");
+            IInfoApi<RequestModel, ResponseModel> infoApi;
+            infoApi = Activator.CreateInstance(apiType) as IInfoApi<RequestModel, ResponseModel>;
+            return infoApi.RunApi(requestModel);
+        }
     }
 }

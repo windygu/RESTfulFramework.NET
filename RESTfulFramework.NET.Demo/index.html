@@ -1,26 +1,41 @@
 ﻿<!doctype html>
-<html manifest="demo.appcache">
+<html ng-app="app">
 <head>
+    <!--manifest="demo.appcache"-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>RESTfulFramework接口测试工具</title>
     <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
     <link href="Content/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
     <link href="Content//jquery.jsonview.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-2.2.2.min.js"></script>
+    <script src="Scripts/JsonView/jquery.jsonview.js"></script>
+    <script src="Scripts/jquery.md5.js"></script>
+    <script src="Scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+
+
+    <script src="TypeScript/Sign.js"></script>
+    <script src="TypeScript/ConfigInfo.js"></script>
+    <script src="TypeScript/HttpHelper.js"></script>
+    <script src="TypeScript/UserHttpHelper.js"></script>
+    <script src="TypeScript/DbSqliteHelper.js"></script>
+    <script src="TypeScript/DataHttpHelper.js"></script>
+
+
 </head>
 <body>
-    <script src="Scripts/jquery-2.2.2.min.js"></script>
-    <script src="Scripts/jquery.mobile-1.4.5.min.js"></script>
-    <div data-role="page" data-theme="b">
+
+    <div data-role="page" data-theme="b" ng-controller="ApiInfoController">
         <div data-role="header">
             <h3>接口测试工具</h3>
         </div>
         <div data-role="content">
-
             <!--请求内容-->
             <section>
                 <label>请求内容：</label>
-                <textarea></textarea>
+                <textarea id="bodyTextarea"></textarea>
             </section>
 
             <!--接口列表-->
@@ -29,9 +44,7 @@
                     <label id="apiNameListLabel" for="apiNameList" class="ui-block-a">接口名称：</label>
                     <div class="ui-block-b">
                         <select id="apiNameList">
-                            <option>登陆</option>
-                            <option>注册</option>
-                            <option>退出</option>
+                            <option data-api-id="{{apiInfo.id}}" ng-repeat="apiInfo in apiInfoList">{{apiInfo.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -45,7 +58,6 @@
                             <option>GET</option>
                         </select>
                     </div>
-
                 </div>
             </section>
 
@@ -55,24 +67,17 @@
                     <h3>响应内容</h3>
                     <div id="responseView"></div>
                 </div>
-
-
-            </section>
-
-            <!--操作-->
-            <section>
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <a id="addApiButton" href="#dialogAddInterfacePage" data-rel="dialog" data-role="button">添加接口</a>
-                    </div>
-                    <div class="ui-block-b">
-                        <button type="button">测试接口</button>
-                    </div>
-                </div>
             </section>
         </div>
-        <div data-role="footer">
-
+        <div data-role="footer" class="ui-footer-fixed">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a id="testApiButton" data-icon="arrow-r">测试</a></li>
+                    <li><a id="addApiButton" href="#dialogAddInterfacePage" data-rel="dialog" data-icon="plus">添加</a></li>
+                    <li><a id="deleteApiButton" href="#" data-icon="delete">删除</a></li>
+                    <li><a id="setConfigButton" href="#dialogSetConfigPage" data-rel="dialog" data-icon="gear">设置</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -82,51 +87,173 @@
         </div>
         <div data-role="content" class="ui-content">
             <div>
-                <input type="text" placeholder="接口名称" />
-                <input type="text" placeholder="接口API名" />
-                <textarea placeholder="请求数据"></textarea>
-
+                <input id="apiInfoName" type="text" placeholder="接口中文名称" />
+                <input id="apiName" type="text" placeholder="API" />
+                <textarea id="requestInfoData" placeholder="请求数据"></textarea>
+                <textarea id="apiUrl" placeholder="绝对地址(可选,一般不填)"></textarea>
+                <select id="apiInfoRequestMode">
+                    <option>POST</option>
+                    <option>GET</option>
+                </select>
             </div>
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <button type="button">确定</button>
+                    <a id="ok" href="#" data-role="button" data-rel="back">确定</a>
                 </div>
                 <div class="ui-block-b">
-                    <a href="#" data-role="button" data-rel="back">取消</a>
+                    <a id="cancel" href="#" data-role="button" data-rel="back">取消</a>
                 </div>
             </div>
-
         </div>
 
     </section>
-    <script src="Scripts/JsonView/jquery.jsonview.js"></script>
 
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/jquery.md5.js"></script>
-    <script src="TypeScript/Sign.js"></script>
-    <script src="TypeScript/ConfigInfo.js"></script>
-    <script src="TypeScript/HttpHelper.js"></script>
-    <script src="TypeScript/UserHttpHelper.js"></script>
+    <section id="dialogSetConfigPage" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h3>设置</h3>
+        </div>
+        <div data-role="content" class="ui-content">
+            <div>
+                <input id="apiDataBaseUrl" type="text" placeholder="数据接口基础地址" value="http://www.***.com/DataService" />
+                <input id="apiUserBaseUrl" type="text" placeholder="用户接口基础地址" value="http://www.***.com/UserService" />
+                <input id="secretKey" placeholder="用于签名的密钥" />
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a id="okSet" href="#" data-role="button" data-rel="back">确定</a>
+                </div>
+                <div class="ui-block-b">
+                    <a id="cancelSet" href="#" data-role="button" data-rel="back">取消</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <script>
         function setMiddle(element) {
-            var parentElement = $(element).parent();
-            parentElement.css("line-height", parentElement.height() + "px")
+            //取自已的高度
+            var myHeight = $(element).height();
+            //取父节点的高度
+            var parentHeight = $(element).parent().height();
+            //设置margin-top
+            $(element).css("margin-top", (parentHeight / 2 - myHeight / 2) + "px");
+
         }
     </script>
     <script>
+        var apiInfos = new Object();
+        ConfigInfo.BaseDataServiceUrl = localStorage.BaseDataServiceUrl;
+        ConfigInfo.BaseUserServiceUrl = localStorage.BaseUserServiceUrl;
+        ConfigInfo.SecretKey = localStorage.SecretKey;
+    </script>
+    <script>
         $(document).ready(function () {
+
             setMiddle(document.getElementById("apiNameListLabel"));
             setMiddle(document.getElementById("apiRequestModeLabel"));
 
-
-            $("#addApiButton").click(function () {
-                var userHttp = new UserHttpHelper();
-                userHttp.Login("18024454137", "123456", function (data, textStatus) {
-                    if (textStatus == "success") {
-                        $("#responseView").JSONView(data);
+            $("#apiDataBaseUrl").val(ConfigInfo.BaseDataServiceUrl);;
+            $("#apiUserBaseUrl").val(ConfigInfo.BaseUserServiceUrl);;
+            $("#secretKey").val(ConfigInfo.SecretKey);;
+            $("#addApiButton").click(function () { });
+            $("#apiNameList").change(function (eventObject) {
+                var itemid = $("#apiNameList").val();
+                for (var i = 0; i < apiInfos.length; i++) {
+                    if (apiInfos[i].name == itemid) {
+                        $("#bodyTextarea").text(apiInfos[i].body);
                     }
+                }
+                setMiddle(document.getElementById("apiNameListLabel"));
+                setMiddle(document.getElementById("apiRequestModeLabel"));
+            });
+            $("#ok").click(function () {
+                var db = new DbSqliteHelper();
+                //apiUrl
+                db.CreateApiTestInfo($("#apiName").val(), $("#apiInfoName").val(), $("#requestInfoData").val(), $("#apiInfoRequestMode").val(), $("#apiUrl").val(), function (data, textStatus, jqXHR) {
+                    if (data.Code > 0) {
+                        alert("添加成功！");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("添加失败！");
+                    }
+                });
+            });
+            $("#cancel").click(function () { });
+            $("#okSet").click(function () {
+                localStorage.BaseDataServiceUrl = $("#apiDataBaseUrl").val();
+                localStorage.BaseUserServiceUrl = $("#apiUserBaseUrl").val();
+                localStorage.SecretKey = $("#secretKey").val();;
 
-                })
+                ConfigInfo.BaseDataServiceUrl = $("#apiDataBaseUrl").val();
+                ConfigInfo.BaseUserServiceUrl = $("#apiUserBaseUrl").val();
+                ConfigInfo.SecretKey = $("#secretKey").val();
+                window.location.reload();
+            });
+            $("#cancelSet").click(function () {
+                $("#apiDataBaseUrl").val(ConfigInfo.BaseDataServiceUrl);;
+                $("#apiUserBaseUrl").val(ConfigInfo.BaseUserServiceUrl);;
+                $("#secretKey").val(ConfigInfo.SecretKey);;
+            });
+            $("#testApiButton").click(function () {
+                var itemid = $("#apiNameList").val();
+                for (var i = 0; i < apiInfos.length; i++) {
+                    if (apiInfos[i].name == itemid) {
+                        //apiInfos[i].body
+                        var dataHttpHelper = new DataHttpHelper();
+                        if (apiInfos[i].requestMethod == "GET") {
+                            if (apiInfos[i].url.indexOf("http", 0) >= 0) {
+                                $.getJSON(apiInfos[i].url, "", function (data, textStatus, jqHRX) {
+
+                                    $("#responseView").JSONView(data);
+                                });
+                            }
+                            else {
+                                dataHttpHelper.GetJson(apiInfos[i].body, apiInfos[i].api, apiInfos[i].token, function (data, textStatus, jqXHR) {
+                                    $("#responseView").JSONView(data);
+                                });
+                            }
+                        }
+                        else {
+                            dataHttpHelper.PostJson(apiInfos[i].body, apiInfos[i].api, apiInfos[i].token, function (data, textStatus, jqXHR) {
+                                $("#responseView").JSONView(data);
+                            });
+                        }
+                    }
+                }
+
+            });
+        });
+    </script>
+
+    <!--angular-->
+
+    <script>
+
+        var agModele = angular.module("app", []);
+        agModele.controller("ApiInfoController", function ($scope) {
+
+            //取api信息列表
+            var db = new DbSqliteHelper();
+            db.GetAllTestInfo(function (data, textStatus, jqXHR) {
+
+                if (textStatus == "success") {
+                    if (data.Code > 0) {
+                        apiInfos = data.Msg;
+                        //alert( apiInfos[0].name);
+                        $scope.apiInfoList = apiInfos;
+                        $scope.$apply();
+                    }
+                    else {
+                        alert("获取接口信息列表失败！");
+                    }
+                }
+                else {
+
+                    alert("获取接口信息列表失败！");
+                }
+
             });
         });
     </script>
