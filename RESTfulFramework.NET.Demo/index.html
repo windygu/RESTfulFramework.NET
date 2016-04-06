@@ -21,12 +21,14 @@
     <script src="TypeScript/UserHttpHelper.js"></script>
     <script src="TypeScript/DbSqliteHelper.js"></script>
     <script src="TypeScript/DataHttpHelper.js"></script>
-    <script>
+    <script src="Model/UrlParse.js"></script>
+    <script src="Controller/TestApiController.js"></script>
+    <script src="Model/Layout.js"></script>
 
-    </script>
     <div data-role="page" data-theme="b" ng-controller="ApiInfoController">
         <div data-role="header">
             <h3>接口测试工具</h3>
+            <a id="setConfigButton" href="#dialogSetConfigPage" data-rel="dialog" data-icon="gear" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-right">设置</a>
         </div>
         <div data-role="content">
             <!--请求内容-->
@@ -37,17 +39,6 @@
 
             <!--接口列表-->
             <section>
-
-                <div>
-                    <label>url地址参数：</label>
-                    <div class="ui-grid-a" ng-repeat="apiForm in apiFormList">
-                        <label class="ui-block-a">&nbsp;&nbsp;{{apiForm.key}}</label>
-                        <div class="ui-block-b">
-                            <input type="text"   name="{{apiForm.key}}" value="{{apiForm.value}}" />
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="ui-grid-a">
                     <label id="apiNameListLabel" for="apiNameList" class="ui-block-a">接口名称：</label>
@@ -64,6 +55,18 @@
                     </div>
                 </div>
 
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>url参数</h3>
+                    <div class="ui-grid-a" ng-repeat="apiForm in apiFormList">
+                        <label class="ui-block-a my-api-input-label">&nbsp;&nbsp;{{apiForm.key}}</label>
+                        <div class="ui-block-b">
+                            <input type="text" class="my-api-input" ng-model="apiForm.value" name="{{apiForm.key}}" value="{{apiForm.value}}" ng-keyup="FormInputTextChange()" />
+                        </div>
+                    </div>
+                    <div>
+                        <a id="apiUrl" href="{{fullApiUrl}}">{{fullApiUrl}}</a>
+                    </div>
+                </div>
             </section>
 
             <!--响应内容-->
@@ -86,7 +89,7 @@
                     <li><a id="testApiButton" data-icon="arrow-r" ng-click="TestApiClick()">测试</a></li>
                     <li><a id="addApiButton" href="#dialogAddInterfacePage" data-rel="dialog" data-icon="plus">添加</a></li>
                     <li><a id="deleteApiButton" href="#" data-icon="delete">删除</a></li>
-                    <li><a id="setConfigButton" href="#dialogSetConfigPage" data-rel="dialog" data-icon="gear">设置</a></li>
+                    <li><a id="updateApiButton" href="#" data-rel="dialog" data-icon="edit">设置</a></li>
                 </ul>
             </div>
         </div>
@@ -117,7 +120,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <section id="dialogSetConfigPage" data-role="page" data-theme="b">
@@ -139,47 +141,9 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-    <script>
-        function setMiddle(element) {
-            //取自已的高度
-            var myHeight = $(element).height();
-            //取父节点的高度
-            var parentHeight = $(element).parent().height();
-            //设置margin-top
-            $(element).css("margin-top", (parentHeight / 2 - myHeight / 2) + "px");
-        }
-
-
-        function getQueryString(url, name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = url.match(reg);
-
-            if (r != null) return unescape(r[2]); return null;
-        }
-
-        //返回的是对象形式的参数
-        function getUrlArgObject(url) {
-            var args = [];
-            var query = url;//获取查询串
-            var queryPara = query.split("?")[1];
-            var pairs = queryPara.split("&");
-            for (var i = 0; i < pairs.length; i++) {
-                var pos = pairs[i].indexOf('=');//查找name=value
-                if (pos == -1) {//如果没有找到就跳过
-                    continue;
-                }
-                var argname = pairs[i].substr(0, pairs[i].split("=")[0].length);//提取name
-                var value = pairs[i].substr(pairs[i].split("=")[0].length + 1, pairs[i].split("=")[1].length);//提取value
-                args.push({ key: argname, value: value });
-                //args[argname] = unescape(value);//存为属性
-            }
-            return args;//返回对象
-        }
-    </script>
-
+ 
     <script>
         var apiInfos = new Object();
         ConfigInfo.BaseDataServiceUrl = localStorage.BaseDataServiceUrl;
@@ -188,7 +152,6 @@
     </script>
 
     <script>
-
         $(document).ready(function () {
 
             setMiddle(document.getElementById("apiNameListLabel"));
@@ -243,117 +206,25 @@
             });
 
             $("#apiNameList").change(function () {
-           
-             
-                    $('input').textinput();
-                    $('select').selectmenu('refresh', true);
-              
+                try {
+                    $('.my-api-input').textinput();
+                    $('#apiInfoRequestMode').selectmenu('refresh', true);
+                } catch (e) { }
+
+                try { $('#apiNameList').selectmenu('refresh', true); } catch (e) { }
+                var elememts = document.getElementsByClassName("my-api-input-label");
+                for (var i = 0; i < elememts.length; i++) {
+                    setMiddle(elememts[i]);
+                }
 
             });
             $("#apiRequestMode").change(function () {
-                //$('select').selectmenu('refresh', true);
-            });
-
-            $("input").change(function () {
-                $('input').textinput();
-
-            })
-
-
-            //window.onloadeddata= function () {
-            //    $('select').selectmenu('refresh', true);
-            //};
-        });
-
-      
-    </script>
-
-    <!--angular-->
-
-    <script>
-
-        var agModele = angular.module("app", []);
-        agModele.controller("ApiInfoController", function ($scope) {
-            //取api信息列表
-            var db = new DbSqliteHelper();
-            db.GetAllTestInfo(function (data, textStatus, jqXHR) {
-
-                if (textStatus == "success") {
-                    if (data.Code > 0) {
-                        apiInfos = data.Msg;
-                        $scope.apiInfoSelected = "";
-                        $scope.apiInfoList = apiInfos;
-                        $scope.apiInfoRequestMethod = "";
-                        $scope.apiInfoRequestMethodList = [{ "name": "POST" }, { "name": "GET" }];
-                        $scope.apiFormList = [];
-
-                        $scope.$apply();
-                    }
-                    else {
-                        alert("获取接口信息列表失败！");
-                    }
-                }
-                else {
-                    alert("获取接口信息列表失败！");
-                }
 
             });
 
-            $scope.TestApiClick = function () {
-
-                var apiInfo = $scope.apiInfoSelected;
-
-                var dataHttpHelper = new DataHttpHelper();
-                if (apiInfo.requestMethod == "GET") {
-                    if (apiInfo.url.indexOf("http", 0) >= 0) {
-                        $.getJSON(apiInfo.url, "", function (data, textStatus, jqHRX) {
-                            $("#responseView").JSONView(data);
-                        });
-                    }
-                    else {
-                        dataHttpHelper.GetJson(apiInfo.body, apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
-                            $("#responseView").JSONView(data);
-                        });
-                    }
-                }
-                else {
-                    dataHttpHelper.PostJson(apiInfo.body, apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
-                        $("#responseView").JSONView(data);
-                    });
-                }
-            };
-
-            $scope.SwithApi = function () {
-                var apiInfo = $scope.apiInfoSelected;
-                var para = getUrlArgObject(apiInfo.url);
-                $scope.apiFormList = [];
-                for (var i = 0; i < para.length; i++) {
-
-                    $scope.apiFormList.push(para[i]);
-                }
-
-                for (var i = 0; i < $scope.apiInfoRequestMethodList.length; i++) {
-                    if (apiInfo.requestMethod == $scope.apiInfoRequestMethodList[i].name) {
-                        $scope.apiInfoRequestMethod = $scope.apiInfoRequestMethodList[i];
-                        break;
-                    }
-                }
-
-            };
-
-
-            $scope.SwithRequestMethod = function () {
-                //alert($scope.apiInfoRequestMethod.name);
-            };
-
-            $scope.RefreshUrlInput = function () {
-
-
-            };
-
-
-
         });
     </script>
+
+
 </body>
 </html>
