@@ -67,3 +67,10 @@ RESTfulFramework.NET.ConsoleWCF/obj/Debug/RESTfulFramework.NET.ConsoleWCF.csproj
 RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 *.dll
 *.dll
+RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.pdb
+RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+RESTfulFramework.NET.Security/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+RESTfulFramework.NET.Security/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.pdb
+RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
+RESTfulFramework.NET.ConsoleWCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

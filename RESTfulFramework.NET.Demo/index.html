@@ -29,10 +29,12 @@
         <div data-role="header">
             <h3>接口测试工具</h3>
             <a id="setConfigButton" href="#dialogSetConfigPage" data-rel="dialog" data-icon="gear" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-right">设置</a>
-        </div>
+            <a id="refreshPage" href="javascript:window.location.reload()"   class="ui-btn ui-corner-all ui-icon-refresh ui-btn-icon-notext ui-btn-left">刷新</a>
+
+          </div>
         <div data-role="content">
             <!--请求内容-->
-            <section>
+            <section id="requestContentSection">
                 <label>请求内容：</label>
                 <textarea id="bodyTextarea"></textarea>
             </section>
@@ -187,7 +189,7 @@
         ConfigInfo.SecretKey = localStorage.SecretKey;
         ConfigInfo.InterfaceDataServiceUrl = localStorage.InterfaceDataServiceUrl;
 
- 
+
     </script>
 
     <script>
@@ -195,6 +197,7 @@
 
             setMiddle(document.getElementById("apiNameListLabel"));
             setMiddle(document.getElementById("apiRequestModeLabel"));
+
 
             $("#apiDataBaseUrl").val(ConfigInfo.BaseDataServiceUrl);;
 
@@ -225,7 +228,7 @@
                     if (apiInfos[i].name == itemid) {
                         //请求的body信息
                         $("#bodyTextarea").text(apiInfos[i].body);
-                        
+
                     }
                 }
                 setMiddle(document.getElementById("apiNameListLabel"));
@@ -289,9 +292,25 @@
                 for (var i = 0; i < elememts.length; i++) {
                     setMiddle(elememts[i]);
                 }
+
+                var requestMode = $("#apiRequestMode").find("option:selected").text();
+                if (requestMode == "GET") {
+                    $("#requestContentSection").hide();
+                }
+                else {
+                    $("#requestContentSection").show();
+                }
             });
 
-            $("#apiRequestMode").change(function () { });
+            $("#apiRequestMode").change(function () {
+                var requestMode = $("#apiRequestMode").find("option:selected").text();
+                if (requestMode == "GET") {
+                    $("#requestContentSection").hide();
+                }
+                else {
+                    $("#requestContentSection").show();
+                }
+            });
 
             $("#updateApiButton").click(function () {
                 var db = new DbSqliteHelper();

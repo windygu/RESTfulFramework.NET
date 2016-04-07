@@ -14,13 +14,21 @@ agModele.controller("ApiInfoController",
             if (textStatus == "success") {
                 if (data.Code > 0) {
                     apiInfos = data.Msg;
-                    $scope.apiInfoSelected = "";
                     $scope.apiInfoList = apiInfos;
-                    $scope.apiInfoRequestMethod = "";
                     $scope.apiInfoRequestMethodList = [{ "name": "POST" }, { "name": "GET" }];
                     $scope.apiFormList = [];
-
+                    $scope.apiInfoSelected = $scope.apiInfoList[0];
+                    $scope.apiInfoRequestMethod = $scope.apiInfoRequestMethodList[0];
                     $scope.$apply();
+
+                    try {
+                        $('#apiNameList').selectmenu('refresh', true);
+                    } catch (e) { }
+
+                    try {
+                        $('#apiRequestMode').selectmenu('refresh', true);
+                    } catch (e) { }
+
                 }
                 else {
                     alert("获取接口信息列表失败！");
@@ -61,7 +69,7 @@ agModele.controller("ApiInfoController",
                             }
                             else {
                                 alert("调用接口失败，请重试！");
-                            } 
+                            }
                         });
                     }
                 }
