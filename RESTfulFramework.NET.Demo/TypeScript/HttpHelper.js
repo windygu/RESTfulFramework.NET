@@ -7,6 +7,7 @@ var HttpHelper = (function (_super) {
     __extends(HttpHelper, _super);
     function HttpHelper() {
         _super.apply(this, arguments);
+        this.apiAlis = "protocol";
     }
     /**
      * 生成指定api的Url地址
@@ -19,7 +20,7 @@ var HttpHelper = (function (_super) {
         var sign = new Sign();
         var timestamp = this.CurrentTimestamp();
         var signString = sign.GetDataSign(token, api, timestamp, ConfigInfo.SecretKey);
-        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/get?body=" + body + "&token=" + token + "&api=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
+        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/get?body=" + body + "&token=" + token + "&" + this.apiAlis + "=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
         return resultUrl;
     };
     /**
@@ -31,7 +32,7 @@ var HttpHelper = (function (_super) {
         var sign = new Sign();
         var timestamp = this.CurrentTimestamp();
         var signString = sign.GetDataSign(token, api, timestamp, ConfigInfo.SecretKey);
-        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/post?token=" + token + "&api=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
+        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/post?token=" + token + "&" + this.apiAlis + "=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
         return resultUrl;
     };
     /**
@@ -41,6 +42,10 @@ var HttpHelper = (function (_super) {
      */
     HttpHelper.prototype.BulidGetDataInfoUrl = function (body, api) {
         var resultUrl = ConfigInfo.BaseDataServiceUrl + "/getinfo?body=" + body + "&api=" + api;
+        return resultUrl;
+    };
+    HttpHelper.prototype.BulidGetApiListDataInfoUrl = function (body, api) {
+        var resultUrl = ConfigInfo.InterfaceDataServiceUrl + "/getinfo?body=" + body + "&api=" + api;
         return resultUrl;
     };
     /**
@@ -118,3 +123,4 @@ var HttpHelper = (function (_super) {
     };
     return HttpHelper;
 }(ConfigInfo));
+//# sourceMappingURL=HttpHelper.js.map

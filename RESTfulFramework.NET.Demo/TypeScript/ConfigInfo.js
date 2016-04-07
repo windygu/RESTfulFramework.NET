@@ -7,5 +7,7 @@ var ConfigInfo = (function () {
     ConfigInfo.SecretKey = "123456";
     ConfigInfo.BaseUserServiceUrl = "http://localhost:8737/UserService";
     ConfigInfo.BaseDataServiceUrl = "http://localhost:8736/DataService";
+    ConfigInfo.InterfaceDataServiceUrl = "";
     return ConfigInfo;
 }());
+//# sourceMappingURL=ConfigInfo.js.map

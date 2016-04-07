@@ -86,8 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AddApiInfo.cs" />
+    <Compile Include="Api\DeleteApiInfo.cs" />
     <Compile Include="Api\GetApiInfo.cs" />
+    <Compile Include="Api\GetSingleApiInfo.cs" />
     <Compile Include="Api\Test.cs" />
+    <Compile Include="Api\UpdateSingleApiInfo.cs" />
     <Compile Include="ConfigInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

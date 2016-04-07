@@ -17,3 +17,4 @@ var UserHttpHelper = (function (_super) {
     };
     return UserHttpHelper;
 }(HttpHelper));
+//# sourceMappingURL=UserHttpHelper.js.map

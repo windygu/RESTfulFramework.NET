@@ -4,7 +4,7 @@ class DataHttpHelper extends HttpHelper {
     PostJson(body: string, api: string, token: string, callBackFunction: any): void {
         var url = this.BulidDataServicePostUrl(token, api);
 
-        $.post(url, JSON.parse(body), function (data, textStatus, jqXHR) {
+        $.post(url, body, function (data, textStatus, jqXHR) {
             callBackFunction(data, textStatus, jqXHR);
         }, "json");
     }

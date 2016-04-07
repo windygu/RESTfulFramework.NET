@@ -1,4 +1,7 @@
 ﻿class HttpHelper extends ConfigInfo {
+
+      apiAlis: string = "protocol";
+
     /**
      * 生成指定api的Url地址
      * @param token
@@ -10,7 +13,7 @@
         var sign = new Sign();
         var timestamp = this.CurrentTimestamp();
         var signString = sign.GetDataSign(token, api, timestamp, ConfigInfo.SecretKey);
-        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/get?body=" + body + "&token=" + token + "&api=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
+        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/get?body=" + body + "&token=" + token + "&" + this.apiAlis + "=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
         return resultUrl;
     }
     /**
@@ -22,7 +25,7 @@
         var sign = new Sign();
         var timestamp = this.CurrentTimestamp();
         var signString = sign.GetDataSign(token, api, timestamp, ConfigInfo.SecretKey);
-        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/post?token=" + token + "&api=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
+        var resultUrl = ConfigInfo.BaseDataServiceUrl + "/post?token=" + token + "&" + this.apiAlis +"=" + api + "&timestamp=" + timestamp + "&sign=" + signString;
         return resultUrl;
     }
     /**
@@ -35,7 +38,12 @@
         return resultUrl;
     }
 
+    public BulidGetApiListDataInfoUrl(body: string, api: string): string {
 
+        var resultUrl = ConfigInfo.InterfaceDataServiceUrl + "/getinfo?body=" + body + "&api=" + api;
+        return resultUrl;
+
+    }
     /**
      * 生成登陆的地址
      * @param userName

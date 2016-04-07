@@ -11,7 +11,7 @@ var DataHttpHelper = (function (_super) {
     }
     DataHttpHelper.prototype.PostJson = function (body, api, token, callBackFunction) {
         var url = this.BulidDataServicePostUrl(token, api);
-        $.post(url, JSON.parse(body), function (data, textStatus, jqXHR) {
+        $.post(url, body, function (data, textStatus, jqXHR) {
             callBackFunction(data, textStatus, jqXHR);
         }, "json");
     };
@@ -23,3 +23,4 @@ var DataHttpHelper = (function (_super) {
     };
     return DataHttpHelper;
 }(HttpHelper));
+//# sourceMappingURL=DataHttpHelper.js.map

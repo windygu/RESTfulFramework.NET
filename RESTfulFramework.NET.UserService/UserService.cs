@@ -28,7 +28,6 @@ namespace RESTfulFramework.NET.UserService
                 WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
             }
             #endregion 
-
         }
         static UserService()
         {

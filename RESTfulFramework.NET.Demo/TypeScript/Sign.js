@@ -28,3 +28,4 @@ var Sign = (function () {
     };
     return Sign;
 }());
+//# sourceMappingURL=Sign.js.map
