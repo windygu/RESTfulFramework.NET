@@ -16,28 +16,32 @@ namespace RESTfulConsoleService
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
                 AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
                 var userService = new HostUserServer();
-                if (userService.Start()) Console.WriteLine("已启动 UserService RESTful服务。");
-                else Console.WriteLine("启动 UserService RESTful服务失败。");
+
+                //var userService = new HostUserServer();
+                //if (userService.Start()) Console.WriteLine("已启动 UserService RESTful服务。");
+                //else Console.WriteLine("启动 UserService RESTful服务失败。");
+
+                //var dataService = new HostDataServer();
+                //if (dataService.Start()) Console.WriteLine("已启动 DataService RESTful服务。");
+                //else Console.WriteLine("启动 DataService RESTful服务失败。");
+
+                //Console.WriteLine();
+                //Console.ForegroundColor = ConsoleColor.Green;
+                //Console.WriteLine("UserService接口如下：");
+                //Console.ForegroundColor = ConsoleColor.White;
+                //Console.WriteLine($"用户登陆(GET)：    {ConfigInfo.UserServiceBaseUrl}/login2?username={{username}}&sign={{sign}}&timestamp={{timestamp}}&clientid={{clientid}}");
+                //Console.WriteLine($"用户登陆(GET)：    {ConfigInfo.UserServiceBaseUrl}/login?username={{username}}&sign={{sign}}&timestamp={{timestamp}}");
+                //Console.WriteLine($"用户注销(GET)：    {ConfigInfo.UserServiceBaseUrl}/loginout?token={{token}}");
+                //Console.WriteLine($"用户注册(GET)：    {ConfigInfo.UserServiceBaseUrl}/register?username={{username}}&password={{password}}&smscode={{smscode}}&realname={{realname}}");
+                //Console.WriteLine($"获取用户信息(GET)：{ConfigInfo.UserServiceBaseUrl}/getuserinfo?token={{token}}");
+                //Console.WriteLine($"请求短信验证码(GET)：{ConfigInfo.UserServiceBaseUrl}/sendsmscode?phone={{phone}}");
+                //Console.WriteLine($"短信验证码是否存在(GET)：{ConfigInfo.UserServiceBaseUrl}/smscodeexist?code={{code}}");
+                //Console.WriteLine();
+
 
                 var dataService = new HostDataServer();
-                if (dataService.Start()) Console.WriteLine("已启动 DataService RESTful服务。");
-                else Console.WriteLine("启动 DataService RESTful服务失败。");
-
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("UserService接口如下：");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($"用户登陆(GET)：    {ConfigInfo.UserServiceBaseUrl}/login2?username={{username}}&sign={{sign}}&timestamp={{timestamp}}&clientid={{clientid}}");
-                Console.WriteLine($"用户登陆(GET)：    {ConfigInfo.UserServiceBaseUrl}/login?username={{username}}&sign={{sign}}&timestamp={{timestamp}}");
-                Console.WriteLine($"用户注销(GET)：    {ConfigInfo.UserServiceBaseUrl}/loginout?token={{token}}");
-                Console.WriteLine($"用户注册(GET)：    {ConfigInfo.UserServiceBaseUrl}/register?username={{username}}&password={{password}}&smscode={{smscode}}&realname={{realname}}");
-                Console.WriteLine($"获取用户信息(GET)：{ConfigInfo.UserServiceBaseUrl}/getuserinfo?token={{token}}");
-                Console.WriteLine($"请求短信验证码(GET)：{ConfigInfo.UserServiceBaseUrl}/sendsmscode?phone={{phone}}");
-                Console.WriteLine($"短信验证码是否存在(GET)：{ConfigInfo.UserServiceBaseUrl}/smscodeexist?code={{code}}");
-                Console.WriteLine();
-
-
-
+                if (dataService.Start()) Console.WriteLine("已启动  RESTful服务。");
+                else Console.WriteLine("启动  RESTful服务失败。");
 
                 Console.WriteLine("如需关闭服务，请输入exit按回车键退出！");
 
