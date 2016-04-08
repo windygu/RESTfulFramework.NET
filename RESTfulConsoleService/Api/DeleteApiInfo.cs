@@ -9,6 +9,8 @@ namespace RESTfulConsoleService.Api
     {
         public ResponseModel RunApi(RequestModel source)
         {
+            return new ResponseModel() { Code = -1, Msg = null };
+
             var dic = source.Body as Dictionary<string, object>;
             var api = dic["id"];
             var sql = $"delete from api_info where id={api};";

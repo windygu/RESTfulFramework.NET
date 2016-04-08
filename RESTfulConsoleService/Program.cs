@@ -9,7 +9,7 @@ namespace RESTfulConsoleService
         
         static void Main(string[] args)
         {
-            Console.Title = "RESTfulFramework.NET 控制台服务";
+            Console.Title = "控制台服务";
             try
             {
                 //全局异常捕获

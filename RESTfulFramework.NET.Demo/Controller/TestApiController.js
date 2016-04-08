@@ -42,7 +42,7 @@ agModele.controller("ApiInfoController",
 
         //单击测试按钮事件
         $scope.TestApiClick = function () {
-            $("#responseView").JSONView({ excetion: "出现异常，请排除错误后重试。" });
+            $("#responseView").JSONView({ request: "请求ing..." });
             localStorage.token = $scope.token;
             var apiInfo = $scope.apiInfoSelected;
             apiInfo.token = localStorage.token;
@@ -56,6 +56,11 @@ agModele.controller("ApiInfoController",
                         $.getJSON($scope.fullApiUrl, "", function (data, textStatus, jqHRX) {
                             if (textStatus == "success") {
                                 $("#responseView").JSONView(data);
+                                if ($scope.fullApiUrl.indexOf("/login?") > 0)
+                                {
+                                    localStorage.token = data.Msg.Token;
+                                    $scope.token = localStorage.token;
+                                }
                             }
                             else {
                                 alert("调用接口失败，请重试！");

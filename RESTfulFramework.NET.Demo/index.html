@@ -7,7 +7,7 @@
     <title>RESTfulFramework接口测试工具</title>
     <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
     <link href="Content/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
-    <link href="Content//jquery.jsonview.css" rel="stylesheet" />
+    <link href="Content/jquery.jsonview.css" rel="stylesheet" />
 </head>
 <body>
     <script src="Scripts/jquery-2.2.2.min.js"></script>
@@ -26,12 +26,13 @@
     <script src="Model/Layout.js"></script>
 
     <div data-role="page" data-theme="b" ng-controller="ApiInfoController">
-        <div data-role="header">
-            <h3>接口测试工具</h3>
+        <div data-role="header" class="ui-header-fixed">
+            <h3>简趣接口测试工具</h3>
             <a id="setConfigButton" href="#dialogSetConfigPage" data-rel="dialog" data-icon="gear" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-right">设置</a>
             <a id="refreshPage" href="javascript:window.location.reload()"   class="ui-btn ui-corner-all ui-icon-refresh ui-btn-icon-notext ui-btn-left">刷新</a>
 
           </div>
+        <div style="height:30px"></div>
         <div data-role="content">
             <!--请求内容-->
             <section id="requestContentSection">
@@ -90,6 +91,7 @@
             </section>
         </div>
 
+        <div style="height:20px"></div>
         <div data-role="footer" class="ui-footer-fixed">
             <div data-role="navbar" data-iconpos="left">
                 <ul>
@@ -321,6 +323,7 @@
                             $("#apiInfoId2").val(data.Msg.id);
                             $("#apiName2").val(data.Msg.api);
                             $("#apiInfoName2").val(data.Msg.name);
+                            $("#requestInfoData2").val(data.Msg.body);
                             $("#apiInfoRequestMode2").val(data.Msg.requestMethod);
                             $("#apiUrl2").val(data.Msg.url);
                         }
