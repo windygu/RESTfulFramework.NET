@@ -74,3 +74,8 @@ RESTfulFramework.NET.Security/obj/Debug/DesignTimeResolveAssemblyReferencesInput
 RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.pdb
 RESTfulFramework.NET.DataService/obj/Debug/RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 RESTfulFramework.NET.ConsoleWCF/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.svn-base
+.svn/entries
+*.db
+.svn/wc.db-journal
+.svn/format
