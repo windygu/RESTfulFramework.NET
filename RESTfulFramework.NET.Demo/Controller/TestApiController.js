@@ -1,4 +1,5 @@
 ﻿var agModele = angular.module("app", []);
+
 agModele.controller("ApiInfoController",
     function ($scope) {
         $scope.fullApiUrl = "";
