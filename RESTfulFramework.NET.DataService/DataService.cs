@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -59,7 +60,7 @@ namespace RESTfulFramework.NET.DataService
         public override object StringToObject(string str)
         {
             if (Serialzer != null)
-                return Serialzer.DeserializeObject<object>(str);
+                return Serialzer.DeserializeObject<Dictionary<string,object>>(str);
 
             throw new Exception("没有可用的反序列化器组件。");
         }

@@ -51,9 +51,7 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>返回用户信息</returns>
         public UserResponseModel<UserInfo> GetUserInfo(string token)
         {
-            var redis = new RedisClient(ConfigInfo.RedisAddress, int.Parse(ConfigInfo.RedisPort));
-            var user = redis.Get<UserInfo>(token);
-            return new UserResponseModel<UserInfo> { Code = Code.Sucess, Msg = user };
+            return new UserResponseModel<UserInfo> { Code = Code.Sucess, Msg = UserCache.GetUserInfo(token) };
         }
 
         /// <summary>

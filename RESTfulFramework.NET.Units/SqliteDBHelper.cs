@@ -1,5 +1,6 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
@@ -13,12 +14,18 @@ namespace RESTfulFramework.NET.Units
         public static IJsonSerialzer JsonSerialzer { get; set; }
         public static ILogManager LogManager { get; set; }
 
-        public SqliteDBHelper()
+        static SqliteDBHelper()
         {
             JsonSerialzer = UnitsFactory.JsonSerialzer;
             LogManager = UnitsFactory.LogManager;
         }
+        public SqliteDBHelper() { }
 
+        public SqliteDBHelper(string connectionString)
+
+        {
+            ConnectionString = connectionString;
+        }
 
 
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
@@ -38,13 +45,18 @@ namespace RESTfulFramework.NET.Units
             {
                 var i = dbcommand.ExecuteNonQuery();
                 dbcommand.Transaction.Commit();
-                dbconnection.Close();
+
                 return i;
             }
             catch (Exception ex)
             {
                 dbcommand.Transaction.Rollback();
                 throw ex;
+            }
+            finally
+            {
+
+                dbconnection.Close();
             }
         }
 
@@ -73,8 +85,9 @@ namespace RESTfulFramework.NET.Units
             {
                 dbconnection.Close();
             }
-
-
         }
+
+        public List<Dictionary<string, object>> Query(string sql) => QuerySql<List<Dictionary<string, object>>>(sql);
+
     }
 }

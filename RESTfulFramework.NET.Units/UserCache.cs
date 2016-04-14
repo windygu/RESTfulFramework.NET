@@ -24,11 +24,11 @@ namespace RESTfulFramework.NET.Units
                 var redisuser = new UserInfo
                 {
                     account_name = user["account_name"].ToString(),
-                    account_type_id = user["account_type"].ToString(),
+                    account_type_id = Unicode( user["account_type"].ToString()),
                     create_time = Convert.ToDateTime(user["create_time"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
                     id = Guid.Parse(user["id"].ToString()),
                     passwrod = user["passwrod"].ToString(),
-                    real_name = user["realname"].ToString()
+                    real_name = Unicode( user["realname"].ToString())
                 };
                 Client.Set(redisuser.id.ToString(), redisuser);
             }
@@ -62,6 +62,20 @@ namespace RESTfulFramework.NET.Units
         /// <param name="token">用户token</param>
         /// <returns>存在返回true,不存在返回false</returns>
         public bool ContainsUserInfo(string token) => Client.ContainsKey(token);
+
+        private static string Unicode(string str)
+        {
+            string outStr = "";
+            if (!string.IsNullOrEmpty(str))
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    //将中文字符转为10进制整数，然后转为16进制unicode字符  
+                    outStr += "\\u" + ((int)str[i]).ToString("x");
+                }
+            }
+            return outStr;
+        }
 
     }
 }

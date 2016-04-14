@@ -5,6 +5,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.Units
 {
@@ -13,9 +14,18 @@ namespace RESTfulFramework.NET.Units
         public DBHelper() { }
 
         private static IJsonSerialzer JsonSerialzer { get; set; }
+        private static ILogManager LogManager { get; set; }
+
         static DBHelper()
         {
             JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
+            LogManager = UnitsFactory.LogManager;
+        }
+
+
+        public DBHelper(string connectionString)
+        {
+            ConnectionString = connectionString;
         }
 
 
@@ -44,21 +54,40 @@ namespace RESTfulFramework.NET.Units
                 dbcommand.Transaction.Rollback();
                 throw ex;
             }
+            finally
+            {
+                dbconnection.Close();
+            }
         }
 
         public T QuerySql<T>(string sql) where T : class
         {
             var dbconnection = new MySqlConnection(ConnectionString);
-            var dbcommand = new MySqlCommand();
-            dbcommand.Connection = dbconnection;
-            var dba = new MySqlDataAdapter(dbcommand);
-            if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
-            dbcommand.CommandText = $"{sql};";
-            var dt = new DataTable();
-            dba.Fill(dt);
-            var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
-            dbconnection.Close();
-            return JsonSerialzer.DeserializeObject<T>(json);
+            try
+            {
+
+                var dbcommand = new MySqlCommand();
+                dbcommand.Connection = dbconnection;
+                var dba = new MySqlDataAdapter(dbcommand);
+                if (dbconnection.State == ConnectionState.Closed) dbconnection.Open();
+                dbcommand.CommandText = $"{sql};";
+                var dt = new DataTable();
+                dba.Fill(dt);
+                var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
+                dbconnection.Close();
+                return JsonSerialzer.DeserializeObject<T>(json);
+            }
+            catch (Exception ex)
+            {
+                LogManager.WriteLog(ex.Message);
+                throw ex;
+            }
+            finally
+            {
+                dbconnection.Close();
+            }
+
         }
+        public List<Dictionary<string, object>> Query(string sql) => QuerySql<List<Dictionary<string, object>>>(sql);
     }
 }

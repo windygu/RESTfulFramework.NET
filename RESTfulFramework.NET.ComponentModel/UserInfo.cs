@@ -17,12 +17,8 @@ namespace RESTfulFramework.NET.Units.Model
         public string account_name { get; set; }
 
         [DataMember]
-        public string passwrod
-        {
-            get { return null; }
-            set { _password = value; }
-        }
-
+        public string passwrod { get; set; }
+  
         [DataMember]
         public string account_type_id { get; set; }
 
