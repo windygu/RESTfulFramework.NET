@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D203BB50-4A56-4B9D-B341-9928B09E822D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -15,21 +15,10 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\RESTfulConsoleService\bin\Debug\Units\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Debug\Units\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Release\Units\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -120,29 +109,16 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.99.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  
   <ItemGroup>
-    <Compile Include="ConfigManager.cs" />
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="JsonSerialzer.cs" />
-    <Compile Include="LocalUserCache.cs" />
-    <Compile Include="LogManager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PushManager.cs" />
-    <Compile Include="SmsManager.cs" />
-    <Compile Include="SqliteDBHelper.cs" />
-    <Compile Include="UnitsFactory.cs" />
-    <Compile Include="UserCache.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="test.sqlite" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets')" />

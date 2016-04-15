@@ -17,7 +17,6 @@ D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Un
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Units\RESTfulFramework.NET.Units.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Units\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Units\RESTfulFramework.NET.Units.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService.WCF\bin\Units\RESTfulFramework.NET.Units.dll
