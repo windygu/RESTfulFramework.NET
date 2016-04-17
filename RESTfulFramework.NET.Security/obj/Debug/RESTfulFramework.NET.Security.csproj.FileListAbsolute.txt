@@ -49,3 +49,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulF
 D:\GitHub\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
+F:\Project\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.dll
+F:\Project\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.pdb

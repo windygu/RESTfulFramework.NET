@@ -73,3 +73,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTful
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.pdb
