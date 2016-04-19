@@ -3,15 +3,16 @@ using RESTfulFramework.NET.Common.Model;
 using RESTfulFramework.NET.ComponentModel;
 using RESTfulFramework.NET.Units.Model;
 using PluginPackage;
-using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Web;
 using System.Text;
+using System.ServiceModel.Activation;
 
 namespace RESTfulFramework.NET.UserService
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class UserService : IUserService
     {
         private static IDBHelper DbHelper { get; set; }

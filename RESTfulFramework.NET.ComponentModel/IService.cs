@@ -34,4 +34,6 @@ namespace RESTfulFramework.NET.ComponentModel
         Stream GetStream(string body, string api);
         #endregion
     }
+
+    
 }

@@ -5,9 +5,11 @@ using System.IO;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Collections.Generic;
+using System.ServiceModel.Activation;
 
 namespace RESTfulFramework.NET.DataService
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class DataService : Service<RequestModel, ResponseModel>
     {
 
