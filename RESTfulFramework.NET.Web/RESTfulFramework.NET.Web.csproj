@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataService.svc" />
+    <Content Include="Global.asax" />
     <Content Include="PluginConfig.xml" />
     <Content Include="Security\PluginPackage.Configurator.dll" />
     <Content Include="Security\PluginPackage.Container.dll" />
@@ -154,6 +155,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
