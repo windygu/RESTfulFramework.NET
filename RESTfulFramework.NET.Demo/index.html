@@ -4,17 +4,24 @@
     <!--manifest="demo.appcache"-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
     <title>RESTfulFramework接口测试工具</title>
     <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
     <link href="Content/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
     <link href="Content/jquery.jsonview.css" rel="stylesheet" />
 </head>
 <body>
-    <script src="Scripts/jquery-2.2.2.min.js"></script>
-    <script src="Scripts/JsonView/jquery.jsonview.js"></script>
-    <script src="Scripts/jquery.md5.js"></script>
-    <script src="Scripts/jquery.mobile-1.4.5.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+    <script src="scripts/jquery-2.2.2.min.js"></script>
+    <script src="scripts/JsonView/jquery.jsonview.js"></script>
+    <script src="scripts/jquery.md5.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
     <script src="TypeScript/Sign.js"></script>
     <script src="TypeScript/ConfigInfo.js"></script>
     <script src="TypeScript/HttpHelper.js"></script>
@@ -24,6 +31,8 @@
     <script src="Model/UrlParse.js"></script>
     <script src="Controller/TestApiController.js"></script>
     <script src="Model/Layout.js"></script>
+
+
 
     <div data-role="page" data-theme="b" ng-controller="ApiInfoController">
         <div data-role="header" class="ui-header-fixed">
@@ -183,6 +192,7 @@
         </div>
     </section>
 
+   
 
     <script>
         var apiInfos = new Object();
@@ -229,7 +239,7 @@
                 for (var i = 0; i < apiInfos.length; i++) {
                     if (apiInfos[i].name == itemid) {
                         //请求的body信息
-                        $("#bodyTextarea").text(apiInfos[i].body);
+                        $("#bodyTextarea").val(apiInfos[i].body);
 
                     }
                 }
@@ -344,7 +354,11 @@
                 });
             });
 
+            $("#bodyTextarea").keyup(function () {
+                $("#bodyTextarea").textinput("refresh");
 
+
+            });
         });
     </script>
 

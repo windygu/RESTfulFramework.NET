@@ -1,7 +1,6 @@
 ﻿using RESTfulFramework.NET.Common;
 using RESTfulFramework.NET.ComponentModel;
 using RESTfulFramework.NET.Units.Model;
-using PluginPackage;
 using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace RESTfulFramework.NET.Units
             Client = new RedisClient(ConfigInfo.RedisAddress, int.Parse(ConfigInfo.RedisPort));
 
             //所有用户基本信息缓存redis
-            var users = Factory.GetInstance<IDBHelper>().QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
+            var users = Common.UnitsFactory.DBHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
                 var redisuser = new UserInfo

@@ -62,7 +62,7 @@ namespace RESTfulFramework.NET.DataService
         public override object StringToObject(string str)
         {
             if (Serialzer != null)
-                return Serialzer.DeserializeObject<Dictionary<string,object>>(str);
+                return Serialzer.DeserializeObject<Dictionary<string, object>>(str);
 
             throw new Exception("没有可用的反序列化器组件。");
         }
@@ -91,15 +91,29 @@ namespace RESTfulFramework.NET.DataService
         public override Stream ResponseModelToStream(ResponseModel responseModel)
         {
             var resultStr = ObjectToString(responseModel);
-            LogManager?.WriteLog($"输出结果：{resultStr}");
+            try
+            {
+                WriteLog($"输出结果：{resultStr}", "输出");
+            }
+            catch { }
+
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
         protected override ResponseModel ApiHandler(RequestModel requestModel)
         {
             var responseModel = base.ApiHandler(requestModel);
-            LogManager?.WriteLog($"接收请求：body={requestModel?.Tag}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}");
+            try
+            {
+                WriteLog($"接收请求：body={requestModel?.Tag}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}", "请求");
+            }
+            catch { }
+
             return responseModel;
         }
+
+        protected virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
+
+
 
     }
 }

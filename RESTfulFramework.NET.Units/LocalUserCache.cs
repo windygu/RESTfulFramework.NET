@@ -1,4 +1,4 @@
-﻿using PluginPackage;
+﻿
 using RESTfulFramework.NET.ComponentModel;
 using RESTfulFramework.NET.Units.Model;
 using System;
@@ -16,7 +16,7 @@ namespace RESTfulFramework.NET.Units
         static LocalUserCache()
         {
             //所有用户基本信息缓存redis
-            var dbHelper = Factory.GetInstance<IDBHelper>();
+            var dbHelper = Common.UnitsFactory.DBHelper;
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {

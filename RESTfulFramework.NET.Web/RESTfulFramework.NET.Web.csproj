@@ -63,38 +63,6 @@
       <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RESTfulFramework.NET.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Common.1.0.0\lib\RESTfulFramework.NET.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RESTfulFramework.NET.ComponentModel, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.ComponentModel.1.0.12\lib\RESTfulFramework.NET.ComponentModel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RESTfulFramework.NET.DataService, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Service.1.0.0.2\lib\RESTfulFramework.NET.DataService.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RESTfulFramework.NET.UserService, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RESTfulFramework.NET.Service.1.0.0.2\lib\RESTfulFramework.NET.UserService.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceStack.Common, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Common.4.0.52\lib\net40\ServiceStack.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Interfaces.4.0.52\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceStack.Redis, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Redis.4.0.52\lib\net40\ServiceStack.Redis.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Text.4.0.52\lib\net40\ServiceStack.Text.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -117,48 +85,19 @@
   <ItemGroup>
     <Content Include="DataService.svc" />
     <Content Include="Global.asax" />
-    <Content Include="PluginConfig.xml" />
-    <Content Include="Security\PluginPackage.Configurator.dll" />
-    <Content Include="Security\PluginPackage.Container.dll" />
-    <Content Include="Security\PluginPackage.Core.dll" />
-    <Content Include="Security\PluginPackage.dll" />
-    <Content Include="Security\RESTfulFramework.NET.Common.dll" />
-    <Content Include="Security\RESTfulFramework.NET.ComponentModel.dll" />
-    <Content Include="Security\RESTfulFramework.NET.Security.dll" />
-    <Content Include="Units\EntityFramework.dll" />
-    <Content Include="Units\EntityFramework.SqlServer.dll" />
-    <Content Include="Units\GetuiServerApiSDK.dll" />
-    <Content Include="Units\Google.ProtocolBuffers.dll" />
-    <Content Include="Units\Json2KeyValue.dll" />
-    <Content Include="Units\log4net.dll" />
-    <Content Include="Units\MySql.Data.dll" />
-    <Content Include="Units\NLog.dll" />
-    <Content Include="Units\PluginPackage.Configurator.dll" />
-    <Content Include="Units\PluginPackage.Container.dll" />
-    <Content Include="Units\PluginPackage.Core.dll" />
-    <Content Include="Units\PluginPackage.dll" />
-    <Content Include="Units\RESTfulFramework.NET.Common.dll" />
-    <Content Include="Units\RESTfulFramework.NET.ComponentModel.dll" />
-    <Content Include="Units\RESTfulFramework.NET.Units.dll" />
-    <Content Include="Units\ServiceStack.Common.dll" />
-    <Content Include="Units\ServiceStack.Interfaces.dll" />
-    <Content Include="Units\ServiceStack.Redis.dll" />
-    <Content Include="Units\ServiceStack.Text.dll" />
-    <Content Include="Units\System.Data.SQLite.dll" />
-    <Content Include="Units\System.Data.SQLite.EF6.dll" />
-    <Content Include="Units\System.Data.SQLite.Linq.dll" />
-    <Content Include="Units\x64\SQLite.Interop.dll" />
-    <Content Include="Units\x86\SQLite.Interop.dll" />
     <Content Include="UserService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\test.cs" />
+    <Compile Include="Config\ConfigInfo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\RESTfulDataService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -169,6 +108,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

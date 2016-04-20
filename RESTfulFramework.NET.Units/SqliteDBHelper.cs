@@ -16,8 +16,8 @@ namespace RESTfulFramework.NET.Units
 
         static SqliteDBHelper()
         {
-            JsonSerialzer = UnitsFactory.JsonSerialzer;
-            LogManager = UnitsFactory.LogManager;
+            JsonSerialzer = Common.UnitsFactory.JsonSerialzer;
+            LogManager = Common.UnitsFactory.LogManager;
         }
         public SqliteDBHelper() { }
 

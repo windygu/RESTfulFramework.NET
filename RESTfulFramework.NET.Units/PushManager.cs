@@ -15,7 +15,7 @@ namespace RESTfulFramework.NET.Units
         private static string AppID { get; set; }
         static PushManager()
         {
-            var configManager = UnitsFactory.ConfigManager;
+            var configManager = Common.UnitsFactory.ConfigManager;
             try
             {
                 Host = configManager?.GetValue("getui_host").value;
@@ -25,9 +25,9 @@ namespace RESTfulFramework.NET.Units
             }
             catch (System.Exception ex)
             {
-                UnitsFactory.LogManager.WriteLog(ex.Message);                 
+                Common.UnitsFactory.LogManager.WriteLog(ex.Message);
             }
-           
+
         }
 
         public bool PushInfo(PushInfo info)
@@ -79,7 +79,7 @@ namespace RESTfulFramework.NET.Units
 
         }
 
-  
+
         /// <summary>
         /// 透传模板动作内容
         /// 所有推送接口均支持四个消息模板，依次为透传模板，通知透传模板，通知链接模板，通知弹框下载模板
@@ -138,7 +138,7 @@ namespace RESTfulFramework.NET.Units
             return template;
         }
 
-        
+
         /// <summary>
         /// 通知链接动作内容
         /// </summary>

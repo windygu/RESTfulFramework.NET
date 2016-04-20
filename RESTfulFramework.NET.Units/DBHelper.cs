@@ -1,6 +1,5 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using MySql.Data.MySqlClient;
-using PluginPackage;
 using System;
 using System.Configuration;
 using System.Data;
@@ -12,22 +11,11 @@ namespace RESTfulFramework.NET.Units
     public class DBHelper : IDBHelper
     {
         public DBHelper() { }
-
-        private static IJsonSerialzer JsonSerialzer { get; set; }
-        private static ILogManager LogManager { get; set; }
-
-        static DBHelper()
-        {
-            JsonSerialzer = Factory.GetInstance<IJsonSerialzer>();
-            LogManager = UnitsFactory.LogManager;
-        }
-
-
+ 
         public DBHelper(string connectionString)
         {
             ConnectionString = connectionString;
         }
-
 
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
 
@@ -73,13 +61,13 @@ namespace RESTfulFramework.NET.Units
                 dbcommand.CommandText = $"{sql};";
                 var dt = new DataTable();
                 dba.Fill(dt);
-                var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
+                var json = Common.UnitsFactory.JsonSerialzer.SerializeObject(dt.ToDictionary());
                 dbconnection.Close();
-                return JsonSerialzer.DeserializeObject<T>(json);
+                return Common.UnitsFactory.JsonSerialzer.DeserializeObject<T>(json);
             }
             catch (Exception ex)
             {
-                LogManager.WriteLog(ex.Message);
+                Common.UnitsFactory.LogManager.WriteLog(ex.Message);
                 throw ex;
             }
             finally

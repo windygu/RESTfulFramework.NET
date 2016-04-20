@@ -32,3 +32,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTful
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.ComponentModel.dll
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.ComponentModel.pdb

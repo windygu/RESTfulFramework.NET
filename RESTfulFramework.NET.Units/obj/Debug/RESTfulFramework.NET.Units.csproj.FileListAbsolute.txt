@@ -60,3 +60,4 @@ F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Units\RESTfulFra
 F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache

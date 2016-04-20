@@ -1,5 +1,4 @@
 ﻿var agModele = angular.module("app", []);
-
 agModele.controller("ApiInfoController",
     function ($scope) {
         $scope.fullApiUrl = "";
@@ -69,7 +68,7 @@ agModele.controller("ApiInfoController",
                         });
                     }
                     else {
-                        dataHttpHelper.GetJson(apiInfo.body, apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
+                        dataHttpHelper.GetJson($("#bodyTextarea").val(), apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
                             if (textStatus == "success") {
                                 $("#responseView").JSONView(data);
                             }
@@ -80,7 +79,7 @@ agModele.controller("ApiInfoController",
                     }
                 }
                 else {
-                    dataHttpHelper.PostJson(apiInfo.body, apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
+                    dataHttpHelper.PostJson($("#bodyTextarea").val(), apiInfo.api, apiInfo.token, function (data, textStatus, jqXHR) {
                         if (textStatus == "success") {
                             $("#responseView").JSONView(data);
                         }

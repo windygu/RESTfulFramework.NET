@@ -1,5 +1,4 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using PluginPackage;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -19,7 +18,7 @@ namespace RESTfulFramework.NET.Units
         {
             if (ConfigModels == null)
             {
-                var dbHelper = Factory.GetInstance<IDBHelper>();
+                var dbHelper =Common.UnitsFactory.DBHelper;
                 dbHelper.ConnectionString = ConnectionString;
                 var result = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM sys_config");
                 if (result != null && result.Any())
