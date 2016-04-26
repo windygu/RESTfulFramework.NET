@@ -18,7 +18,7 @@ namespace RESTfulFramework.NET.Units
         {
             if (ConfigModels == null)
             {
-                var dbHelper =Common.UnitsFactory.DBHelper;
+                var dbHelper = new DBHelper();
                 dbHelper.ConnectionString = ConnectionString;
                 var result = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM sys_config");
                 if (result != null && result.Any())

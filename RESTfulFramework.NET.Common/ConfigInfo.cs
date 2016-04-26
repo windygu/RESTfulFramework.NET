@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using RESTfulFramework.NET.ComponentModel;
+using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.Common
 {
     public class ConfigInfo
     {
-        static ConfigInfo()
-        {
+  
+        public ConfigInfo(IConfigManager<SysConfigModel> configManager) {
+
             try
             {
-                var configManager = UnitsFactory.ConfigManager;
                 AccountSecretKey = configManager.GetValue("account_secret_key").value;
                 SmsAccount = configManager.GetValue("sms_account").value;
                 SmsPassword = configManager.GetValue("sms_password").value;
@@ -18,6 +19,7 @@ namespace RESTfulFramework.NET.Common
             }
             catch { }
         }
+
         public static Dictionary<string, string> SmsCodeDictionary { get; set; }
         /// <summary>
         /// 短信帐号

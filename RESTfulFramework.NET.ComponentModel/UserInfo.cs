@@ -18,7 +18,7 @@ namespace RESTfulFramework.NET.Units.Model
 
         [DataMember]
         public string passwrod { get; set; }
-  
+
         [DataMember]
         public string account_type_id { get; set; }
 
@@ -30,5 +30,16 @@ namespace RESTfulFramework.NET.Units.Model
         [DataMember]
         public string client_id { get; set; }
 
+        [DataMember]
+        public string company_name_id { get; set; }
+
+        [DataMember]
+        public string company_name { get; set; }
+
+        [DataMember]
+        public string data_library_conntection { get; set; }
+
+        [DataMember]
+        public string data_library_name { get; set; }
     }
 }

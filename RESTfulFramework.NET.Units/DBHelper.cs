@@ -11,7 +11,7 @@ namespace RESTfulFramework.NET.Units
     public class DBHelper : IDBHelper
     {
         public DBHelper() { }
- 
+
         public DBHelper(string connectionString)
         {
             ConnectionString = connectionString;
@@ -19,9 +19,16 @@ namespace RESTfulFramework.NET.Units
 
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
 
-        public int ExcuteSql(string sql)
+        public int ExcuteSql(string sql) => ExcuteSql(sql, ConnectionString);
+
+
+        public T QuerySql<T>(string sql) where T : class => QuerySql<T>(sql, ConnectionString);
+        
+        public List<Dictionary<string, object>> Query(string sql) => QuerySql<List<Dictionary<string, object>>>(sql);
+
+        public int ExcuteSql(string sql, string connectionString)
         {
-            var dbconnection = new MySqlConnection(ConnectionString);
+            var dbconnection = new MySqlConnection(connectionString);
             var dbcommand = new MySqlCommand();
 
             dbcommand.Connection = dbconnection;
@@ -48,9 +55,9 @@ namespace RESTfulFramework.NET.Units
             }
         }
 
-        public T QuerySql<T>(string sql) where T : class
+        public T QuerySql<T>(string sql, string connectionString) where T : class
         {
-            var dbconnection = new MySqlConnection(ConnectionString);
+            var dbconnection = new MySqlConnection(connectionString);
             try
             {
 
@@ -61,21 +68,24 @@ namespace RESTfulFramework.NET.Units
                 dbcommand.CommandText = $"{sql};";
                 var dt = new DataTable();
                 dba.Fill(dt);
-                var json = Common.UnitsFactory.JsonSerialzer.SerializeObject(dt.ToDictionary());
+                var jSerialzer = new JsonSerialzer();
+                var json = jSerialzer.SerializeObject(dt.ToDictionary());
                 dbconnection.Close();
-                return Common.UnitsFactory.JsonSerialzer.DeserializeObject<T>(json);
+                return jSerialzer.DeserializeObject<T>(json);
             }
             catch (Exception ex)
             {
-                Common.UnitsFactory.LogManager.WriteLog(ex.Message);
+                var logManager = new LogManager();
+                logManager.WriteLog(ex.Message);
                 throw ex;
             }
             finally
             {
                 dbconnection.Close();
             }
-
         }
-        public List<Dictionary<string, object>> Query(string sql) => QuerySql<List<Dictionary<string, object>>>(sql);
+
+        public List<Dictionary<string, object>> Query(string sql, string connectionString)=>QuerySql<List<Dictionary<string, object>>>(sql,connectionString);
+    
     }
 }

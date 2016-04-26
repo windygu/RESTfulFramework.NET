@@ -27,9 +27,6 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\PluginPa
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\MySql.Data.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\RESTfulFramework.NET.Units.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\RESTfulFramework.NET.Business.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\RESTfulFramework.NET.Business.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Business\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
@@ -74,3 +71,6 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Busine
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\Business\RESTfulFramework.NET.Business.pdb
 F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll
 F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb

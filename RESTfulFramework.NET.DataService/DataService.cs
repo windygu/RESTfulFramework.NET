@@ -1,5 +1,5 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using PluginPackage.Core;
+
 using System;
 using System.IO;
 using System.ServiceModel.Web;
@@ -14,28 +14,18 @@ namespace RESTfulFramework.NET.DataService
     {
 
         /// <summary>
-        /// 组件容器
-        /// </summary>
-        private static IPluginContainer Container { get; set; }
-
-        /// <summary>
         /// 序列化器组件
         /// </summary>
-        private static IJsonSerialzer Serialzer { get; set; } = new JsonSerialzer();
-
+        private IJsonSerialzer Serialzer { get; set; } = new JsonSerialzer();
+        protected Factory.UnitsFactory<RequestModel,ResponseModel> UnitsFactory { get; set; }
+        protected Factory.SecurityFactory SecurityFactory { get; set; }
         public DataService()
         {
-            if (Container == null)
-            {
-                try
-                {
-                    Container = GetContainer();
-                    Serialzer = Container.GetPluginInstance<IJsonSerialzer>();
-                    LogManager = Container.GetPluginInstance<ILogManager>();
-                }
-                catch (Exception ex) { }
-            }
+            UnitsFactory = new Factory.UnitsFactory<RequestModel, ResponseModel>();
+            Serialzer = UnitsFactory.JsonSerialzer;
+            LogManager = UnitsFactory.LogManager;
 
+            SecurityFactory = new Factory.SecurityFactory();
             #region 设置头部信息
             if (WebOperationContext.Current != null)
             {
@@ -70,13 +60,8 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 安全检查
         /// </summary>
-        public override bool SecurityCheck(RequestModel requestModel) => Container.GetPluginInstance<ISecurity<RequestModel>>().SecurityCheck(requestModel);
+        public override bool SecurityCheck(RequestModel requestModel) => SecurityFactory.SecurityService.SecurityCheck(requestModel);
 
-
-        /// <summary>
-        /// 必须的组件容器
-        /// </summary>
-        public override IPluginContainer GetContainer() => new PluginPackage.PluginContainer();
 
 
         /// <summary>

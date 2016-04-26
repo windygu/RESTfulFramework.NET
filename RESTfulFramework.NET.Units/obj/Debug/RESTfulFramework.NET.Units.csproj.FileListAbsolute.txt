@@ -4,8 +4,6 @@ F:\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NE
 F:\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\bin\Debug\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\bin\Debug\RESTfulFramework.NET.Units.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Units\bin\Debug\RESTfulFramework.NET.Units.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Units\bin\Debug\RESTfulFramework.NET.Units.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
@@ -61,3 +59,5 @@ F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb

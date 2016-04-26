@@ -9,9 +9,6 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulF
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.ComponentModel.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.Security.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.Security.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Security\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
@@ -51,3 +48,6 @@ F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTful
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\bin\Security\RESTfulFramework.NET.Security.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb

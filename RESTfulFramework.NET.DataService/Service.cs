@@ -1,5 +1,4 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using PluginPackage.Core;
 using System.IO;
 using System;
 
@@ -17,6 +16,13 @@ namespace RESTfulFramework.NET.DataService
        where TRequestModel : RequestModel, new()
        where TResponseModel : ResponseModel, new()
     {
+
+        private Factory.UnitsFactory<TRequestModel, TResponseModel> Factory { get; set; }
+
+        public Service()
+        {
+            Factory = new Factory.UnitsFactory<TRequestModel, TResponseModel>();
+        }
 
         protected static ILogManager LogManager { get; set; }
 
@@ -117,11 +123,7 @@ namespace RESTfulFramework.NET.DataService
         /// <returns>验证成功返回true,失败返回false</returns>
         public abstract bool SecurityCheck(TRequestModel requestModel);
 
-        /// <summary>
-        /// 获取组件容器
-        /// </summary>
-        /// <returns>组件容器</returns>
-        public abstract IPluginContainer GetContainer();
+
 
 
         /// <summary>
@@ -152,14 +154,15 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<ITokenApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
+        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => Factory.TokenApi.RunApi(requestModel);
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<IInfoApi<TRequestModel, TResponseModel>>(requestModel.Api).RunApi(requestModel);
+        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => Factory.InfoApi.RunApi(requestModel);
 
 
-        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => GetContainer().GetPluginInstance<IStreamApi<TRequestModel>>(requestModel.Api).RunApi(requestModel);
+        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => Factory.StreamApi.RunApi(requestModel);
+
     }
 }

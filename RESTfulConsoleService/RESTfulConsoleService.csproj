@@ -42,22 +42,6 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PluginPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Configurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Configurator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Container.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />

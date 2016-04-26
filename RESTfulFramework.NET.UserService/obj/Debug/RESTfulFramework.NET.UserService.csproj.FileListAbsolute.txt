@@ -31,8 +31,6 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTf
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Common.xml
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Redis.xml
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\ServiceStack.Text.xml
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.UserService.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.UserService\bin\Debug\RESTfulFramework.NET.Common.dll
@@ -110,3 +108,5 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfu
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.dll
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb

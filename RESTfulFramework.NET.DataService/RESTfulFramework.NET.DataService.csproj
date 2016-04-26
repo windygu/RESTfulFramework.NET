@@ -34,22 +34,6 @@
       <HintPath>..\packages\Json2KeyValue.1.3.0.0\lib\net40\Json2KeyValue.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PluginPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.1\lib\PluginPackage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Configurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.1\lib\PluginPackage.Configurator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.1\lib\PluginPackage.Container.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.1\lib\PluginPackage.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
@@ -74,6 +58,14 @@
     <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
       <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
       <Name>RESTfulFramework.NET.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.NET.SecurityFactory\RESTfulFramework.NET.SecurityFactory.csproj">
+      <Project>{0335c6bb-1876-4073-8f0d-3f53c610dd38}</Project>
+      <Name>RESTfulFramework.NET.SecurityFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.NET.UnitsFactory\RESTfulFramework.NET.UnitsFactory.csproj">
+      <Project>{8d210768-36cd-4f70-8062-9bd7b5af73d1}</Project>
+      <Name>RESTfulFramework.NET.UnitsFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

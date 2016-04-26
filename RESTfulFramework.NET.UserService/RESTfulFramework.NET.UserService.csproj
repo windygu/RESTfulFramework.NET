@@ -30,22 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PluginPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Configurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Configurator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Container.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -70,9 +54,10 @@
       <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
       <Name>RESTfulFramework.NET.ComponentModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\RESTfulFramework.NET.UnitsFactory\RESTfulFramework.NET.UnitsFactory.csproj">
+      <Project>{8d210768-36cd-4f70-8062-9bd7b5af73d1}</Project>
+      <Name>RESTfulFramework.NET.UnitsFactory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

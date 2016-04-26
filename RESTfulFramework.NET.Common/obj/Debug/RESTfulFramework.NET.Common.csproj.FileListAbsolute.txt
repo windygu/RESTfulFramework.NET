@@ -4,13 +4,10 @@ F:\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.N
 F:\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.Common.pdb
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
 D:\新文件夹\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
-F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\RESTfulFramework.NET.ComponentModel.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.Configurator.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\bin\Debug\PluginPackage.Container.dll
@@ -58,3 +55,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFram
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Common.dll
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Common.pdb
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
