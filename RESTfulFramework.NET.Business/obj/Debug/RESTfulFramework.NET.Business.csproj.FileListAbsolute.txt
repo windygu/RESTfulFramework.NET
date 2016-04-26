@@ -51,11 +51,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.WCF\bin\Business\RESTfulFramework.NET.Business.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\Business\RESTfulFramework.NET.Business.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService.IISWCF\bin\Business\RESTfulFramework.NET.Business.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
-D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll
-D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
 C:\Users\yf-cqj\Documents\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\bin\Business\RESTfulFramework.NET.Business.dll
@@ -74,3 +69,8 @@ F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
+D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll
+D:\GitHub\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
