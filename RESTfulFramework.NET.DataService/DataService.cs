@@ -16,16 +16,16 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 序列化器组件
         /// </summary>
-        private IJsonSerialzer Serialzer { get; set; } = new JsonSerialzer();
+        protected IJsonSerialzer Serialzer { get; set; }
         protected Factory.UnitsFactory<RequestModel,ResponseModel> UnitsFactory { get; set; }
         protected Factory.SecurityFactory SecurityFactory { get; set; }
         public DataService()
         {
             UnitsFactory = new Factory.UnitsFactory<RequestModel, ResponseModel>();
-            Serialzer = UnitsFactory.JsonSerialzer;
-            LogManager = UnitsFactory.LogManager;
-
+            Serialzer = UnitsFactory.GetJsonSerialzer();
+            LogManager = UnitsFactory.GetLogManager();
             SecurityFactory = new Factory.SecurityFactory();
+
             #region 设置头部信息
             if (WebOperationContext.Current != null)
             {
@@ -60,7 +60,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 安全检查
         /// </summary>
-        public override bool SecurityCheck(RequestModel requestModel) => SecurityFactory.SecurityService.SecurityCheck(requestModel);
+        public override bool SecurityCheck(RequestModel requestModel) => SecurityFactory.GetSecurityService().SecurityCheck(requestModel);
 
 
 

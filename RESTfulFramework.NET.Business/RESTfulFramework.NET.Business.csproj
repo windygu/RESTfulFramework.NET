@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}</ProjectGuid>
+    <ProjectGuid>{48ADF8E8-B8EB-4D92-83C8-CA147BCA83D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RESTfulFramework.NET.Business</RootNamespace>

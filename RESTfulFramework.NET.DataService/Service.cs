@@ -154,15 +154,15 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => Factory.TokenApi.RunApi(requestModel);
+        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => Factory.GetTokenApi(requestModel.Api).RunApi(requestModel);
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => Factory.InfoApi.RunApi(requestModel);
+        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => Factory.GetInfoApi(requestModel.Api).RunApi(requestModel);
 
 
-        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => Factory.StreamApi.RunApi(requestModel);
+        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => Factory.GetStreamApi(requestModel.Api).RunApi(requestModel);
 
     }
 }

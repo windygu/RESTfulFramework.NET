@@ -5,5 +5,7 @@
     {
         bool SetValue(string key, T value);
         T GetValue(string key);
+
+        ConfigInfo GetConfigInfo();
     }
 }

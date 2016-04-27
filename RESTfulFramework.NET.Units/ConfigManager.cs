@@ -35,11 +35,13 @@ namespace RESTfulFramework.NET.Units
                     }
                     return ConfigModels.FirstOrDefault(s => s.key == key);
                 }
-                else {
+                else
+                {
                     throw new Exception("数据库表sys_config为空，加载基础配置信息失败。");
                 }
             }
-            else {
+            else
+            {
 
                 return ConfigModels.FirstOrDefault(s => s.key == key);
             }
@@ -48,6 +50,20 @@ namespace RESTfulFramework.NET.Units
         public bool SetValue(string key, SysConfigModel value)
         {
             throw new NotImplementedException();
+        }
+
+        public ConfigInfo GetConfigInfo()
+        {
+            return new ConfigInfo
+            {
+                AccountSecretKey = this.GetValue("account_secret_key")?.value,
+                SmsAccount = this.GetValue("sms_account")?.value,
+                SmsPassword = this.GetValue("sms_password")?.value,
+                SmsCodeContent = this.GetValue("sms_code_content")?.value,
+                RedisAddress = this.GetValue("redis_address")?.value,
+                RedisPort = this.GetValue("redis_port")?.value,
+            };
+
         }
     }
 }

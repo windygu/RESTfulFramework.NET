@@ -1,5 +1,4 @@
-﻿using RESTfulFramework.NET.Common;
-using RESTfulFramework.NET.ComponentModel;
+﻿using RESTfulFramework.NET.ComponentModel;
 using RESTfulFramework.NET.Units.Model;
 using ServiceStack.Redis;
 using System;
@@ -14,7 +13,9 @@ namespace RESTfulFramework.NET.Units
 
         static UserCache()
         {
-            Client = new RedisClient(ConfigInfo.RedisAddress, int.Parse(ConfigInfo.RedisPort));
+            var configManager = new ConfigManager();
+            var configInfo = configManager.GetConfigInfo();
+            Client = new RedisClient(configInfo.RedisAddress, int.Parse(configInfo.RedisPort));
 
             //所有用户基本信息缓存redis
             var dbHelper = new DBHelper();

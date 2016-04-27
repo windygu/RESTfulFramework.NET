@@ -16,6 +16,11 @@ namespace RESTfulFramework.NET.UserService
         private IDBHelper DbHelper { get; set; }
         private ISmsManager SmsManager { get; set; }
         private IUserCache<UserInfo> UserCache { get; set; }
+        private static ConfigInfo ConfigInfo { get; set; }
+        static UserService()
+        {
+            ConfigInfo = new Factory.UnitsFactory<RequestModel, ResponseModel>().GetConfigManager().GetConfigInfo();
+        }
 
         public UserService()
         {
@@ -29,9 +34,9 @@ namespace RESTfulFramework.NET.UserService
             try
             {
                 var unityFactory = new Factory.UnitsFactory<RequestModel, ResponseModel>();
-                DbHelper = unityFactory.DBHelper;
-                SmsManager = unityFactory.SmsMamager;
-                UserCache = unityFactory.UserCache;
+                DbHelper = unityFactory.GetDBHelper();
+                SmsManager = unityFactory.GetSmsMamager();
+                UserCache = unityFactory.GetUserCache();
                 ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
             }
             catch (Exception) { }

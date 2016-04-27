@@ -2,14 +2,11 @@
 
 namespace RESTfulFramework.NET.Factory
 {
+    /// <summary>
+    /// 安全相关工厂
+    /// </summary>
     public class SecurityFactory
     {
-
-        public ISecurity<RequestModel> SecurityService { get; set; }
-
-        public SecurityFactory()
-        {
-            SecurityService = new Security.SecurityService();
-        }
+        public ISecurity<RequestModel> GetSecurityService() => new Security.SecurityService();
     }
 }
