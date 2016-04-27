@@ -16,9 +16,9 @@ namespace RESTfulFramework.NET.ComponentModel
         public string Timestamp { get; set; }
         [DataMember]
         public string Sign { get; set; }
-
+        [DataMember]
         public object Tag { get; set; }
-
+        [DataMember]
         public UserInfo UserInfo { get; set; }
     }
 }

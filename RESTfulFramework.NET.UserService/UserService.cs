@@ -28,7 +28,7 @@ namespace RESTfulFramework.NET.UserService
             if (WebOperationContext.Current != null)
             {
                 WebOperationContext.Current.OutgoingResponse.Headers.Add("Access-Control-Allow-Origin", "*");
-                WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
+                //WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
             }
             #endregion
             try

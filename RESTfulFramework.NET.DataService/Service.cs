@@ -1,6 +1,7 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
 using System.IO;
 using System;
+using System.ServiceModel.Activation;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -10,7 +11,7 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TConfigurator">组件配置信息</typeparam>
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
-
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public abstract class Service<TRequestModel, TResponseModel>
        : IService
        where TRequestModel : RequestModel, new()
@@ -74,16 +75,19 @@ namespace RESTfulFramework.NET.DataService
         /// <param name="timestamp">时间戳</param>
         /// <param name="sign">签名</param>
         /// <returns>返回流</returns>
-        public virtual Stream Post(Stream stream, string token, string api, string timestamp, string sign)
+        public virtual Stream Post(Stream stream,string token, string api, string timestamp, string sign)
         {
             var body = StreamToString(stream);
             return Get(body, token, api, timestamp, sign);
         }
 
+
+
+
         /// <summary>
         /// 获取信息通用接口(不用token)
         /// </summary>
-        public Stream PostInfo(Stream stream, string api)
+        public Stream PostInfo(Stream stream,string api)
         {
             var body = StreamToString(stream);
             return GetInfo(body, api);

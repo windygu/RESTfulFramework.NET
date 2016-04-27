@@ -15,8 +15,7 @@ namespace RESTfulFramework.NET.ComponentModel
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "/post?token={token}&api={api}&timestamp={timestamp}&sign={sign}")]
-        Stream Post(Stream stream, string token, string api, string timestamp, string sign);
-
+        Stream Post( Stream stream,string token, string api, string timestamp, string sign);
         [OperationContract]
         [WebGet(UriTemplate = "/get?body={body}&token={token}&api={api}&timestamp={timestamp}&sign={sign}")]
         Stream Get(string body, string token, string api, string timestamp, string sign);

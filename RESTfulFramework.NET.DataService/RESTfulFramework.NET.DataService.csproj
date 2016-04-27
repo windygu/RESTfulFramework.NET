@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Json2KeyValue, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Json2KeyValue.1.3.0.0\lib\net40\Json2KeyValue.dll</HintPath>
+    <Reference Include="Json2KeyValue, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json2KeyValue.1.3.0.2\lib\net40\Json2KeyValue.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
