@@ -19,7 +19,7 @@ namespace RESTfulFramework.NET.UserService
         private static ConfigInfo ConfigInfo { get; set; }
         static UserService()
         {
-            ConfigInfo = new Factory.UnitsFactory<RequestModel, ResponseModel>().GetConfigManager().GetConfigInfo();
+            ConfigInfo = new Factory.UnitsFactory().GetConfigManager().GetConfigInfo();
         }
 
         public UserService()
@@ -33,7 +33,7 @@ namespace RESTfulFramework.NET.UserService
             #endregion
             try
             {
-                var unityFactory = new Factory.UnitsFactory<RequestModel, ResponseModel>();
+                var unityFactory = new Factory.UnitsFactory();
                 DbHelper = unityFactory.GetDBHelper();
                 SmsManager = unityFactory.GetSmsMamager();
                 UserCache = unityFactory.GetUserCache();

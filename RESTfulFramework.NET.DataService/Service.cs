@@ -12,17 +12,15 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public abstract class Service<TRequestModel, TResponseModel>
+    public abstract class Service 
        : IService
-       where TRequestModel : RequestModel, new()
-       where TResponseModel : ResponseModel, new()
     {
 
-        private Factory.UnitsFactory<TRequestModel, TResponseModel> Factory { get; set; }
+        private Factory.UnitsFactory Factory { get; set; }
 
         public Service()
         {
-            Factory = new Factory.UnitsFactory<TRequestModel, TResponseModel>();
+            Factory = new Factory.UnitsFactory();
         }
 
         protected static ILogManager LogManager { get; set; }
@@ -41,7 +39,7 @@ namespace RESTfulFramework.NET.DataService
 
             try
             {
-                var requestModel = new TRequestModel
+                var requestModel = new RequestModel
                 {
                     Body = StringToObject(body),
                     Token = token,
@@ -51,17 +49,17 @@ namespace RESTfulFramework.NET.DataService
                     Tag = body
                 };
                 var securityResult = SecurityCheck(requestModel);
-                if (!securityResult) return ResponseModelToStream(new TResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
+                if (!securityResult) return ResponseModelToStream(new ResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
 
 
-                TResponseModel result = ApiHandler(requestModel);
+                ResponseModel result = ApiHandler(requestModel);
 
                 return ResponseModelToStream(result);
             }
             catch (Exception ex)
             {
 
-                return ResponseModelToStream(new TResponseModel { Code = Code.SystemException, Msg = ex.Message });
+                return ResponseModelToStream(new ResponseModel { Code = Code.SystemException, Msg = ex.Message });
 
             }
         }
@@ -97,20 +95,20 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public Stream GetInfo(string body, string api)
         {
-            var requestModel = new TRequestModel
+            var requestModel = new RequestModel
             {
                 Body = StringToObject(body),
                 Api = api,
                 Tag = body
             };
 
-            TResponseModel result = InfoApiHandler(requestModel);
+            ResponseModel result = InfoApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
 
         public Stream GetStream(string body, string api)
         {
-            var requestModel = new TRequestModel
+            var requestModel = new RequestModel
             {
                 Body = StringToObject(body),
                 Api = api,
@@ -125,7 +123,7 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract bool SecurityCheck(TRequestModel requestModel);
+        public abstract bool SecurityCheck(RequestModel requestModel);
 
 
 
@@ -135,7 +133,7 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         /// <param name="responseModel">输出的对像</param>
         /// <returns>流</returns>
-        public abstract Stream ResponseModelToStream(TResponseModel responseModel);
+        public abstract Stream ResponseModelToStream(ResponseModel responseModel);
 
         /// <summary>
         /// 将接收的二进制转为请求的对像
@@ -158,15 +156,15 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual TResponseModel ApiHandler(TRequestModel requestModel) => Factory.GetTokenApi(requestModel.Api).RunApi(requestModel);
+        protected virtual ResponseModel ApiHandler(RequestModel requestModel) => Factory.GetTokenApi(requestModel.Api).RunApi(requestModel);
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual TResponseModel InfoApiHandler(TRequestModel requestModel) => Factory.GetInfoApi(requestModel.Api).RunApi(requestModel);
+        protected virtual ResponseModel InfoApiHandler(RequestModel requestModel) => Factory.GetInfoApi(requestModel.Api).RunApi(requestModel);
 
 
-        protected virtual Stream StreamApiHandler(TRequestModel requestModel) => Factory.GetStreamApi(requestModel.Api).RunApi(requestModel);
+        protected virtual Stream StreamApiHandler(RequestModel requestModel) => Factory.GetStreamApi(requestModel.Api).RunApi(requestModel);
 
     }
 }
