@@ -9,7 +9,7 @@ namespace RESTfulFramework.NET.Security
         private IUserCache<UserInfo> UserCache { get; set; }
         public UserSecurity()
         {
-            UserCache = new Factory.UnitsFactory<RequestModel, ResponseModel>().GetUserCache();
+            UserCache = new Factory.UnitsFactory().GetUserCache();
         }
         public bool SecurityCheck(RequestModel requestModel)
         {

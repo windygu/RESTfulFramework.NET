@@ -1,8 +1,5 @@
 ﻿using RESTfulFramework.NET.Common;
 using RESTfulFramework.NET.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace RESTfulFramework.NET.Security
@@ -13,7 +10,7 @@ namespace RESTfulFramework.NET.Security
 
         static DataSecurity()
         {
-            var configInfo = new Factory.UnitsFactory<RequestModel, ResponseModel>().GetConfigManager().GetConfigInfo();
+            var configInfo = new Factory.UnitsFactory().GetConfigManager().GetConfigInfo();
             AccountSecretKey = configInfo.AccountSecretKey;
         }
 

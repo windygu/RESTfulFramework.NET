@@ -10,18 +10,18 @@ using System.ServiceModel.Activation;
 namespace RESTfulFramework.NET.DataService
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class DataService : Service<RequestModel, ResponseModel>
+    public class DataService : Service
     {
 
         /// <summary>
         /// 序列化器组件
         /// </summary>
         protected IJsonSerialzer Serialzer { get; set; }
-        protected Factory.UnitsFactory<RequestModel,ResponseModel> UnitsFactory { get; set; }
+        protected Factory.UnitsFactory UnitsFactory { get; set; }
         protected Factory.SecurityFactory SecurityFactory { get; set; }
         public DataService()
         {
-            UnitsFactory = new Factory.UnitsFactory<RequestModel, ResponseModel>();
+            UnitsFactory = new Factory.UnitsFactory();
             Serialzer = UnitsFactory.GetJsonSerialzer();
             LogManager = UnitsFactory.GetLogManager();
             SecurityFactory = new Factory.SecurityFactory();
