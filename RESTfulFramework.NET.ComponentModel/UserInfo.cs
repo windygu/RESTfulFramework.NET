@@ -7,7 +7,7 @@ namespace RESTfulFramework.NET.Units.Model
     [Serializable]
     public class UserInfo
     {
-        private string _password;
+ 
         public UserInfo() { }
 
         [DataMember]

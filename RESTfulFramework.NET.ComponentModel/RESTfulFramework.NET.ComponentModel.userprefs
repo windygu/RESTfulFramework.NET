@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IUserCache.cs">
+    <Files>
+      <File FileName="UserInfo.cs" Line="12" Column="3" />
+      <File FileName="Code.cs" Line="2" Column="2" />
+      <File FileName="UserResponseModel.cs" Line="1" Column="1" />
+      <File FileName="TokenModel.cs" Line="1" Column="1" />
+      <File FileName="ResponseModel.cs" Line="1" Column="1" />
+      <File FileName="IUserCache.cs" Line="9" Column="38" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

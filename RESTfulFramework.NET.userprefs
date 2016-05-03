@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="RESTfulFramework.NET.Web\RESTfulFramework.NET.Web.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RESTfulFramework.NET.UnitsFactory\UnitsFactory.cs">
+    <Files>
+      <File FileName="RESTfulFramework.NET.Web\Api\test.cs" Line="1" Column="28" />
+      <File FileName="RESTfulFramework.NET.UnitsFactory\UnitsFactory.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
