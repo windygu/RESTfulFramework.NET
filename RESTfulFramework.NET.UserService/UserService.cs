@@ -13,10 +13,12 @@ namespace RESTfulFramework.NET.UserService
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class UserService : IUserService
     {
-        private IDBHelper DbHelper { get; set; }
-        private ISmsManager SmsManager { get; set; }
-        private IUserCache<UserInfo> UserCache { get; set; }
+        protected IDBHelper DbHelper { get; set; }
+        protected ISmsManager SmsManager { get; set; }
+        protected IUserCache<UserInfo> UserCache { get; set; }
         private static ConfigInfo ConfigInfo { get; set; }
+        protected UserInfo CurrUserInfo { get; set; }
+        protected string Token { get; set; }
         static UserService()
         {
             ConfigInfo = new Factory.UnitsFactory().GetConfigManager().GetConfigInfo();
@@ -31,6 +33,8 @@ namespace RESTfulFramework.NET.UserService
                 //WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
             }
             #endregion
+
+            #region 获取即将被调用的组件     
             try
             {
                 var unityFactory = new Factory.UnitsFactory();
@@ -40,7 +44,20 @@ namespace RESTfulFramework.NET.UserService
                 ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
             }
             catch (Exception) { }
+            #endregion
 
+            #region 获取用户基本信息
+            try
+            {
+                var token = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.QueryParameters["token"];
+                if (!string.IsNullOrEmpty(token))
+                {
+                    CurrUserInfo = UserCache?.GetUserInfo(token);
+                    Token = token;
+                }
+            }
+            catch { }
+            #endregion
         }
 
         /// <summary>
@@ -87,6 +104,7 @@ namespace RESTfulFramework.NET.UserService
 
             //产生TOKEN
             var token = Convert.ToBase64String(Encoding.UTF8.GetBytes(Md5.GetMd5(sign + Guid.NewGuid(), Encoding.UTF8)));
+            Token = token;
 
             //写入redis服务
             var redisuser = new UserInfo
@@ -99,6 +117,8 @@ namespace RESTfulFramework.NET.UserService
                 real_name = user[0]["realname"].ToString(),
                 client_id = clientid
             };
+
+            CurrUserInfo = redisuser;
 
             if (UserCache.SetUserInfo(redisuser, token)) return new UserResponseModel<TokenModel> { Code = Code.Sucess, Msg = new TokenModel { Token = token, UserId = redisuser.id.ToString() } };
             else return new UserResponseModel<TokenModel> { Code = Code.SystemException, Msg = new TokenModel { Token = token, UserId = redisuser.id.ToString() } };
@@ -175,15 +195,6 @@ namespace RESTfulFramework.NET.UserService
 
         protected virtual bool SendSms(string phone, string content)
         {
-
-            //var result = PushManager.PushInfo(new PushInfo
-            //{
-            //    CliendId = "28b10506ba167e0ab4e9fba606dd035e",
-            //    Title = "注册验证码",
-            //    Content = content,
-            //    Descript = content
-            //});
-            //return result;
             return true;
         }
 
