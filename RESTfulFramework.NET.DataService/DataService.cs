@@ -16,14 +16,15 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TUserInfoModel">用户信息模型</typeparam>
     /// <typeparam name="TJsonSerialzer">序列化与反序列化器</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class BaseDataService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager>
-        : Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager>
+    public class BaseDataService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+        : Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
          where TConfigManager : IConfigManager<SysConfigModel>, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
          where TUserInfoModel : BaseUserInfo, new()
          where TJsonSerialzer : IJsonSerialzer, new()
          where TDBHelper : IDBHelper, new()
          where TSmsManager : ISmsManager, new()
+         where TLogManager : ILogManager, new()
     {
 
         public BaseDataService()

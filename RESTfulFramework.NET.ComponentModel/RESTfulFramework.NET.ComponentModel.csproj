@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiContext.cs" />
     <Compile Include="BaseUserInfo.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="ConfigInfo.cs" />
     <Compile Include="IInfoApi.cs" />
+    <Compile Include="IServiceContext.cs" />
     <Compile Include="IStreamApi.cs" />
     <Compile Include="ITokenApi.cs" />
     <Compile Include="IConfigManager.cs" />

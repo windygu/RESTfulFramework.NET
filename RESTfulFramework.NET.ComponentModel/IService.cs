@@ -8,7 +8,8 @@ namespace RESTfulFramework.NET.ComponentModel
     /// 基础核心接口
     /// </summary>
     [ServiceContract]
-    public interface IService
+    public interface IService<TUserInfoModel>
+        where TUserInfoModel : BaseUserInfo, new()
 
     {
         #region 通用接口
@@ -33,7 +34,7 @@ namespace RESTfulFramework.NET.ComponentModel
         Stream GetStream(string body, string api);
         #endregion
 
-
+      
     }
 
 

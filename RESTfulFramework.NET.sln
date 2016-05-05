@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Securi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Units", "RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj", "{D203BB50-4A56-4B9D-B341-9928B09E822D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Business", "RESTfulFramework.NET.Business\RESTfulFramework.NET.Business.csproj", "{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Business", "RESTfulFramework.NET.Business\RESTfulFramework.NET.Business.csproj", "{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Common", "RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj", "{F153AB9F-269D-4269-96F1-45455EB6DAD9}"
 EndProject
@@ -54,10 +54,10 @@ Global
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F93D43A5-BF26-49CA-9D06-C0C6BC3D7DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU

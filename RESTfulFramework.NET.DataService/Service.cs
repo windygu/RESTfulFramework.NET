@@ -13,89 +13,106 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager> : IService
+    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> 
+        : IService<TUserInfoModel>, IServiceContext<TUserInfoModel>
          where TConfigManager : IConfigManager<SysConfigModel>, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
          where TUserInfoModel : BaseUserInfo, new()
          where TJsonSerialzer : IJsonSerialzer, new()
          where TDBHelper : IDBHelper, new()
          where TSmsManager : ISmsManager, new()
+         where TLogManager : ILogManager, new()
 
     {
-
+        #region 基础组件
+        /// <summary>
+        /// API接口转换为实例
+        /// </summary>
         public Factory.UnitsFactory<TUserInfoModel> UnitsFactoryContext { get; set; }
-        public static ILogManager LogManager { get; set; }
+        /// <summary>
+        /// 安全校验
+        /// </summary>
+        public Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
+        public TLogManager LogManager { get; set; }
+
+
         /// <summary>
         /// 序列化器组件
         /// </summary>
         public TJsonSerialzer Serialzer { get; set; }
 
-        private static TDBHelper _DbHelper;
+
+
         /// <summary>
         /// 数据库操作
         /// </summary>
-        public TDBHelper DbHelper
-        {
-            get
-            {
-                return _DbHelper;
-            }
-        }
+        public TDBHelper DbHelper { get; set; }
 
-        private static TSmsManager _SmsManager;
+
+
         /// <summary>
         /// 用于短信的收发
         /// </summary>
-        public TSmsManager SmsManager
-        {
-            get
-            {
-                return _SmsManager;
-            }
-        }
+        public TSmsManager SmsManager { get; set; }
 
-        private static TUserCache _UserCache;
+
+
         /// <summary>
         /// 用户缓存应该是被多个实例共享的
         /// </summary>
-        public TUserCache UserCache
-        {
-            get
-            {
-                return _UserCache;
-            }
-        }
-        public static ConfigInfo ConfigInfo { get; set; }
+        public TUserCache UserCache { get; set; }
 
-        private static TConfigManager _ConfigManager;
+        public ConfigInfo ConfigInfo { get; set; }
+
+
 
         /// <summary>
         /// 用于配置管理
         /// </summary>
-        public TConfigManager ConfigManager
-        {
-            get
-            {
-                return _ConfigManager;
-            }
-        }
+        public TConfigManager ConfigManager { get; set; }
+
 
         public TUserInfoModel CurrUserInfo { get; set; }
 
         public string Token { get; set; }
 
-        public Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
+
+
+        #endregion
+
+        public ApiContext<TUserInfoModel> ApiContext
+        {
+            get
+            {
+                return new ApiContext<TUserInfoModel>
+                {
+                    ConfigInfo = ConfigInfo,
+                    ConfigManager = ConfigManager,
+                    CurrUserInfo = CurrUserInfo,
+                    DbHelper = DbHelper,
+                    SmsManager = SmsManager,
+                    Token = Token,
+                    UserCache = UserCache,
+                    JsonSerialzer = Serialzer,
+                    LogManager = LogManager
+                };
+
+            }
+            private set { }
+        }
+
+       
 
         public Service()
         {
-            SecurityFactoryContext = new Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel>();
             Serialzer = new TJsonSerialzer();
-            _DbHelper = new TDBHelper();
-            _UserCache = new TUserCache();
-            _SmsManager = new TSmsManager();
-            _ConfigManager = new TConfigManager();
+            DbHelper = new TDBHelper();
+            UserCache = new TUserCache();
+            SmsManager = new TSmsManager();
+            ConfigManager = new TConfigManager();
+            LogManager = new TLogManager();
             UnitsFactoryContext = new Factory.UnitsFactory<TUserInfoModel>();
-
+            SecurityFactoryContext = new Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel>();
 
             #region 获取用户基本信息
             try
@@ -247,17 +264,25 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetTokenApi<IService>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetTokenApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetInfoApi<IService>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetInfoApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
 
         /// <summary>
         /// 获 取流数据
         /// </summary>
-        protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetStreamApi<IService>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetStreamApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
 
+ 
+        public ApiContext<TUserInfoModel> Context
+        {
+            get
+            {
+                return ApiContext;
+            }   
+        }
     }
 }

@@ -1,13 +1,13 @@
-﻿using RESTfulFramework.NET.ComponentModel;
+﻿using System;
+using RESTfulFramework.NET.ComponentModel;
 
 namespace RESTfulFramework.NET.Business
 {
-    public class selectinfo<TServer> : IInfoApi<RequestModel<BaseUserInfo>, ResponseModel, TServer>
-        where TServer : IService
+    public class selectinfo : IInfoApi<RequestModel<UserInfo>, ResponseModel, IServiceContext<UserInfo>, UserInfo>
     {
-        public ResponseModel RunApi(RequestModel<BaseUserInfo> source, TServer service)
+        public ResponseModel RunApi(RequestModel<UserInfo> source, IServiceContext<UserInfo> service)
         {
-            return new ResponseModel { Code = 1, Msg = "测试" };
+            throw new NotImplementedException();
         }
     }
 }

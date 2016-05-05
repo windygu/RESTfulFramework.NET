@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using System.ServiceModel;
 using System.ServiceModel.Web;
 
@@ -6,7 +6,7 @@ namespace RESTfulFramework.NET.ComponentModel
 {
     [ServiceContract]
     public interface IUserService<TUserInfoModel>
-        where TUserInfoModel:BaseUserInfo
+        where TUserInfoModel : BaseUserInfo, new()
     {
 
         [OperationContract]
@@ -43,5 +43,7 @@ namespace RESTfulFramework.NET.ComponentModel
         [WebGet(UriTemplate = "/smscodeexist?code={code}", ResponseFormat = WebMessageFormat.Json)]
         UserResponseModel<string> SmsCodeExist(string code);
 
+
+       
     }
 }

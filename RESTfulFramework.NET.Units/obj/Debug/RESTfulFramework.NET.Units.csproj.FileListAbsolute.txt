@@ -49,9 +49,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Units\RESTfulFram
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Units\RESTfulFramework.NET.Units.dll.config
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Units\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Units\RESTfulFramework.NET.Units.pdb
-D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll.config
-D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.dll
-D:\GitHub\RESTfulFramework.NET\bin\Units\RESTfulFramework.NET.Units.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
@@ -61,3 +58,6 @@ F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
+D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.dll.config
+D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.dll
+D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.pdb

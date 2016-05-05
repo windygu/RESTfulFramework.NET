@@ -1,6 +1,6 @@
 ﻿
 using RESTfulFramework.NET.ComponentModel;
- 
+
 using System;
 using System.Collections.Generic;
 
@@ -10,13 +10,14 @@ namespace RESTfulFramework.NET.Units
     {
 
         public LocalUserCache() { }
-    
-        private static Dictionary<string, BaseUserInfo> Client { get; set; } = new Dictionary<string, BaseUserInfo>();
- 
+
+        //用一定的性能损失，后期优化
+        private static Dictionary<string, object> Client { get; set; } = new Dictionary<string, object>();
+
         static LocalUserCache()
         {
             //所有用户基本信息缓存redis
-            var dbHelper =  new  DBHelper();
+            var dbHelper = new DBHelper();
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
@@ -32,25 +33,52 @@ namespace RESTfulFramework.NET.Units
                 Client.Add(redisuser.id.ToString(), redisuser);
             }
         }
-        public bool ContainsUserInfo(string token) => Client.ContainsKey(token);
+        public bool ContainsUserInfo(string key) => Client.ContainsKey(key);
 
 
-        public BaseUserInfo GetUserInfo(string token) => Client.GetValueOrDefault(token);
+        public BaseUserInfo GetUserInfo(string key) => (BaseUserInfo)Client.GetValueOrDefault(key);
 
 
-        public bool RemoveUserInfo(string token) => Client.Remove(token);
+        public bool RemoveUserInfo(string key) => Client.Remove(key);
 
 
-        public bool SetUserInfo(BaseUserInfo userInfo, string token)
+        public bool SetUserInfo(BaseUserInfo userInfo, string key)
         {
-            if (!ContainsUserInfo(token))
+            if (!ContainsUserInfo(key))
             {
-                Client.Add(token, userInfo);
+                Client.Add(key, userInfo);
                 return true;
             }
-            else {
+            else
+            {
                 return false;
             }
+        }
+
+        public bool Contains(string key) => ContainsUserInfo(key);
+
+
+        public string GetValue(string key) => Client.GetValueOrDefault(key)?.ToString();
+
+
+
+        public bool SetValue(string value, string key)
+        {
+            if (!Contains(key))
+            {
+                Client.Add(key, value);
+                return true;
+            }
+            else
+            {
+                Client[key] = value;
+                return true;
+            }
+        }
+
+        public Dictionary<string, object> GetAll()
+        {
+            return Client;
         }
     }
 }

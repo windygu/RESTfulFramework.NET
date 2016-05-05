@@ -18,86 +18,99 @@ namespace RESTfulFramework.NET.UserService
     /// <typeparam name="TConfigManager">配置管理</typeparam>
     /// <typeparam name="TUserInfoModel">用户信息</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class BaseUserService<TDBHelper, TSmsManager, TUserCache, TConfigManager, TUserInfoModel>
-        : IUserService<TUserInfoModel>
-        where TDBHelper : IDBHelper, new()
-        where TSmsManager : ISmsManager, new()
-        where TUserCache : IUserCache<TUserInfoModel>, new()
-        where TConfigManager : IConfigManager<SysConfigModel>, new()
-        where TUserInfoModel : BaseUserInfo, new()
+    public class BaseUserService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+        : IUserService<TUserInfoModel>, IServiceContext<TUserInfoModel>
+         where TConfigManager : IConfigManager<SysConfigModel>, new()
+         where TUserCache : IUserCache<TUserInfoModel>, new()
+         where TUserInfoModel : BaseUserInfo, new()
+         where TJsonSerialzer : IJsonSerialzer, new()
+         where TDBHelper : IDBHelper, new()
+         where TSmsManager : ISmsManager, new()
+         where TLogManager : ILogManager, new()
     {
-        private static TDBHelper _DbHelper;
+
+        #region 基础组件
+
+        public TLogManager LogManager { get; set; }
+
+
+        /// <summary>
+        /// 序列化器组件
+        /// </summary>
+        public TJsonSerialzer Serialzer { get; set; }
+
+
+
         /// <summary>
         /// 数据库操作
         /// </summary>
-        protected TDBHelper DbHelper
-        {
-            get
-            {
-                return _DbHelper;
-            }
-        }
+        public TDBHelper DbHelper { get; set; }
 
-        private static TSmsManager _SmsManager;
+
+
         /// <summary>
         /// 用于短信的收发
         /// </summary>
-        protected TSmsManager SmsManager
-        {
-            get
-            {
-                return _SmsManager;
-            }
-        }
+        public TSmsManager SmsManager { get; set; }
 
-        private static TUserCache _UserCache;
+
+
         /// <summary>
         /// 用户缓存应该是被多个实例共享的
         /// </summary>
-        protected TUserCache UserCache
-        {
-            get
-            {
-                return _UserCache;
-            }
-        }
-        static ConfigInfo ConfigInfo { get; set; }
+        public TUserCache UserCache { get; set; }
 
-        private static TConfigManager _ConfigManager;
+        public ConfigInfo ConfigInfo { get; set; }
+
+
 
         /// <summary>
         /// 用于配置管理
         /// </summary>
-        protected TConfigManager ConfigManager
+        public TConfigManager ConfigManager { get; set; }
+
+
+        public TUserInfoModel CurrUserInfo { get; set; }
+
+        public string Token { get; set; }
+
+
+
+        #endregion
+
+        public ApiContext<TUserInfoModel> ApiContext
         {
             get
             {
-                return _ConfigManager;
+                return new ApiContext<TUserInfoModel>
+                {
+                    ConfigInfo = ConfigInfo,
+                    ConfigManager = ConfigManager,
+                    CurrUserInfo = CurrUserInfo,
+                    DbHelper = DbHelper,
+                    SmsManager = SmsManager,
+                    Token = Token,
+                    UserCache = UserCache,
+                    JsonSerialzer = Serialzer,
+                    LogManager = LogManager
+                };
+
             }
+            private set { }
         }
 
-        protected TUserInfoModel CurrUserInfo { get; set; }
-
-        protected string Token { get; set; }
-
-        static BaseUserService()
-        {
-            try
-            {
-                _DbHelper = new TDBHelper();
-                _UserCache = new TUserCache();
-                _SmsManager = new TSmsManager();
-                _ConfigManager = new TConfigManager();
-                ConfigInfo = _ConfigManager?.GetConfigInfo();
-                ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
-            }
-            catch (Exception)
-            {
-            }
-        }
 
         public BaseUserService()
         {
+            #region 实例化基础组件
+            DbHelper = new TDBHelper();
+            UserCache = new TUserCache();
+            SmsManager = new TSmsManager();
+            ConfigManager = new TConfigManager();
+            Serialzer = new TJsonSerialzer();
+            LogManager = new TLogManager();
+            #endregion
+
             #region 设置头部信息
             if (WebOperationContext.Current != null)
             {
@@ -117,6 +130,16 @@ namespace RESTfulFramework.NET.UserService
                 }
             }
             catch { }
+            #endregion
+
+            #region 获取基础配置信息
+            try
+            {
+                ConfigInfo = ConfigManager?.GetConfigInfo();
+            }
+            catch (Exception)
+            {
+            }
             #endregion
         }
 
@@ -215,7 +238,7 @@ namespace RESTfulFramework.NET.UserService
         public virtual UserResponseModel<string> Register(string username, string password, string smscode, string realname)
         {
             ////判断验证码
-            if (!ConfigInfo.SmsCodeDictionary.Contains(new KeyValuePair<string, string>(username, smscode)))
+            if (!(UserCache.Contains(username) && UserCache.GetValue(username) == smscode))
                 return new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
             var result = DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}'");
             if (result != null && result.Any()) return new UserResponseModel<string> { Code = Code.AccountExsit, Msg = "帐号已存在" };
@@ -237,11 +260,7 @@ namespace RESTfulFramework.NET.UserService
             var rendomCode = Common.Random.CreateSmsCode();
 
             var content = ConfigInfo.SmsCodeContent.Replace("{code}", rendomCode);
-
-            if (ConfigInfo.SmsCodeDictionary.ContainsKey(phone))
-                ConfigInfo.SmsCodeDictionary[phone] = rendomCode;
-            else
-                ConfigInfo.SmsCodeDictionary.Add(phone, rendomCode);
+            UserCache.SetValue(rendomCode, phone);
 
             //发送验证码
             //var result = SmsManager.SendSms(phone, content);
@@ -258,15 +277,30 @@ namespace RESTfulFramework.NET.UserService
         /// </summary>
         /// <param name="code">短信验证码</param>
         /// <returns>返回结果</returns>
-        public virtual UserResponseModel<string> SmsCodeExist(string code) => ConfigInfo.SmsCodeDictionary.ContainsValue(code) ? new UserResponseModel<string> { Code = Code.Sucess, Msg = "验证码存在" } : new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
+        public virtual UserResponseModel<string> SmsCodeExist(string code)
+        {
+
+            return UserCache.GetAll().ContainsValue(code) ? new UserResponseModel<string> { Code = Code.Sucess, Msg = "验证码存在" } : new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
+        }
 
         protected virtual bool SendSms(string phone, string content)
         {
             return true;
         }
 
-        protected virtual bool ValidateSmsCode(string phone, string smscode) => ConfigInfo.SmsCodeDictionary.Contains(new KeyValuePair<string, string>(phone, smscode));
+        protected virtual bool ValidateSmsCode(string phone, string smscode)
+        {
+            return UserCache.GetValue(phone) == smscode;
+        }
+
+        public ApiContext<TUserInfoModel> Context
+        {
+            get
+            {
+                return ApiContext;
+            }
 
 
+        }
     }
 }

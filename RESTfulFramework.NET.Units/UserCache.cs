@@ -42,31 +42,31 @@ namespace RESTfulFramework.NET.Units
         /// <summary>
         /// 获取Redis缓存的用户信息
         /// </summary>
-        /// <param name="token">用户token</param>
+        /// <param name="key">用户token</param>
         /// <returns>返回用户信息</returns>
-        public TUserInfoModel GetUserInfo(string token) => Client.Get<TUserInfoModel>(token);
+        public TUserInfoModel GetUserInfo(string key) => Client.Get<TUserInfoModel>(key);
 
         /// <summary>
         /// 将用户信息保存在Redis缓存
         /// </summary>
         /// <param name="userInfo">用户信息</param>
-        /// <param name="token">用户token</param>
+        /// <param name="key">用户token</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public bool SetUserInfo(TUserInfoModel userInfo, string token) => Client.Set(token, userInfo);
+        public bool SetUserInfo(TUserInfoModel userInfo, string key) => Client.Set(key, userInfo);
 
         /// <summary>
         /// 删除用户缓存信息
         /// </summary>
-        /// <param name="token">用户token</param>
+        /// <param name="key">用户token</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public bool RemoveUserInfo(string token) => Client.Remove(token);
+        public bool RemoveUserInfo(string key) => Client.Remove(key);
 
         /// <summary>
         /// 是否存在用户信息
         /// </summary>
         /// <param name="token">用户token</param>
         /// <returns>存在返回true,不存在返回false</returns>
-        public bool ContainsUserInfo(string token) => Client.ContainsKey(token);
+        public bool ContainsUserInfo(string key) => Client.ContainsKey(key);
 
         private static string Unicode(string str)
         {
@@ -82,5 +82,17 @@ namespace RESTfulFramework.NET.Units
             return outStr;
         }
 
+        public bool Contains(string key) => Client.ContainsKey(key);
+
+
+        public string GetValue(string key) => Client.Get<string>(key);
+
+
+        public bool SetValue(string value, string key) => Client.Set(key, value);
+
+        public Dictionary<string, object> GetAll()
+        {
+            return Client.GetAll<object>(Client.GetAllKeys()) as Dictionary<string, object>;
+        }
     }
 }

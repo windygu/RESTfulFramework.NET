@@ -1,14 +1,16 @@
-﻿using RESTfulFramework.NET.ComponentModel;
+﻿using System;
+using RESTfulFramework.NET.ComponentModel;
 
 namespace RESTfulFramework.NET.Business
 {
-    public class select<TServer> : ITokenApi<RequestModel<BaseUserInfo>, ResponseModel,TServer>
-        where TServer:IService
+    public class select : ITokenApi<RequestModel<UserInfo>, ResponseModel, IServiceContext<UserInfo>,UserInfo>
     {
-        public ResponseModel RunApi(RequestModel<BaseUserInfo> source,TServer service)
+        public ResponseModel RunApi(RequestModel<UserInfo> source, IServiceContext<UserInfo> service)
         {
-            return null;
-
+            
+            throw new NotImplementedException();
         }
+
+        
     }
 }

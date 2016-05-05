@@ -10,7 +10,7 @@ namespace RESTfulFramework.NET.ComponentModel
         /// <summary>
         /// 用于存储短信验证码集合
         /// </summary>
-        public Dictionary<string, string> SmsCodeDictionary { get; set; }
+        //public Dictionary<string, string> SmsCodeDictionary { get; set; }
 
         /// <summary>
         /// 短信帐号
