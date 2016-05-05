@@ -1,6 +1,5 @@
 ﻿using RESTfulFramework.NET.Common;
 using RESTfulFramework.NET.ComponentModel;
-using RESTfulFramework.NET.Units.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +9,94 @@ using System.ServiceModel.Activation;
 
 namespace RESTfulFramework.NET.UserService
 {
+    /// <summary>
+    /// 用户权限的基础服务
+    /// </summary>
+    /// <typeparam name="TDBHelper">数据库操作</typeparam>
+    /// <typeparam name="TSmsManager">短信收发操作</typeparam>
+    /// <typeparam name="TUserCache">用户缓存</typeparam>
+    /// <typeparam name="TConfigManager">配置管理</typeparam>
+    /// <typeparam name="TUserInfoModel">用户信息</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class UserService : IUserService
+    public class BaseUserService<TDBHelper, TSmsManager, TUserCache, TConfigManager, TUserInfoModel>
+        : IUserService<TUserInfoModel>
+        where TDBHelper : IDBHelper, new()
+        where TSmsManager : ISmsManager, new()
+        where TUserCache : IUserCache<TUserInfoModel>, new()
+        where TConfigManager : IConfigManager<SysConfigModel>, new()
+        where TUserInfoModel : BaseUserInfo, new()
     {
-        protected IDBHelper DbHelper { get; set; }
-        protected ISmsManager SmsManager { get; set; }
-        protected IUserCache<UserInfo> UserCache { get; set; }
-        private static ConfigInfo ConfigInfo { get; set; }
-        protected UserInfo CurrUserInfo { get; set; }
-        protected string Token { get; set; }
-        static UserService()
+        private static TDBHelper _DbHelper;
+        /// <summary>
+        /// 数据库操作
+        /// </summary>
+        protected TDBHelper DbHelper
         {
-            ConfigInfo = new Factory.UnitsFactory().GetConfigManager().GetConfigInfo();
+            get
+            {
+                return _DbHelper;
+            }
         }
 
-        public UserService()
+        private static TSmsManager _SmsManager;
+        /// <summary>
+        /// 用于短信的收发
+        /// </summary>
+        protected TSmsManager SmsManager
+        {
+            get
+            {
+                return _SmsManager;
+            }
+        }
+
+        private static TUserCache _UserCache;
+        /// <summary>
+        /// 用户缓存应该是被多个实例共享的
+        /// </summary>
+        protected TUserCache UserCache
+        {
+            get
+            {
+                return _UserCache;
+            }
+        }
+        static ConfigInfo ConfigInfo { get; set; }
+
+        private static TConfigManager _ConfigManager;
+
+        /// <summary>
+        /// 用于配置管理
+        /// </summary>
+        protected TConfigManager ConfigManager
+        {
+            get
+            {
+                return _ConfigManager;
+            }
+        }
+
+        protected TUserInfoModel CurrUserInfo { get; set; }
+
+        protected string Token { get; set; }
+
+        static BaseUserService()
+        {
+            try
+            {
+                _DbHelper = new TDBHelper();
+                _UserCache = new TUserCache();
+                _SmsManager = new TSmsManager();
+                _ConfigManager = new TConfigManager();
+                ConfigInfo = _ConfigManager?.GetConfigInfo();
+                ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public BaseUserService()
         {
             #region 设置头部信息
             if (WebOperationContext.Current != null)
@@ -32,18 +104,6 @@ namespace RESTfulFramework.NET.UserService
                 WebOperationContext.Current.OutgoingResponse.Headers.Add("Access-Control-Allow-Origin", "*");
                 //WebOperationContext.Current.OutgoingResponse.ContentType = "application/json;charset=utf-8";
             }
-            #endregion
-
-            #region 获取即将被调用的组件     
-            try
-            {
-                var unityFactory = new Factory.UnitsFactory();
-                DbHelper = unityFactory.GetDBHelper();
-                SmsManager = unityFactory.GetSmsMamager();
-                UserCache = unityFactory.GetUserCache();
-                ConfigInfo.SmsCodeDictionary = new Dictionary<string, string>();
-            }
-            catch (Exception) { }
             #endregion
 
             #region 获取用户基本信息
@@ -65,9 +125,25 @@ namespace RESTfulFramework.NET.UserService
         /// </summary>
         /// <param name="token">token</param>
         /// <returns>返回用户信息</returns>
-        public virtual UserResponseModel<UserInfo> GetUserInfo(string token)
+        public virtual UserResponseModel<BaseUserInfo> GetUserInfo(string token)
         {
-            return new UserResponseModel<UserInfo> { Code = Code.Sucess, Msg = UserCache.GetUserInfo(token) };
+
+            //var userInfo = (BaseUserInfo)CurrUserInfo;
+            //userInfo.passwrod = "";
+            //userInfo.client_id = "";
+            return new UserResponseModel<BaseUserInfo>
+            {
+                Code = Code.Sucess,
+                Msg = new BaseUserInfo
+                {
+                    account_name = CurrUserInfo.account_name,
+                    account_type_id = CurrUserInfo.account_type_id,
+                    client_id = CurrUserInfo.client_id,
+                    create_time = CurrUserInfo.create_time,
+                    id = CurrUserInfo.id,
+                    real_name = CurrUserInfo.real_name
+                }
+            };
         }
 
         /// <summary>
@@ -107,17 +183,8 @@ namespace RESTfulFramework.NET.UserService
             Token = token;
 
             //写入redis服务
-            var redisuser = new UserInfo
-            {
-                account_name = user[0]["account_name"].ToString(),
-                account_type_id = user[0]["account_type"].ToString(),
-                create_time = Convert.ToDateTime(user[0]["create_time"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
-                id = Guid.Parse(user[0]["id"].ToString()),
-                passwrod = user[0]["passwrod"].ToString(),
-                real_name = user[0]["realname"].ToString(),
-                client_id = clientid
-            };
-
+            var redisuser = UserCache.GetUserInfo(user[0]["id"].ToString());
+            redisuser.client_id = clientid;
             CurrUserInfo = redisuser;
 
             if (UserCache.SetUserInfo(redisuser, token)) return new UserResponseModel<TokenModel> { Code = Code.Sucess, Msg = new TokenModel { Token = token, UserId = redisuser.id.ToString() } };

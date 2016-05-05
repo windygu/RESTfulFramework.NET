@@ -1,17 +1,17 @@
 ﻿
 using RESTfulFramework.NET.ComponentModel;
-using RESTfulFramework.NET.Units.Model;
+ 
 using System;
 using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.Units
 {
-    public class LocalUserCache : IUserCache<UserInfo>
+    public class LocalUserCache : IUserCache<BaseUserInfo>
     {
 
         public LocalUserCache() { }
     
-        private static Dictionary<string, UserInfo> Client { get; set; } = new Dictionary<string, UserInfo>();
+        private static Dictionary<string, BaseUserInfo> Client { get; set; } = new Dictionary<string, BaseUserInfo>();
  
         static LocalUserCache()
         {
@@ -20,7 +20,7 @@ namespace RESTfulFramework.NET.Units
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
-                var redisuser = new UserInfo
+                var redisuser = new BaseUserInfo
                 {
                     account_name = user["account_name"].ToString(),
                     account_type_id = user["account_type"].ToString(),
@@ -35,13 +35,13 @@ namespace RESTfulFramework.NET.Units
         public bool ContainsUserInfo(string token) => Client.ContainsKey(token);
 
 
-        public UserInfo GetUserInfo(string token) => Client.GetValueOrDefault(token);
+        public BaseUserInfo GetUserInfo(string token) => Client.GetValueOrDefault(token);
 
 
         public bool RemoveUserInfo(string token) => Client.Remove(token);
 
 
-        public bool SetUserInfo(UserInfo userInfo, string token)
+        public bool SetUserInfo(BaseUserInfo userInfo, string token)
         {
             if (!ContainsUserInfo(token))
             {

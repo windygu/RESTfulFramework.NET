@@ -1,5 +1,4 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-
 using System;
 using System.IO;
 using System.ServiceModel.Web;
@@ -9,22 +8,26 @@ using System.ServiceModel.Activation;
 
 namespace RESTfulFramework.NET.DataService
 {
+    /// <summary>
+    /// 基础数据服务
+    /// </summary>
+    /// <typeparam name="TConfigManager">配置管理</typeparam>
+    /// <typeparam name="TUserCache">用户缓存</typeparam>
+    /// <typeparam name="TUserInfoModel">用户信息模型</typeparam>
+    /// <typeparam name="TJsonSerialzer">序列化与反序列化器</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class DataService : Service
+    public class BaseDataService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager>
+        : Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager>
+         where TConfigManager : IConfigManager<SysConfigModel>, new()
+         where TUserCache : IUserCache<TUserInfoModel>, new()
+         where TUserInfoModel : BaseUserInfo, new()
+         where TJsonSerialzer : IJsonSerialzer, new()
+         where TDBHelper : IDBHelper, new()
+         where TSmsManager : ISmsManager, new()
     {
 
-        /// <summary>
-        /// 序列化器组件
-        /// </summary>
-        protected IJsonSerialzer Serialzer { get; set; }
-        protected Factory.UnitsFactory UnitsFactory { get; set; }
-        protected Factory.SecurityFactory SecurityFactory { get; set; }
-        public DataService()
+        public BaseDataService()
         {
-            UnitsFactory = new Factory.UnitsFactory();
-            Serialzer = UnitsFactory.GetJsonSerialzer();
-            LogManager = UnitsFactory.GetLogManager();
-            SecurityFactory = new Factory.SecurityFactory();
 
             #region 设置头部信息
             if (WebOperationContext.Current != null)
@@ -60,7 +63,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 安全检查
         /// </summary>
-        public override bool SecurityCheck(RequestModel requestModel) => SecurityFactory.GetSecurityService().SecurityCheck(requestModel);
+        public override bool SecurityCheck(RequestModel<BaseUserInfo> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
 
 
 
@@ -84,7 +87,7 @@ namespace RESTfulFramework.NET.DataService
 
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
-        protected override ResponseModel ApiHandler(RequestModel requestModel)
+        protected override ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             var responseModel = base.ApiHandler(requestModel);
             try
@@ -97,8 +100,6 @@ namespace RESTfulFramework.NET.DataService
         }
 
         protected virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
-
-
 
     }
 }

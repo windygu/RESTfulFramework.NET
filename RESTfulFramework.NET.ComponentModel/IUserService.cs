@@ -1,11 +1,12 @@
-﻿using RESTfulFramework.NET.Units.Model;
+﻿ 
 using System.ServiceModel;
 using System.ServiceModel.Web;
 
 namespace RESTfulFramework.NET.ComponentModel
 {
     [ServiceContract]
-    public interface IUserService
+    public interface IUserService<TUserInfoModel>
+        where TUserInfoModel:BaseUserInfo
     {
 
         [OperationContract]
@@ -30,7 +31,7 @@ namespace RESTfulFramework.NET.ComponentModel
 
         [OperationContract]
         [WebGet(UriTemplate = "/getuserinfo?token={token}", ResponseFormat = WebMessageFormat.Json)]
-        UserResponseModel<UserInfo> GetUserInfo(string token);
+        UserResponseModel<BaseUserInfo> GetUserInfo(string token);
 
 
         [OperationContract]

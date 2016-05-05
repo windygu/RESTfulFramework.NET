@@ -1,17 +1,19 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using RESTfulFramework.NET.Units.Model;
+
 using System;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class UserSecurity : ISecurity<RequestModel>
+    public class UserSecurity<TUserCache, TUserInfoModel> : ISecurity<RequestModel<BaseUserInfo>>
+        where TUserCache : IUserCache<TUserInfoModel>, new()
+        where TUserInfoModel : BaseUserInfo, new()
     {
-        private IUserCache<UserInfo> UserCache { get; set; }
+        private TUserCache UserCache { get; set; }
         public UserSecurity()
         {
-            UserCache = new Factory.UnitsFactory().GetUserCache();
+            UserCache = new TUserCache();
         }
-        public bool SecurityCheck(RequestModel requestModel)
+        public bool SecurityCheck(RequestModel<BaseUserInfo> requestModel)
         {
             try
             {

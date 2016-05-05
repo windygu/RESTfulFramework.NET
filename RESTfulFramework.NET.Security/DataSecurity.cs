@@ -4,18 +4,19 @@ using System.Text;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class DataSecurity : ISecurity<RequestModel>
+    public class DataSecurity<TConfigManager> : ISecurity<RequestModel<BaseUserInfo>>
+        where TConfigManager : IConfigManager<SysConfigModel>, new()
     {
         private static string AccountSecretKey { get; set; }
 
         static DataSecurity()
         {
-            var configInfo = new Factory.UnitsFactory().GetConfigManager().GetConfigInfo();
+            var configInfo = new TConfigManager().GetConfigInfo();
             AccountSecretKey = configInfo.AccountSecretKey;
         }
 
 
-        public bool SecurityCheck(RequestModel requestModel)
+        public bool SecurityCheck(RequestModel<BaseUserInfo> requestModel)
         {
             //仅用于调试
             if (requestModel.Sign == "ignor") return true;

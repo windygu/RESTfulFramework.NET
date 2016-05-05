@@ -2,6 +2,7 @@
 using System.IO;
 using System;
 using System.ServiceModel.Activation;
+using System.ServiceModel.Web;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -12,18 +13,103 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public abstract class Service 
-       : IService
+    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager> : IService
+         where TConfigManager : IConfigManager<SysConfigModel>, new()
+         where TUserCache : IUserCache<TUserInfoModel>, new()
+         where TUserInfoModel : BaseUserInfo, new()
+         where TJsonSerialzer : IJsonSerialzer, new()
+         where TDBHelper : IDBHelper, new()
+         where TSmsManager : ISmsManager, new()
+
     {
 
-        private Factory.UnitsFactory Factory { get; set; }
+        public Factory.UnitsFactory<TUserInfoModel> UnitsFactoryContext { get; set; }
+        public static ILogManager LogManager { get; set; }
+        /// <summary>
+        /// 序列化器组件
+        /// </summary>
+        public TJsonSerialzer Serialzer { get; set; }
+
+        private static TDBHelper _DbHelper;
+        /// <summary>
+        /// 数据库操作
+        /// </summary>
+        public TDBHelper DbHelper
+        {
+            get
+            {
+                return _DbHelper;
+            }
+        }
+
+        private static TSmsManager _SmsManager;
+        /// <summary>
+        /// 用于短信的收发
+        /// </summary>
+        public TSmsManager SmsManager
+        {
+            get
+            {
+                return _SmsManager;
+            }
+        }
+
+        private static TUserCache _UserCache;
+        /// <summary>
+        /// 用户缓存应该是被多个实例共享的
+        /// </summary>
+        public TUserCache UserCache
+        {
+            get
+            {
+                return _UserCache;
+            }
+        }
+        public static ConfigInfo ConfigInfo { get; set; }
+
+        private static TConfigManager _ConfigManager;
+
+        /// <summary>
+        /// 用于配置管理
+        /// </summary>
+        public TConfigManager ConfigManager
+        {
+            get
+            {
+                return _ConfigManager;
+            }
+        }
+
+        public TUserInfoModel CurrUserInfo { get; set; }
+
+        public string Token { get; set; }
+
+        public Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
 
         public Service()
         {
-            Factory = new Factory.UnitsFactory();
-        }
+            SecurityFactoryContext = new Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel>();
+            Serialzer = new TJsonSerialzer();
+            _DbHelper = new TDBHelper();
+            _UserCache = new TUserCache();
+            _SmsManager = new TSmsManager();
+            _ConfigManager = new TConfigManager();
+            UnitsFactoryContext = new Factory.UnitsFactory<TUserInfoModel>();
 
-        protected static ILogManager LogManager { get; set; }
+
+            #region 获取用户基本信息
+            try
+            {
+                var token = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.QueryParameters["token"];
+                if (!string.IsNullOrEmpty(token))
+                {
+                    CurrUserInfo = UserCache?.GetUserInfo(token);
+                    Token = token;
+                }
+            }
+            catch { }
+            #endregion
+        }
 
         /// <summary>
         /// GET通用接口
@@ -39,7 +125,7 @@ namespace RESTfulFramework.NET.DataService
 
             try
             {
-                var requestModel = new RequestModel
+                var requestModel = new RequestModel<BaseUserInfo>
                 {
                     Body = StringToObject(body),
                     Token = token,
@@ -48,11 +134,21 @@ namespace RESTfulFramework.NET.DataService
                     Sign = sign,
                     Tag = body
                 };
+
                 var securityResult = SecurityCheck(requestModel);
                 if (!securityResult) return ResponseModelToStream(new ResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
 
+                var _requestModel = new RequestModel<TUserInfoModel>
+                {
+                    Body = requestModel.Body,
+                    Token = requestModel.Token,
+                    Api = requestModel.Api,
+                    Timestamp = requestModel.Timestamp,
+                    Sign = requestModel.Sign,
+                    Tag = requestModel.Tag
+                };
 
-                ResponseModel result = ApiHandler(requestModel);
+                ResponseModel result = ApiHandler(_requestModel);
 
                 return ResponseModelToStream(result);
             }
@@ -73,29 +169,27 @@ namespace RESTfulFramework.NET.DataService
         /// <param name="timestamp">时间戳</param>
         /// <param name="sign">签名</param>
         /// <returns>返回流</returns>
-        public virtual Stream Post(Stream stream,string token, string api, string timestamp, string sign)
+        public virtual Stream Post(Stream stream, string token, string api, string timestamp, string sign)
         {
             var body = StreamToString(stream);
             return Get(body, token, api, timestamp, sign);
         }
 
-
-
-
         /// <summary>
         /// 获取信息通用接口(不用token)
         /// </summary>
-        public Stream PostInfo(Stream stream,string api)
+        public Stream PostInfo(Stream stream, string api)
         {
             var body = StreamToString(stream);
             return GetInfo(body, api);
         }
+
         /// <summary>
         /// 获取信息通用接口(不用token)
         /// </summary>
         public Stream GetInfo(string body, string api)
         {
-            var requestModel = new RequestModel
+            var requestModel = new RequestModel<TUserInfoModel>
             {
                 Body = StringToObject(body),
                 Api = api,
@@ -108,7 +202,7 @@ namespace RESTfulFramework.NET.DataService
 
         public Stream GetStream(string body, string api)
         {
-            var requestModel = new RequestModel
+            var requestModel = new RequestModel<TUserInfoModel>
             {
                 Body = StringToObject(body),
                 Api = api,
@@ -118,15 +212,13 @@ namespace RESTfulFramework.NET.DataService
             Stream result = StreamApiHandler(requestModel);
             return result;
         }
+
         /// <summary>
         /// 安全检查
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract bool SecurityCheck(RequestModel requestModel);
-
-
-
+        public abstract bool SecurityCheck(RequestModel<BaseUserInfo> requestModel);
 
         /// <summary>
         /// 将要输出的对像转为流
@@ -152,19 +244,20 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public abstract object StringToObject(string str);
 
-
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual ResponseModel ApiHandler(RequestModel requestModel) => Factory.GetTokenApi(requestModel.Api).RunApi(requestModel);
+        protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetTokenApi<IService>(requestModel.Api).RunApi(requestModel, this);
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual ResponseModel InfoApiHandler(RequestModel requestModel) => Factory.GetInfoApi(requestModel.Api).RunApi(requestModel);
+        protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetInfoApi<IService>(requestModel.Api).RunApi(requestModel, this);
 
-
-        protected virtual Stream StreamApiHandler(RequestModel requestModel) => Factory.GetStreamApi(requestModel.Api).RunApi(requestModel);
+        /// <summary>
+        /// 获 取流数据
+        /// </summary>
+        protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetStreamApi<IService>(requestModel.Api).RunApi(requestModel, this);
 
     }
 }

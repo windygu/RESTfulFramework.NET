@@ -1,12 +1,12 @@
 ﻿using RESTfulFramework.NET.ComponentModel;
-using RESTfulFramework.NET.Units.Model;
 using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.Units
 {
-    public class UserCache : IUserCache<UserInfo>
+    public class UserCache<TUserInfoModel> : IUserCache<TUserInfoModel>
+      where TUserInfoModel : BaseUserInfo, new()
     {
         public UserCache() { }
         private static RedisClient Client { get; set; }
@@ -19,10 +19,10 @@ namespace RESTfulFramework.NET.Units
 
             //所有用户基本信息缓存redis
             var dbHelper = new DBHelper();
-            var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user_view`;");
+            var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
-                var redisuser = new UserInfo
+                var redisuser = new TUserInfoModel
                 {
                     account_name = user["account_name"].ToString(),
                     account_type_id = Unicode(user["account_type"].ToString()),
@@ -30,10 +30,10 @@ namespace RESTfulFramework.NET.Units
                     id = Guid.Parse(user["id"].ToString()),
                     passwrod = user["passwrod"].ToString(),
                     real_name = Unicode(user["realname"].ToString()),
-                    company_name = user["company_name"].ToString(),
-                    data_library_conntection = user["data_library_conntection"].ToString(),
-                    company_name_id = user["company_id"].ToString(),
-                    data_library_name = user["data_library_name"].ToString()
+                    //company_name = user["company_name"].ToString(),
+                    //data_library_conntection = user["data_library_conntection"].ToString(),
+                    //company_name_id = user["company_id"].ToString(),
+                    //data_library_name = user["data_library_name"].ToString()
                 };
                 Client.Set(redisuser.id.ToString(), redisuser);
             }
@@ -44,7 +44,7 @@ namespace RESTfulFramework.NET.Units
         /// </summary>
         /// <param name="token">用户token</param>
         /// <returns>返回用户信息</returns>
-        public UserInfo GetUserInfo(string token) => Client.Get<UserInfo>(token);
+        public TUserInfoModel GetUserInfo(string token) => Client.Get<TUserInfoModel>(token);
 
         /// <summary>
         /// 将用户信息保存在Redis缓存
@@ -52,7 +52,7 @@ namespace RESTfulFramework.NET.Units
         /// <param name="userInfo">用户信息</param>
         /// <param name="token">用户token</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public bool SetUserInfo(UserInfo userInfo, string token) => Client.Set(token, userInfo);
+        public bool SetUserInfo(TUserInfoModel userInfo, string token) => Client.Set(token, userInfo);
 
         /// <summary>
         /// 删除用户缓存信息

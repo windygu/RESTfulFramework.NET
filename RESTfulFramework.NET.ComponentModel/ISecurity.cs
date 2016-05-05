@@ -5,7 +5,7 @@
     /// </summary>
     public interface ISecurity<TRequestModel>
     {
-        bool SecurityCheck( TRequestModel requestModel);
+        bool SecurityCheck(TRequestModel requestModel);
     }
 
 }

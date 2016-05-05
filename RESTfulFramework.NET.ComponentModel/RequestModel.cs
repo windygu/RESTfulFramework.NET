@@ -1,10 +1,11 @@
-﻿using RESTfulFramework.NET.Units.Model;
+﻿
 using System.Runtime.Serialization;
 
 namespace RESTfulFramework.NET.ComponentModel
 {
     [DataContract]
-    public class RequestModel
+    public class RequestModel<TUserInfo>
+        where TUserInfo : BaseUserInfo
     {
         [DataMember]
         public object Body { get; set; }
@@ -19,6 +20,6 @@ namespace RESTfulFramework.NET.ComponentModel
         [DataMember]
         public object Tag { get; set; }
         [DataMember]
-        public UserInfo UserInfo { get; set; }
+        public TUserInfo UserInfo { get; set; }
     }
 }

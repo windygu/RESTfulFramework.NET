@@ -31,22 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PluginPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Configurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Configurator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Container.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PluginPackage.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PluginPackage.1.0.2\lib\PluginPackage.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +44,22 @@
     <Compile Include="UnitsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PluginPackage\PluginPackage.Configurator\PluginPackage.Configurator.csproj">
+      <Project>{aea3a30a-09e8-4156-94e3-8bfd74b08357}</Project>
+      <Name>PluginPackage.Configurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PluginPackage\PluginPackage.Container\PluginPackage.Container.csproj">
+      <Project>{564cf199-f984-407a-baad-c756ad19fa9a}</Project>
+      <Name>PluginPackage.Container</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PluginPackage\PluginPackage.Core\PluginPackage.Core.csproj">
+      <Project>{7d75ca8b-9b14-4f0c-8d5f-a1609c63cc90}</Project>
+      <Name>PluginPackage.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PluginPackage\PluginPackage\PluginPackage.csproj">
+      <Project>{eb26905a-595d-42e6-bc1c-500c8f97c5ce}</Project>
+      <Name>PluginPackage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
       <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
       <Name>RESTfulFramework.NET.ComponentModel</Name>

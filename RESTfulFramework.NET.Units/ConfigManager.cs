@@ -8,11 +8,13 @@ namespace RESTfulFramework.NET.Units
 {
     public class ConfigManager : IConfigManager<SysConfigModel>
     {
-        public string ConnectionString { get; set; }
+        public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"]?.ToString();
         private List<SysConfigModel> ConfigModels { get; set; }
-        public ConfigManager()
+        public ConfigManager() { }
+        public ConfigManager(string connectionString)
+            : this()
         {
-            ConnectionString = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
+            ConnectionString = connectionString;
         }
         public SysConfigModel GetValue(string key)
         {

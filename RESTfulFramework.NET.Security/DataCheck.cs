@@ -3,9 +3,9 @@ using System;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class DataCheck : ISecurity<RequestModel>
+    public class DataCheck : ISecurity<RequestModel<BaseUserInfo>>
     {
-        public bool SecurityCheck(RequestModel requestModel)
+        public bool SecurityCheck(RequestModel<BaseUserInfo> requestModel)
         {
             long timestamp;
             try
