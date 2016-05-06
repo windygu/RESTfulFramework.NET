@@ -3,14 +3,11 @@ using RESTfulFramework.NET.ComponentModel;
 
 namespace RESTfulFramework.NET.Business
 {
-    public class select : ITokenApi<RequestModel<UserInfo>, ResponseModel, IServiceContext<UserInfo>,UserInfo>
+    public class select : BaseTokenApi<RequestModel<UserInfo>, ResponseModel, UserInfo>
     {
-        public ResponseModel RunApi(RequestModel<UserInfo> source, IServiceContext<UserInfo> service)
+        public override ResponseModel RunApi(RequestModel<UserInfo> source)
         {
-            
-            throw new NotImplementedException();
+            return null;
         }
-
-        
     }
 }

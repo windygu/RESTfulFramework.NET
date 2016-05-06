@@ -67,12 +67,10 @@ namespace RESTfulFramework.NET.DataService
         public override bool SecurityCheck(RequestModel<BaseUserInfo> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
 
 
-
         /// <summary>
         /// 接收的请求流转为对像
         /// </summary>
         public override string StreamToString(Stream stream) => new StreamReader(stream).ReadToEnd();
-
 
         /// <summary>
         /// 输出的对像转换成流
@@ -88,12 +86,13 @@ namespace RESTfulFramework.NET.DataService
 
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
+
         protected override ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             var responseModel = base.ApiHandler(requestModel);
             try
             {
-                WriteLog($"接收请求：body={requestModel?.Tag}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}", "请求");
+                WriteLog($"接收请求：body={requestModel?.BodyString}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}", "请求");
             }
             catch { }
 

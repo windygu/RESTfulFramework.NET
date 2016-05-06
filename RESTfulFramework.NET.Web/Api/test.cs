@@ -5,9 +5,9 @@ namespace RESTfulFramework.NET.Web.Api
 {
     //http://url/DataService.svc/getinfo?body={json}&api=test
 
-    public class test : IInfoApi<RequestModel, ResponseModel>
+    public class test : BaseInfoApi<RequestModel<BaseUserInfo>, ResponseModel, BaseUserInfo>
     {
-        public ResponseModel RunApi(RequestModel source)
+        public override ResponseModel RunApi(RequestModel<BaseUserInfo> request)
         {
             throw new NotImplementedException();
         }

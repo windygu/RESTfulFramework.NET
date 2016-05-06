@@ -3,10 +3,20 @@
     /// <summary>
     /// 用于分配 业务逻辑实现 分配器
     /// </summary>
-    public interface IInfoApi<TRequestModel, TResponseModel, TServiceContext, TUserInfoModel>
-        where TServiceContext : IServiceContext<TUserInfoModel>
+    public interface IInfoApi<TRequestModel, TResponseModel, TUserInfoModel>
          where TUserInfoModel : BaseUserInfo, new()
     {
-        TResponseModel RunApi(TRequestModel source, TServiceContext service);
+        TResponseModel RunApi(TRequestModel request);
+
+        ApiContext<TUserInfoModel> Context { get; set; }
+    }
+
+    public abstract class BaseInfoApi<TRequestModel, TResponseModel, TUserInfoModel>
+       : IInfoApi<TRequestModel, TResponseModel, TUserInfoModel>
+       where TUserInfoModel : BaseUserInfo, new()
+    {
+        public abstract TResponseModel RunApi(TRequestModel request);
+
+        public ApiContext<TUserInfoModel> Context { get; set; }
     }
 }

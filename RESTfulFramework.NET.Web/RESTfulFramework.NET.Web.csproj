@@ -154,6 +154,10 @@
       <Project>{8D210768-36CD-4F70-8062-9BD7B5AF73D1}</Project>
       <Name>RESTfulFramework.NET.UnitsFactory</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj">
+      <Project>{d203bb50-4a56-4b9d-b341-9928b09e822d}</Project>
+      <Name>RESTfulFramework.NET.Units</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RESTfulFramework.NET.UserService\RESTfulFramework.NET.UserService.csproj">
       <Project>{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}</Project>
       <Name>RESTfulFramework.NET.UserService</Name>

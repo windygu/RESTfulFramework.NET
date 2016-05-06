@@ -3,9 +3,9 @@ using RESTfulFramework.NET.ComponentModel;
 
 namespace RESTfulFramework.NET.Business
 {
-    public class selectinfo : IInfoApi<RequestModel<UserInfo>, ResponseModel, IServiceContext<UserInfo>, UserInfo>
+    public class selectinfo : BaseInfoApi<RequestModel<UserInfo>, ResponseModel, UserInfo>
     {
-        public ResponseModel RunApi(RequestModel<UserInfo> source, IServiceContext<UserInfo> service)
+        public override ResponseModel RunApi(RequestModel<UserInfo> request)
         {
             throw new NotImplementedException();
         }

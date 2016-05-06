@@ -12,8 +12,8 @@ namespace RESTfulFramework.NET.Factory
     public class UnitsFactory<TUserInfoModel>
         where TUserInfoModel : BaseUserInfo, new()
     {
-        public virtual ITokenApi<RequestModel<TUserInfoModel>, ResponseModel, TServiceContext, TUserInfoModel> GetTokenApi<TServiceContext>(string api) where TServiceContext : IServiceContext<TUserInfoModel> => (new PluginPackage.PluginContainer()).GetPluginInstance<ITokenApi<RequestModel<TUserInfoModel>, ResponseModel, TServiceContext, TUserInfoModel>>(api);
-        public virtual IInfoApi<RequestModel<TUserInfoModel>, ResponseModel, TServiceContext, TUserInfoModel> GetInfoApi<TServiceContext>(string api) where TServiceContext : IServiceContext<TUserInfoModel> => (new PluginPackage.PluginContainer()).GetPluginInstance<IInfoApi<RequestModel<TUserInfoModel>, ResponseModel, TServiceContext, TUserInfoModel>>(api);
-        public virtual IStreamApi<RequestModel<TUserInfoModel>, TServiceContext, TUserInfoModel> GetStreamApi<TServiceContext>(string api) where TServiceContext : IServiceContext<TUserInfoModel> => (new PluginPackage.PluginContainer()).GetPluginInstance<IStreamApi<RequestModel<TUserInfoModel>, TServiceContext, TUserInfoModel>>(api);
+        public virtual ITokenApi<RequestModel<TUserInfoModel>, ResponseModel, TUserInfoModel> GetTokenApi(string api) => (new PluginPackage.PluginContainer()).GetPluginInstance<ITokenApi<RequestModel<TUserInfoModel>, ResponseModel, TUserInfoModel>>(api);
+        public virtual IInfoApi<RequestModel<TUserInfoModel>, ResponseModel, TUserInfoModel> GetInfoApi(string api) => (new PluginPackage.PluginContainer()).GetPluginInstance<IInfoApi<RequestModel<TUserInfoModel>, ResponseModel, TUserInfoModel>>(api);
+        public virtual IStreamApi<RequestModel<TUserInfoModel>, TUserInfoModel> GetStreamApi(string api) => (new PluginPackage.PluginContainer()).GetPluginInstance<IStreamApi<RequestModel<TUserInfoModel>, TUserInfoModel>>(api);
     }
 }

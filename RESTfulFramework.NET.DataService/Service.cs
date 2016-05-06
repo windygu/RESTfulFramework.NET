@@ -13,7 +13,7 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> 
+    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
         : IService<TUserInfoModel>, IServiceContext<TUserInfoModel>
          where TConfigManager : IConfigManager<SysConfigModel>, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
@@ -33,37 +33,32 @@ namespace RESTfulFramework.NET.DataService
         /// 安全校验
         /// </summary>
         public Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
-        public TLogManager LogManager { get; set; }
 
+        /// <summary>
+        /// 日志
+        /// </summary>
+        public TLogManager LogManager { get; set; }
 
         /// <summary>
         /// 序列化器组件
         /// </summary>
         public TJsonSerialzer Serialzer { get; set; }
 
-
-
         /// <summary>
         /// 数据库操作
         /// </summary>
         public TDBHelper DbHelper { get; set; }
-
-
 
         /// <summary>
         /// 用于短信的收发
         /// </summary>
         public TSmsManager SmsManager { get; set; }
 
-
-
         /// <summary>
         /// 用户缓存应该是被多个实例共享的
         /// </summary>
         public TUserCache UserCache { get; set; }
-
         public ConfigInfo ConfigInfo { get; set; }
-
 
 
         /// <summary>
@@ -71,16 +66,13 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public TConfigManager ConfigManager { get; set; }
 
-
         public TUserInfoModel CurrUserInfo { get; set; }
 
         public string Token { get; set; }
 
-
-
         #endregion
 
-        public ApiContext<TUserInfoModel> ApiContext
+        private ApiContext<TUserInfoModel> ApiContext
         {
             get
             {
@@ -98,10 +90,9 @@ namespace RESTfulFramework.NET.DataService
                 };
 
             }
-            private set { }
         }
 
-       
+
 
         public Service()
         {
@@ -149,7 +140,7 @@ namespace RESTfulFramework.NET.DataService
                     Api = api,
                     Timestamp = timestamp,
                     Sign = sign,
-                    Tag = body
+                    BodyString = body
                 };
 
                 var securityResult = SecurityCheck(requestModel);
@@ -162,7 +153,7 @@ namespace RESTfulFramework.NET.DataService
                     Api = requestModel.Api,
                     Timestamp = requestModel.Timestamp,
                     Sign = requestModel.Sign,
-                    Tag = requestModel.Tag
+                    BodyString = requestModel.BodyString
                 };
 
                 ResponseModel result = ApiHandler(_requestModel);
@@ -210,7 +201,7 @@ namespace RESTfulFramework.NET.DataService
             {
                 Body = StringToObject(body),
                 Api = api,
-                Tag = body
+                BodyString = body
             };
 
             ResponseModel result = InfoApiHandler(requestModel);
@@ -223,7 +214,7 @@ namespace RESTfulFramework.NET.DataService
             {
                 Body = StringToObject(body),
                 Api = api,
-                Tag = body
+                BodyString = body
             };
 
             Stream result = StreamApiHandler(requestModel);
@@ -264,25 +255,38 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
-        protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetTokenApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
+        {
+            var tokenApi = UnitsFactoryContext.GetTokenApi(requestModel.Api);
+            tokenApi.Context = ApiContext;
+            return tokenApi.RunApi(requestModel);
+        }
+
 
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
-        protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetInfoApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel)
+        {
+            return UnitsFactoryContext.GetInfoApi(requestModel.Api).RunApi(requestModel);
+        }
+
 
         /// <summary>
         /// 获 取流数据
         /// </summary>
-        protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel) => UnitsFactoryContext.GetStreamApi<IServiceContext<TUserInfoModel>>(requestModel.Api).RunApi(requestModel, this);
+        protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel)
+        {
+            return UnitsFactoryContext.GetStreamApi(requestModel.Api).RunApi(requestModel);
+        }
 
- 
+
         public ApiContext<TUserInfoModel> Context
         {
             get
             {
                 return ApiContext;
-            }   
+            }
         }
     }
 }

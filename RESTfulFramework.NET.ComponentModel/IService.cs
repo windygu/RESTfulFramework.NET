@@ -32,9 +32,7 @@ namespace RESTfulFramework.NET.ComponentModel
         [OperationContract]
         [WebGet(UriTemplate = "/getstream?body={body}&api={api}")]
         Stream GetStream(string body, string api);
-        #endregion
-
-      
+        #endregion  
     }
 
 

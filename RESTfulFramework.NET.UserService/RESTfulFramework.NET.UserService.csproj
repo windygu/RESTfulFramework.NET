@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseUserService.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj">
@@ -54,9 +55,9 @@
       <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
       <Name>RESTfulFramework.NET.ComponentModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.UnitsFactory\RESTfulFramework.NET.UnitsFactory.csproj">
-      <Project>{8d210768-36cd-4f70-8062-9bd7b5af73d1}</Project>
-      <Name>RESTfulFramework.NET.UnitsFactory</Name>
+    <ProjectReference Include="..\RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj">
+      <Project>{d203bb50-4a56-4b9d-b341-9928b09e822d}</Project>
+      <Name>RESTfulFramework.NET.Units</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
