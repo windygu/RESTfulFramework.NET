@@ -24,12 +24,12 @@ namespace RESTfulFramework.NET.Units
             {
                 var redisuser = new TUserInfoModel
                 {
-                    account_name = user["account_name"].ToString(),
-                    account_type_id = Unicode(user["account_type"].ToString()),
-                    create_time = Convert.ToDateTime(user["create_time"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
-                    id = Guid.Parse(user["id"].ToString()),
-                    passwrod = user["passwrod"].ToString(),
-                    real_name = Unicode(user["realname"].ToString()),
+                    account_name = user["account_name"]?.ToString(),
+                    account_type_id = Unicode(user["account_type"]?.ToString()),
+                    create_time = Convert.ToDateTime(user["create_time"]?.ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
+                    id = Guid.Parse(user["id"]?.ToString()),
+                    passwrod = user["passwrod"]?.ToString(),
+                    real_name = Unicode(user["realname"]?.ToString()),
                     //company_name = user["company_name"].ToString(),
                     //data_library_conntection = user["data_library_conntection"].ToString(),
                     //company_name_id = user["company_id"].ToString(),
@@ -93,6 +93,11 @@ namespace RESTfulFramework.NET.Units
         public Dictionary<string, object> GetAll()
         {
             return Client.GetAll<object>(Client.GetAllKeys()) as Dictionary<string, object>;
+        }
+
+        public bool RefreshCache()
+        {
+            throw new NotImplementedException();
         }
     }
 }

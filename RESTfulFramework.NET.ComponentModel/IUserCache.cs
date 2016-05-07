@@ -63,5 +63,10 @@ namespace RESTfulFramework.NET.ComponentModel
         /// 获取所有键值对
         /// </summary>
         Dictionary<string, object> GetAll();
+
+        /// <summary>
+        /// 刷新缓存
+        /// </summary>
+        bool RefreshCache();
     }
 }

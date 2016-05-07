@@ -192,6 +192,7 @@ namespace RESTfulFramework.NET.DataService
             return GetInfo(body, api);
         }
 
+
         /// <summary>
         /// 获取信息通用接口(不用token)
         /// </summary>
@@ -207,6 +208,7 @@ namespace RESTfulFramework.NET.DataService
             ResponseModel result = InfoApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
+
 
         public Stream GetStream(string body, string api)
         {
@@ -262,7 +264,6 @@ namespace RESTfulFramework.NET.DataService
             return tokenApi.RunApi(requestModel);
         }
 
-
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
@@ -271,7 +272,6 @@ namespace RESTfulFramework.NET.DataService
             return UnitsFactoryContext.GetInfoApi(requestModel.Api).RunApi(requestModel);
         }
 
-
         /// <summary>
         /// 获 取流数据
         /// </summary>
@@ -279,7 +279,6 @@ namespace RESTfulFramework.NET.DataService
         {
             return UnitsFactoryContext.GetStreamApi(requestModel.Api).RunApi(requestModel);
         }
-
 
         public ApiContext<TUserInfoModel> Context
         {

@@ -245,7 +245,10 @@ namespace RESTfulFramework.NET.UserService
 
             var userid = Guid.NewGuid();
             var resultInt = DbHelper.ExcuteSql($"INSERT INTO `user` (id,account_name,passwrod,account_type,realname) VALUES ('{userid}','{username}','{password}','手机','{realname}')");
-            if (resultInt > 0) return new UserResponseModel<string> { Code = Code.Sucess, Msg = "注册成功" };
+            if (resultInt > 0) {
+                UserCache.RefreshCache();
+                return new UserResponseModel<string> { Code = Code.Sucess, Msg = "注册成功" };
+            }
             return new UserResponseModel<string> { Code = Code.SystemException, Msg = "注册失败" };
         }
 
