@@ -5,7 +5,7 @@ using System.Reflection;
 namespace RESTfulFramework.NET.Web.Server
 {
     /*调用Api相关,无需更改或谨慎更改。*/
-    public class RESTfulDataService : RESTfulFramework.NET.DataService.DataService
+    public class RESTfulDataService : DataService.DataService
     {
         protected override ResponseModel ApiHandler(RequestModel<BaseUserInfo> requestModel)
         {

@@ -19,7 +19,7 @@ namespace RESTfulFramework.NET.UserService
     /// <typeparam name="TUserInfoModel">用户信息</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class BaseUserService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
-        : IUserService<TUserInfoModel>, IServiceContext<TUserInfoModel>
+        : IUserService, IServiceContext<TUserInfoModel>
          where TConfigManager : IConfigManager<SysConfigModel>, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
          where TUserInfoModel : BaseUserInfo, new()

@@ -14,7 +14,7 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
-        : IService<TUserInfoModel>, IServiceContext<TUserInfoModel>
+        : IService, IServiceContext<TUserInfoModel>
          where TConfigManager : IConfigManager<SysConfigModel>, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
          where TUserInfoModel : BaseUserInfo, new()

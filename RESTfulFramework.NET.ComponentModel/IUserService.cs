@@ -5,8 +5,7 @@ using System.ServiceModel.Web;
 namespace RESTfulFramework.NET.ComponentModel
 {
     [ServiceContract]
-    public interface IUserService<TUserInfoModel>
-        where TUserInfoModel : BaseUserInfo, new()
+    public interface IUserService
     {
 
         [OperationContract]

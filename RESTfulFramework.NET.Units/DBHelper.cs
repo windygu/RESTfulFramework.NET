@@ -79,7 +79,7 @@ namespace RESTfulFramework.NET.Units
                 logManager.WriteLog(ex.Message);
                 throw ex;
             }
-            finally
+            finally 
             {
                 dbconnection.Close();
             }

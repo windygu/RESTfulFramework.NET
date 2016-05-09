@@ -8,8 +8,7 @@ namespace RESTfulFramework.NET.ComponentModel
     /// 基础核心接口
     /// </summary>
     [ServiceContract]
-    public interface IService<TUserInfoModel>
-        where TUserInfoModel : BaseUserInfo, new()
+    public interface IService
 
     {
         #region 通用接口
