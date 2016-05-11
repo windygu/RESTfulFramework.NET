@@ -44,10 +44,10 @@ F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTful
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
+D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll
+D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
-D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll
-D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.pdb

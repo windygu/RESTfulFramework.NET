@@ -81,7 +81,7 @@ namespace RESTfulFramework.NET.Units
                 dbcommand.CommandText = $"{sql};";
                 var dt = new DataTable();
                 dba.Fill(dt);
-                var json = JsonSerialzer.SerializeObject(dt.ToDictionary());
+                var json = JsonSerialzer.SerializeObject(dt.ToDictionary("yyyy/MM/dd HH:mm:ss"));
                 dba.Dispose();
                 return JsonSerialzer.DeserializeObject<T>(json);
             }

@@ -60,7 +60,6 @@ namespace RESTfulFramework.NET.Units
             var dbconnection = new MySqlConnection(connectionString);
             try
             {
-
                 var dbcommand = new MySqlCommand();
                 dbcommand.Connection = dbconnection;
                 var dba = new MySqlDataAdapter(dbcommand);
@@ -69,7 +68,7 @@ namespace RESTfulFramework.NET.Units
                 var dt = new DataTable();
                 dba.Fill(dt);
                 var jSerialzer = new JsonSerialzer();
-                var json = jSerialzer.SerializeObject(dt.ToDictionary());
+                var json = jSerialzer.SerializeObject(dt.ToDictionary("yyyy/MM/dd HH:mm:ss"));
                 dbconnection.Close();
                 return jSerialzer.DeserializeObject<T>(json);
             }

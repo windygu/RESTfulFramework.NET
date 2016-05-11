@@ -1,4 +1,5 @@
-﻿using RESTfulFramework.NET.ComponentModel;
+﻿
+using RESTfulFramework.NET.ComponentModel;
 
 namespace RESTfulFramework.NET.Units
 {
@@ -7,6 +8,8 @@ namespace RESTfulFramework.NET.Units
         public JsonSerialzer() { }
         public T DeserializeObject<T>(string json) => Json2KeyValue.JsonConvert.DeserializeObject<T>(json);
 
+
         public string SerializeObject<T>(T obj) => Json2KeyValue.JsonConvert.SerializeObject(obj);
+
     }
 }

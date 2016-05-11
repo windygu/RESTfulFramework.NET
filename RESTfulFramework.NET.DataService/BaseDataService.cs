@@ -38,7 +38,7 @@ namespace RESTfulFramework.NET.DataService
             }
             #endregion
         }
-
+        
         /// <summary>
         /// 对像序列化为字符串
         /// </summary>
