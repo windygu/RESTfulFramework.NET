@@ -3,6 +3,7 @@ using System.IO;
 using System;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
+using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -58,8 +59,10 @@ namespace RESTfulFramework.NET.DataService
         /// 用户缓存应该是被多个实例共享的
         /// </summary>
         public TUserCache UserCache { get; set; }
+
         public ConfigInfo ConfigInfo { get; set; }
 
+        public Dictionary<string, string> RequestHeader { get; set; }
 
         /// <summary>
         /// 用于配置管理
@@ -86,7 +89,8 @@ namespace RESTfulFramework.NET.DataService
                     Token = Token,
                     UserCache = UserCache,
                     JsonSerialzer = Serialzer,
-                    LogManager = LogManager
+                    LogManager = LogManager,
+                    RequestHeader = RequestHeader
                 };
 
             }
@@ -104,7 +108,7 @@ namespace RESTfulFramework.NET.DataService
             LogManager = new TLogManager();
             UnitsFactoryContext = new Factory.UnitsFactory<TUserInfoModel>();
             SecurityFactoryContext = new Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel>();
-
+            RequestHeader = new Dictionary<string, string>();
             #region 获取用户基本信息
             try
             {
@@ -114,6 +118,27 @@ namespace RESTfulFramework.NET.DataService
                     CurrUserInfo = UserCache?.GetUserInfo(token);
                     Token = token;
                 }
+            }
+            catch { }
+
+
+
+            #endregion
+
+            #region 获取请求的包头信息
+            try
+            {
+
+                //取header
+                foreach (var item in WebOperationContext.Current.IncomingRequest.Headers.AllKeys)
+                {
+                    try
+                    {
+                        RequestHeader.Add(item, WebOperationContext.Current.IncomingRequest.Headers[item]);
+                    }
+                    catch { }
+                }
+
             }
             catch { }
             #endregion

@@ -52,5 +52,7 @@ namespace RESTfulFramework.NET.ComponentModel
         /// 基础的配置
         /// </summary>
         public ConfigInfo ConfigInfo { get; set; }
+
+        public Dictionary<string, string> RequestHeader { get; set; }
     }
 }
