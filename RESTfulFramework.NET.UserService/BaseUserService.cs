@@ -93,7 +93,7 @@ namespace RESTfulFramework.NET.UserService
                     UserCache = UserCache,
                     JsonSerialzer = Serialzer,
                     LogManager = LogManager,
-                    RequestHeader=RequestHeader
+                    RequestHeader = RequestHeader
                 };
 
             }
@@ -168,7 +168,21 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>返回用户信息</returns>
         public virtual UserResponseModel<BaseUserInfo> GetUserInfo(string token)
         {
-
+            if (CurrUserInfo == null) {
+                return new UserResponseModel<BaseUserInfo>
+                {
+                    Code = Code.Fail,
+                    Msg = new BaseUserInfo
+                    {
+                        account_name = CurrUserInfo?.account_name,
+                        account_type_id = CurrUserInfo?.account_type_id,
+                        client_id = CurrUserInfo?.client_id,
+                        create_time = CurrUserInfo?.create_time,
+                        id = CurrUserInfo == null ? Guid.Empty : CurrUserInfo.id,
+                        real_name = CurrUserInfo?.real_name
+                    }
+                };
+            }
             //var userInfo = (BaseUserInfo)CurrUserInfo;
             //userInfo.passwrod = "";
             //userInfo.client_id = "";
@@ -177,12 +191,12 @@ namespace RESTfulFramework.NET.UserService
                 Code = Code.Sucess,
                 Msg = new BaseUserInfo
                 {
-                    account_name = CurrUserInfo.account_name,
-                    account_type_id = CurrUserInfo.account_type_id,
-                    client_id = CurrUserInfo.client_id,
-                    create_time = CurrUserInfo.create_time,
-                    id = CurrUserInfo.id,
-                    real_name = CurrUserInfo.real_name
+                    account_name = CurrUserInfo?.account_name,
+                    account_type_id = CurrUserInfo?.account_type_id,
+                    client_id = CurrUserInfo?.client_id,
+                    create_time = CurrUserInfo?.create_time,
+                    id = CurrUserInfo == null ? Guid.Empty : CurrUserInfo.id,
+                    real_name = CurrUserInfo?.real_name
                 }
             };
         }
@@ -263,7 +277,8 @@ namespace RESTfulFramework.NET.UserService
 
             var userid = Guid.NewGuid();
             var resultInt = DbHelper.ExcuteSql($"INSERT INTO `user` (id,account_name,passwrod,account_type,realname) VALUES ('{userid}','{username}','{password}','手机','{realname}')");
-            if (resultInt > 0) {
+            if (resultInt > 0)
+            {
                 UserCache.RefreshCache();
                 return new UserResponseModel<string> { Code = Code.Sucess, Msg = "注册成功" };
             }
@@ -312,6 +327,12 @@ namespace RESTfulFramework.NET.UserService
         protected virtual bool ValidateSmsCode(string phone, string smscode)
         {
             return UserCache.GetValue(phone) == smscode;
+        }
+
+        public UserResponseModel<string> IsLogin(string token)
+        {
+            if (CurrUserInfo != null) return new UserResponseModel<string> { Code = Code.Sucess, Msg = "您已登陆。" };
+            return new UserResponseModel<string> { Code = Code.Sucess, Msg = "登陆已失效。" };
         }
 
         public ApiContext<TUserInfoModel> Context

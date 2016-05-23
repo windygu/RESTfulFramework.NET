@@ -42,7 +42,9 @@ namespace RESTfulFramework.NET.ComponentModel
         [WebGet(UriTemplate = "/smscodeexist?code={code}", ResponseFormat = WebMessageFormat.Json)]
         UserResponseModel<string> SmsCodeExist(string code);
 
+        [OperationContract]
+        [WebGet(UriTemplate = "/is_login?token={token}", ResponseFormat = WebMessageFormat.Json)]
+        UserResponseModel<string> IsLogin(string token);
 
-       
     }
 }
