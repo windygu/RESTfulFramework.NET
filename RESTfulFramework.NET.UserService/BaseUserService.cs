@@ -168,7 +168,8 @@ namespace RESTfulFramework.NET.UserService
         /// <returns>返回用户信息</returns>
         public virtual UserResponseModel<BaseUserInfo> GetUserInfo(string token)
         {
-            if (CurrUserInfo == null) {
+            if (CurrUserInfo == null)
+            {
                 return new UserResponseModel<BaseUserInfo>
                 {
                     Code = Code.Fail,
@@ -333,6 +334,19 @@ namespace RESTfulFramework.NET.UserService
         {
             if (CurrUserInfo != null) return new UserResponseModel<string> { Code = Code.Sucess, Msg = "您已登陆。" };
             return new UserResponseModel<string> { Code = Code.Sucess, Msg = "登陆已失效。" };
+        }
+
+        public virtual void RefreshCurrUserInfo()
+        {
+            try
+            {
+                UserCache.RefreshCache();
+                var redisuser = UserCache.GetUserInfo(CurrUserInfo.id.ToString());
+                CurrUserInfo = redisuser;
+                UserCache.SetUserInfo(redisuser, Token);
+            }
+            catch { }
+
         }
 
         public ApiContext<TUserInfoModel> Context
