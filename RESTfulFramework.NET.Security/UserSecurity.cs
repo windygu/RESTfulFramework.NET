@@ -13,20 +13,24 @@ namespace RESTfulFramework.NET.Security
         {
             UserCache = new TUserCache();
         }
-        public bool SecurityCheck(RequestModel<BaseUserInfo> requestModel)
+        public Tuple<bool, string, int> SecurityCheck(RequestModel<BaseUserInfo> requestModel)
         {
             try
             {
-                var userInfo = UserCache.GetUserInfo(requestModel.Token);
-                if (userInfo == null) return false;
+                var userInfo = UserCache?.GetUserInfo(requestModel.Token);
+                if (userInfo == null)
+                {
+                    // return false;
+                    return new Tuple<bool, string, int>(false, "token无效或已过期。", Code.TokenError);
+                }
                 requestModel.UserInfo = userInfo;
+                return new Tuple<bool, string, int>(true, "token正确。", Code.Sucess);
             }
             catch (Exception ex)
             {
-                throw new System.Exception($"查询不到指定的Token数据。{ex.Message}");
+                return new Tuple<bool, string, int>(false, $"token异常。{ex.Message}", Code.TokenError);
+                //throw new System.Exception($"查询不到指定的Token数据。{ex.Message}");
             }
-
-            return true;
         }
     }
 }

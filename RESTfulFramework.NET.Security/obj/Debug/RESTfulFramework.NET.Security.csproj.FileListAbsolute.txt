@@ -51,3 +51,5 @@ F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll.CodeAnalysisLog.xml
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll.lastcodeanalysissucceeded

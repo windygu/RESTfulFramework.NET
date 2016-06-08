@@ -121,8 +121,6 @@ namespace RESTfulFramework.NET.DataService
             }
             catch { }
 
-
-
             #endregion
 
             #region 获取请求的包头信息
@@ -158,9 +156,21 @@ namespace RESTfulFramework.NET.DataService
 
             try
             {
+                LogManager?.Info ($"接收请求：body={body}&token={token}&api={api}&timestamp={timestamp}&sign={sign}");
+                object bodyObejct;
+                try
+                {
+                    bodyObejct = StringToObject(body);
+                }
+                catch (Exception)
+                {
+                    return ResponseModelToStream(new ResponseModel { Code = Code.JsonInvalid, Msg = "无效的JSON。请检查JSON格式是否正确" });
+                }
+
+
                 var requestModel = new RequestModel<BaseUserInfo>
                 {
-                    Body = StringToObject(body),
+                    Body = bodyObejct,
                     Token = token,
                     Api = api,
                     Timestamp = timestamp,
@@ -169,7 +179,7 @@ namespace RESTfulFramework.NET.DataService
                 };
 
                 var securityResult = SecurityCheck(requestModel);
-                if (!securityResult) return ResponseModelToStream(new ResponseModel { Code = Code.NoAllow, Msg = "权限不足" });
+                if (!securityResult.Item1) return ResponseModelToStream(new ResponseModel { Code = securityResult.Item3, Msg = securityResult.Item2 });
 
                 var _requestModel = new RequestModel<TUserInfoModel>
                 {
@@ -253,7 +263,7 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract bool SecurityCheck(RequestModel<BaseUserInfo> requestModel);
+        public abstract Tuple<bool, string, int> SecurityCheck(RequestModel<BaseUserInfo> requestModel);
 
         /// <summary>
         /// 将要输出的对像转为流

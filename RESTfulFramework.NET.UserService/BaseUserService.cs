@@ -172,7 +172,7 @@ namespace RESTfulFramework.NET.UserService
             {
                 return new UserResponseModel<BaseUserInfo>
                 {
-                    Code = Code.Fail,
+                    Code = Code.TokenError,
                     Msg = new BaseUserInfo
                     {
                         account_name = CurrUserInfo?.account_name,
@@ -333,7 +333,7 @@ namespace RESTfulFramework.NET.UserService
         public UserResponseModel<string> IsLogin(string token)
         {
             if (CurrUserInfo != null) return new UserResponseModel<string> { Code = Code.Sucess, Msg = "您已登陆。" };
-            return new UserResponseModel<string> { Code = Code.Sucess, Msg = "登陆已失效。" };
+            return new UserResponseModel<string> { Code = Code.TokenError, Msg = "登陆已失效。" };
         }
 
         public virtual void RefreshCurrUserInfo()

@@ -64,7 +64,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 安全检查
         /// </summary>
-        public override bool SecurityCheck(RequestModel<BaseUserInfo> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
+        public override Tuple<bool, string, int> SecurityCheck(RequestModel<BaseUserInfo> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
 
 
         /// <summary>

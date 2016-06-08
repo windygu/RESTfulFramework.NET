@@ -61,3 +61,5 @@ F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.pdb
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.dll.CodeAnalysisLog.xml
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Units.dll.lastcodeanalysissucceeded

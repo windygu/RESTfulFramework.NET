@@ -74,3 +74,5 @@ F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Business\obj\Debug\RESTfulFramework.NET.Business.csprojResolveAssemblyReference.cache
+F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll.CodeAnalysisLog.xml
+F:\Project\RESTfulFramework.NET\bin\Business\RESTfulFramework.NET.Business.dll.lastcodeanalysissucceeded

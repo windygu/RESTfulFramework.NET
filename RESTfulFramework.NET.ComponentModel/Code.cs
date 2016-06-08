@@ -70,6 +70,9 @@
         /// </summary>
         public static int SystemException { get; } = -12;
 
+        /// <summary>
+        /// 权限不足
+        /// </summary>
         public static int NoAllow { get; } = -13;
 
         /// <summary>
@@ -86,7 +89,24 @@
         /// 操作失败
         /// </summary>
         public static int Fail { get; } = -16;
+
+        /// <summary>
+        /// 没有加入组织
+        /// </summary>
+        public static int IsNotJoinEnterpriseLibrary { get; } = -17;
+
+        /// <summary>
+        /// 时间戳不正确
+        /// </summary>
+        public static int TimestampError { get; } = -18;
+
+        /// <summary>
+        /// JSON格式无效
+        /// </summary>
+        public static int JsonInvalid { get; } = -19;
+
+
     }
 
-    
+
 }
