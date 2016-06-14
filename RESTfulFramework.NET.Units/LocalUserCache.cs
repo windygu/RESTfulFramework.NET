@@ -22,7 +22,7 @@ namespace RESTfulFramework.NET.Units
         public bool ContainsUserInfo(string key) => Client.ContainsKey(key);
 
 
-        public BaseUserInfo GetUserInfo(string key) => (BaseUserInfo)Client.GetValueOrDefault(key);
+        public BaseUserInfo GetUserInfo(string key) => (BaseUserInfo)Client[key];
 
 
         public bool RemoveUserInfo(string key) => Client.Remove(key);
@@ -44,7 +44,7 @@ namespace RESTfulFramework.NET.Units
         public bool Contains(string key) => ContainsUserInfo(key);
 
 
-        public string GetValue(string key) => Client.GetValueOrDefault(key)?.ToString();
+        public string GetValue(string key) => Client[key]?.ToString();
 
 
 
@@ -83,7 +83,7 @@ namespace RESTfulFramework.NET.Units
         private static void Refresh()
         {
             //所有用户基本信息缓存redis
-           
+
             var dbHelper = new DBHelper();
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)

@@ -235,7 +235,7 @@ namespace RESTfulFramework.NET.UserService
 
 
             //产生TOKEN
-            var token = Convert.ToBase64String(Encoding.UTF8.GetBytes(Md5.GetMd5(sign + Guid.NewGuid(), Encoding.UTF8)));
+            var token = Convert.ToBase64String(Encoding.UTF8.GetBytes(Md5.GetMd5(sign + Guid.NewGuid(), Encoding.UTF8))).Replace("=", "");
             Token = token;
 
             //写入redis服务
