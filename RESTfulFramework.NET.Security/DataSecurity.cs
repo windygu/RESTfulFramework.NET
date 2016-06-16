@@ -18,7 +18,11 @@ namespace RESTfulFramework.NET.Security
             AccountSecretKey = configManager.GetValue("account_secret_key").value; ;
         }
 
-
+        /// <summary>
+        /// 对签名进行校验
+        /// </summary>
+        /// <param name="requestModel">请求的模型</param>
+        /// <returns></returns>
         public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
             //仅用于调试

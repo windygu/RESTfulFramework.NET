@@ -42,6 +42,9 @@ namespace RESTfulFramework.NET.ComponentModel
         /// </summary>
         public TJsonSerialzer JsonSerialzer { get; set; }
 
+        /// <summary>
+        /// 日志组件
+        /// </summary>
         public TLogManager LogManager { get; set; }
 
         /// <summary>

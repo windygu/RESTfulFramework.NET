@@ -1,5 +1,6 @@
 ﻿namespace RESTfulFramework.NET.ComponentModel
 {
+
     public interface IServiceContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
          where TConfigManager : IConfigManager<TConfigModel>, new()
          where TConfigModel : IConfigModel, new()

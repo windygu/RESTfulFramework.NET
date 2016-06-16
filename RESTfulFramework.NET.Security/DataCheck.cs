@@ -6,6 +6,10 @@ namespace RESTfulFramework.NET.Security
     public class DataCheck<TUserInfoModel> : ISecurity<RequestModel<TUserInfoModel>>
         where TUserInfoModel : IBaseUserInfo
     {
+        /// <summary>
+        /// 对时间戳进行校验
+        /// </summary>
+        /// <param name="requestModel">请求的模型</param>
         public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
             long timestamp;

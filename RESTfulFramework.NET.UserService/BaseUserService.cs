@@ -30,7 +30,7 @@ namespace RESTfulFramework.NET.UserService
          where TLogManager : ILogManager, new()
     {
 
-        #region 基础组件
+        #region ======  基础组件  ======
 
         public TLogManager LogManager { get; set; }
 
@@ -79,29 +79,7 @@ namespace RESTfulFramework.NET.UserService
 
         #endregion
 
-        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> ApiContext
-        {
-            get
-            {
-                return new ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
-                {
-                    ConfigInfo = ConfigInfo,
-                    ConfigManager = ConfigManager,
-                    CurrUserInfo = CurrUserInfo,
-                    DbHelper = DbHelper,
-                    SmsManager = SmsManager,
-                    Token = Token,
-                    UserCache = UserCache,
-                    JsonSerialzer = Serialzer,
-                    LogManager = LogManager,
-                    RequestHeader = RequestHeader
-                };
-
-            }
-            private set { }
-        }
-
-
+        #region ======   初始化   ======
         public BaseUserService()
         {
             #region 实例化基础组件
@@ -145,7 +123,7 @@ namespace RESTfulFramework.NET.UserService
                     SmsCodeContent = ConfigManager?.GetValue("sms_code_content")?.value,
                     RedisAddress = ConfigManager?.GetValue("redis_address")?.value,
                     RedisPort = ConfigManager?.GetValue("redis_port")?.value,
-                }; 
+                };
             }
             catch (Exception)
             {
@@ -169,6 +147,42 @@ namespace RESTfulFramework.NET.UserService
             catch { }
             #endregion
         }
+
+        #endregion
+
+        #region ====== 用户上下文 ======
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> ApiContext
+        {
+            get
+            {
+                return new ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+                {
+                    ConfigInfo = ConfigInfo,
+                    ConfigManager = ConfigManager,
+                    CurrUserInfo = CurrUserInfo,
+                    DbHelper = DbHelper,
+                    SmsManager = SmsManager,
+                    Token = Token,
+                    UserCache = UserCache,
+                    JsonSerialzer = Serialzer,
+                    LogManager = LogManager,
+                    RequestHeader = RequestHeader
+                };
+
+            }
+            private set { }
+        }
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
+        {
+            get
+            {
+                return ApiContext;
+            }
+        }
+        #endregion
+
+        #region ======  用户接口  ======
+
 
         /// <summary>
         /// 获取用户信息
@@ -345,6 +359,9 @@ namespace RESTfulFramework.NET.UserService
             return new UserResponseModel<string> { Code = Code.TokenError, Msg = "登陆已失效。" };
         }
 
+        #endregion
+
+        #region ======  刷新缓存  ======
         public virtual void RefreshCurrUserInfo()
         {
             try
@@ -355,17 +372,8 @@ namespace RESTfulFramework.NET.UserService
                 UserCache.SetUserInfo(redisuser, Token);
             }
             catch { }
-
         }
+        #endregion
 
-        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
-        {
-            get
-            {
-                return ApiContext;
-            }
-
-
-        }
     }
 }

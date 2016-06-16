@@ -2,7 +2,6 @@
 {
     public interface ILogManager
     {
-        //Debug, Info, Warn, Error and Fatal
         void WriteLog(string msg);
         void Debug(string msg);
         void Info(string msg);

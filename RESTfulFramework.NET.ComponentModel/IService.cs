@@ -12,7 +12,6 @@ namespace RESTfulFramework.NET.ComponentModel
 
     {
         #region 通用接口
-
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "/post?token={token}&api={api}&timestamp={timestamp}&sign={sign}")]
         Stream Post(Stream stream, string token, string api, string timestamp, string sign);

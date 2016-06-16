@@ -10,11 +10,17 @@ using RESTfulFramework.NET.Security;
 namespace RESTfulFramework.NET.DataService
 {
     /// <summary>
-    /// WCF服务通用接口
+    /// RESTful服务
     /// </summary>
-    /// <typeparam name="TConfigurator">组件配置信息</typeparam>
-    /// <typeparam name="TRequestModel">请求模型</typeparam>
-    /// <typeparam name="TResponseModel">输出模型</typeparam>
+    /// <typeparam name="TConfigManager">配置管理器，用于设置和读取配置。即所有与配置相关的都使用该TConfigManager管理、读取、设置。</typeparam>
+    /// <typeparam name="TConfigModel">配置模型，配置管理器依赖于此模型。该模型定义了配置信息的字段，例如：时间、地址、人物。</typeparam>
+    /// <typeparam name="TUserCache">缓存管理，用户信息、token及自定义信息都可以缓存下来。该泛型定义了缓存的方式，或内存或数据库或redis</typeparam>
+    /// <typeparam name="TUserInfoModel">用户信息模型，如用户名、用户性别</typeparam>
+    /// <typeparam name="TJsonSerialzer">序列化器，可以使用性能更佳的序列化器</typeparam>
+    /// <typeparam name="TDBHelper">数据库操作</typeparam>
+    /// <typeparam name="TSmsManager">短信管理</typeparam>
+    /// <typeparam name="TLogManager">日志</typeparam>
+    /// <typeparam name="TController">控制器，该泛型决定了http请求调用哪个控制器。</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public abstract class Service<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager, TController>
         : IService, IServiceContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
@@ -30,15 +36,12 @@ namespace RESTfulFramework.NET.DataService
     {
 
 
-        #region 基础组件
-        /// <summary>
-        /// API接口转换为实例
-        /// </summary>
-        //public Factory.UnitsFactory<TUserInfoModel> UnitsFactoryContext { get; set; }
+        #region ======  基础组件  ======
+
         /// <summary>
         /// 安全校验
         /// </summary>
-        public  SecurityFactory<TConfigManager,TConfigModel, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
+        public SecurityFactory<TConfigManager, TConfigModel, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
 
         /// <summary>
         /// 日志
@@ -65,8 +68,15 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public TUserCache UserCache { get; set; }
 
+        /// <summary>
+        /// 基础的必须的配置信息
+        /// </summary>
         public ConfigInfo ConfigInfo { get; set; }
 
+
+        /// <summary>
+        /// http请求的头部信息
+        /// </summary>
         public Dictionary<string, string> RequestHeader { get; set; }
 
         /// <summary>
@@ -74,14 +84,22 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         public TConfigManager ConfigManager { get; set; }
 
+        /// <summary>
+        /// 当前用户信息
+        /// </summary>
         public TUserInfoModel CurrUserInfo { get; set; }
 
+        /// <summary>
+        /// 当前用户token
+        /// </summary>
         public string Token { get; set; }
 
         #endregion
 
-
-
+        #region  ====== 用户上下文 ======
+        /// <summary>
+        /// 当前用户请求的上下文信息，包括了一些基础组件
+        /// </summary>
         private ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> ApiContext
         {
             get
@@ -102,14 +120,39 @@ namespace RESTfulFramework.NET.DataService
             }
         }
 
+        /// <summary>
+        /// 当前用户请求的上下文信息，包括了一些基础组件
+        /// </summary>
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
+        {
+            get
+            {
+                return ApiContext;
+            }
+        }
+        #endregion
+
+        #region ======   初始化   ======
+        /// <summary>
+        /// TController控制器定义的所有方法
+        /// </summary>
         private static System.Reflection.MethodInfo[] Methods { get; set; }
 
+
+        /// <summary>
+        /// 静态初始化
+        /// </summary>
         static Service()
         {
             var business = new TController();
             Methods = business.GetType().GetMethods();
         }
 
+
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public Service()
         {
             Serialzer = new TJsonSerialzer();
@@ -154,12 +197,16 @@ namespace RESTfulFramework.NET.DataService
             #endregion
         }
 
+        #endregion
+
+        #region ======  接口服务  ======
+
         /// <summary>
         /// GET通用接口
         /// </summary>
         /// <param name="body">主要信息</param>
         /// <param name="token">token</param>
-        /// <param name="api">api</param>
+        /// <param name="api">api，即与控制器内的方法名对应</param>
         /// <param name="timestamp">时间戳</param>
         /// <param name="sign">签名</param>
         /// <returns>返回流</returns>
@@ -233,6 +280,9 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 获取信息通用接口(不用token)
         /// </summary>
+        /// <param name="stream">数据流</param>
+        /// <param name="api">api，即与控制器内的方法名对应</param>
+        /// <returns></returns>
         public Stream PostInfo(Stream stream, string api)
         {
             var body = StreamToString(stream);
@@ -251,12 +301,16 @@ namespace RESTfulFramework.NET.DataService
                 Api = api,
                 BodyString = body
             };
-
             ResponseModel result = InfoApiHandler(requestModel);
             return ResponseModelToStream(result);
         }
 
-
+        /// <summary>
+        /// 一般用于下载二进制文件
+        /// </summary>
+        /// <param name="body">请求的内容</param>
+        /// <param name="api">api，即与控制器内的方法名对应</param>
+        /// <returns></returns>
         public Stream GetStream(string body, string api)
         {
             var requestModel = new RequestModel<TUserInfoModel>
@@ -265,18 +319,18 @@ namespace RESTfulFramework.NET.DataService
                 Api = api,
                 BodyString = body
             };
-
             Stream result = StreamApiHandler(requestModel);
             return result;
         }
+
 
         /// <summary>
         /// 安全检查
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel);
-
+        public virtual Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
+       
         /// <summary>
         /// 将要输出的对像转为流
         /// </summary>
@@ -351,13 +405,7 @@ namespace RESTfulFramework.NET.DataService
             }
             throw new Exception($"未找到合适的方法 {requestModel.Api}");
         }
+        #endregion
 
-        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
-        {
-            get
-            {
-                return ApiContext;
-            }
-        }
     }
 }

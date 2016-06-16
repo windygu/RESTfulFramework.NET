@@ -5,14 +5,19 @@ using System;
 namespace RESTfulFramework.NET.Security
 {
     public class UserSecurity<TUserCache, TUserInfoModel> : ISecurity<RequestModel<TUserInfoModel>>
-        where TUserCache      : IUserCache<TUserInfoModel>, new()
-        where TUserInfoModel  : IBaseUserInfo, new()
+        where TUserCache : IUserCache<TUserInfoModel>, new()
+        where TUserInfoModel : IBaseUserInfo, new()
     {
         private TUserCache UserCache { get; set; }
         public UserSecurity()
         {
             UserCache = new TUserCache();
         }
+        /// <summary>
+        /// token校验
+        /// </summary>
+        /// <param name="requestModel">请求的模型</param>
+        /// <returns></returns>
         public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
             try
