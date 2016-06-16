@@ -4,6 +4,8 @@ using System;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Collections.Generic;
+using System.Linq;
+using RESTfulFramework.NET.Security;
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -14,26 +16,29 @@ namespace RESTfulFramework.NET.DataService
     /// <typeparam name="TRequestModel">请求模型</typeparam>
     /// <typeparam name="TResponseModel">输出模型</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public abstract class Service<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
-        : IService, IServiceContext<TUserInfoModel>
-         where TConfigManager : IConfigManager<SysConfigModel>, new()
+    public abstract class Service<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager, TController>
+        : IService, IServiceContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+         where TConfigManager : IConfigManager<TConfigModel>, new()
+         where TConfigModel : IConfigModel, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
-         where TUserInfoModel : BaseUserInfo, new()
+         where TUserInfoModel : IBaseUserInfo, new()
          where TJsonSerialzer : IJsonSerialzer, new()
          where TDBHelper : IDBHelper, new()
          where TSmsManager : ISmsManager, new()
          where TLogManager : ILogManager, new()
-
+         where TController : Controller<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>, new()
     {
+
+
         #region 基础组件
         /// <summary>
         /// API接口转换为实例
         /// </summary>
-        public Factory.UnitsFactory<TUserInfoModel> UnitsFactoryContext { get; set; }
+        //public Factory.UnitsFactory<TUserInfoModel> UnitsFactoryContext { get; set; }
         /// <summary>
         /// 安全校验
         /// </summary>
-        public Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
+        public  SecurityFactory<TConfigManager,TConfigModel, TUserCache, TUserInfoModel> SecurityFactoryContext { get; set; }
 
         /// <summary>
         /// 日志
@@ -75,11 +80,13 @@ namespace RESTfulFramework.NET.DataService
 
         #endregion
 
-        private ApiContext<TUserInfoModel> ApiContext
+
+
+        private ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> ApiContext
         {
             get
             {
-                return new ApiContext<TUserInfoModel>
+                return new ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
                 {
                     ConfigInfo = ConfigInfo,
                     ConfigManager = ConfigManager,
@@ -92,11 +99,16 @@ namespace RESTfulFramework.NET.DataService
                     LogManager = LogManager,
                     RequestHeader = RequestHeader
                 };
-
             }
         }
 
+        private static System.Reflection.MethodInfo[] Methods { get; set; }
 
+        static Service()
+        {
+            var business = new TController();
+            Methods = business.GetType().GetMethods();
+        }
 
         public Service()
         {
@@ -106,8 +118,8 @@ namespace RESTfulFramework.NET.DataService
             SmsManager = new TSmsManager();
             ConfigManager = new TConfigManager();
             LogManager = new TLogManager();
-            UnitsFactoryContext = new Factory.UnitsFactory<TUserInfoModel>();
-            SecurityFactoryContext = new Factory.SecurityFactory<TConfigManager, TUserCache, TUserInfoModel>();
+
+            SecurityFactoryContext = new SecurityFactory<TConfigManager, TConfigModel, TUserCache, TUserInfoModel>();
             RequestHeader = new Dictionary<string, string>();
             #region 获取用户基本信息
             try
@@ -115,7 +127,7 @@ namespace RESTfulFramework.NET.DataService
                 var token = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.QueryParameters["token"];
                 if (!string.IsNullOrEmpty(token))
                 {
-                    CurrUserInfo = UserCache?.GetUserInfo(token);
+                    CurrUserInfo = UserCache.GetUserInfo(token);
                     Token = token;
                 }
             }
@@ -156,7 +168,7 @@ namespace RESTfulFramework.NET.DataService
 
             try
             {
-                LogManager?.Info ($"接收请求：body={body}&token={token}&api={api}&timestamp={timestamp}&sign={sign}");
+                LogManager?.Info($"接收请求：body={body}&token={token}&api={api}&timestamp={timestamp}&sign={sign}");
                 object bodyObejct;
                 try
                 {
@@ -168,7 +180,7 @@ namespace RESTfulFramework.NET.DataService
                 }
 
 
-                var requestModel = new RequestModel<BaseUserInfo>
+                var requestModel = new RequestModel<TUserInfoModel>
                 {
                     Body = bodyObejct,
                     Token = token,
@@ -263,7 +275,7 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
-        public abstract Tuple<bool, string, int> SecurityCheck(RequestModel<BaseUserInfo> requestModel);
+        public abstract Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel);
 
         /// <summary>
         /// 将要输出的对像转为流
@@ -294,9 +306,16 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
-            var tokenApi = UnitsFactoryContext.GetTokenApi(requestModel.Api);
-            tokenApi.Context = ApiContext;
-            return tokenApi.RunApi(requestModel);
+            var business = new TController();
+            business.Context = Context;
+            var method = Methods.FirstOrDefault(m => m.Name == requestModel.Api);
+            if (method != null)
+            {
+                var requestModels = new RequestModel<TUserInfoModel>[1];
+                requestModels[0] = requestModel;
+                return (ResponseModel)method.Invoke(business, requestModels);
+            }
+            throw new Exception($"未找到合适的方法 {requestModel.Api}");
         }
 
         /// <summary>
@@ -304,7 +323,16 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
-            return UnitsFactoryContext.GetInfoApi(requestModel.Api).RunApi(requestModel);
+            var business = new TController();
+            business.Context = Context;
+            var method = Methods.FirstOrDefault(m => m.Name == requestModel.Api);
+            if (method != null)
+            {
+                var requestModels = new RequestModel<TUserInfoModel>[1];
+                requestModels[0] = requestModel;
+                return (ResponseModel)method.Invoke(business, requestModels);
+            }
+            throw new Exception($"未找到合适的方法 {requestModel.Api}");
         }
 
         /// <summary>
@@ -312,10 +340,19 @@ namespace RESTfulFramework.NET.DataService
         /// </summary>
         protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
-            return UnitsFactoryContext.GetStreamApi(requestModel.Api).RunApi(requestModel);
+            var business = new TController();
+            business.Context = Context;
+            var method = Methods.FirstOrDefault(m => m.Name == requestModel.Api);
+            if (method != null)
+            {
+                var requestModels = new RequestModel<TUserInfoModel>[1];
+                requestModels[0] = requestModel;
+                return (Stream)method.Invoke(business, requestModels);
+            }
+            throw new Exception($"未找到合适的方法 {requestModel.Api}");
         }
 
-        public ApiContext<TUserInfoModel> Context
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
         {
             get
             {

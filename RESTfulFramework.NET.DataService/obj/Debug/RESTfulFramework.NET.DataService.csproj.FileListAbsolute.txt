@@ -77,5 +77,8 @@ F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb
-F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll.CodeAnalysisLog.xml
-F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll.lastcodeanalysissucceeded
+F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll.config
+F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csproj.App.config
+F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll.config
+F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll
+F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.pdb

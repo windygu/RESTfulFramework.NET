@@ -5,19 +5,21 @@ using System.Text;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class DataSecurity<TConfigManager> : ISecurity<RequestModel<BaseUserInfo>>
-        where TConfigManager : IConfigManager<SysConfigModel>, new()
+    public class DataSecurity<TConfigManager, TConfigModel, TUserInfoModel> : ISecurity<RequestModel<TUserInfoModel>>
+        where TConfigManager : IConfigManager<TConfigModel>, new()
+        where TConfigModel : IConfigModel, new()
+        where TUserInfoModel : IBaseUserInfo
     {
         private static string AccountSecretKey { get; set; }
 
         static DataSecurity()
         {
-            var configInfo = new TConfigManager().GetConfigInfo();
-            AccountSecretKey = configInfo.AccountSecretKey;
+            var configManager = new TConfigManager();
+            AccountSecretKey = configManager.GetValue("account_secret_key").value; ;
         }
 
 
-        public Tuple<bool, string,int> SecurityCheck(RequestModel<BaseUserInfo> requestModel)
+        public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
             //仅用于调试
             //if (requestModel.Sign == "ignor") return true;
@@ -26,12 +28,12 @@ namespace RESTfulFramework.NET.Security
             if (sign == requestModel.Sign)
             {
                 //签名正确
-                return new Tuple<bool, string,int>(true, "签名正确。",Code.Sucess);
+                return new Tuple<bool, string, int>(true, "签名正确。", Code.Sucess);
             }
             else
             {
                 //签名不正确
-                return new Tuple<bool, string,int>(false, "签名不正确。",Code.SignErron);
+                return new Tuple<bool, string, int>(false, "签名不正确。", Code.SignErron);
             }
 
         }

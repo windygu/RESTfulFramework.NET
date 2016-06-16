@@ -6,17 +6,17 @@ using System.Linq;
 
 namespace RESTfulFramework.NET.Units
 {
-    public class ConfigManager : IConfigManager<SysConfigModel>
+    public class ConfigManager : IConfigManager<ConfigModel>
     {
         public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"]?.ToString();
-        private static List<SysConfigModel> ConfigModels { get; set; }
+        private static List<ConfigModel> ConfigModels { get; set; }
         public ConfigManager() { }
         public ConfigManager(string connectionString)
             : this()
         {
             ConnectionString = connectionString;
         }
-        public SysConfigModel GetValue(string key)
+        public ConfigModel GetValue(string key)
         {
             if (ConfigModels == null)
             {
@@ -25,10 +25,10 @@ namespace RESTfulFramework.NET.Units
                 var result = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM sys_config");
                 if (result != null && result.Any())
                 {
-                    ConfigModels = new List<SysConfigModel>();
+                    ConfigModels = new List<ConfigModel>();
                     foreach (var item in result)
                     {
-                        ConfigModels.Add(new SysConfigModel
+                        ConfigModels.Add(new ConfigModel
                         {
                             key = item["key"].ToString(),
                             value = item["value"].ToString(),
@@ -49,7 +49,7 @@ namespace RESTfulFramework.NET.Units
             }
         }
 
-        public bool SetValue(string key, SysConfigModel value)
+        public bool SetValue(string key, ConfigModel value)
         {
             throw new NotImplementedException();
         }

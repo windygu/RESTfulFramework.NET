@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\binary\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -42,6 +42,7 @@
     <Compile Include="DataCheck.cs" />
     <Compile Include="DataSecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityFactory.cs" />
     <Compile Include="SecurityService.cs" />
     <Compile Include="UserSecurity.cs" />
   </ItemGroup>
@@ -53,10 +54,6 @@
     <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
       <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
       <Name>RESTfulFramework.NET.ComponentModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.UnitsFactory\RESTfulFramework.NET.UnitsFactory.csproj">
-      <Project>{8d210768-36cd-4f70-8062-9bd7b5af73d1}</Project>
-      <Name>RESTfulFramework.NET.UnitsFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

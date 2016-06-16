@@ -13,18 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Securi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Units", "RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj", "{D203BB50-4A56-4B9D-B341-9928B09E822D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Business", "RESTfulFramework.NET.Business\RESTfulFramework.NET.Business.csproj", "{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Common", "RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj", "{F153AB9F-269D-4269-96F1-45455EB6DAD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4EF18B3-2517-46E5-81D8-E6E14214DC3F}"
 	ProjectSection(SolutionItems) = preProject
 		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.SecurityFactory", "RESTfulFramework.NET.SecurityFactory\RESTfulFramework.NET.SecurityFactory.csproj", "{0335C6BB-1876-4073-8F0D-3F53C610DD38}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.UnitsFactory", "RESTfulFramework.NET.UnitsFactory\RESTfulFramework.NET.UnitsFactory.csproj", "{8D210768-36CD-4F70-8062-9BD7B5AF73D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulFramework.NET.Web", "RESTfulFramework.NET.Web\RESTfulFramework.NET.Web.csproj", "{570EB23E-FCA4-4031-8F00-CDD675B54976}"
 EndProject
@@ -54,22 +48,10 @@ Global
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D203BB50-4A56-4B9D-B341-9928B09E822D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BF6F2A8-620D-4E34-BBB1-04BDB2144BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F153AB9F-269D-4269-96F1-45455EB6DAD9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0335C6BB-1876-4073-8F0D-3F53C610DD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0335C6BB-1876-4073-8F0D-3F53C610DD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0335C6BB-1876-4073-8F0D-3F53C610DD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0335C6BB-1876-4073-8F0D-3F53C610DD38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D210768-36CD-4F70-8062-9BD7B5AF73D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D210768-36CD-4F70-8062-9BD7B5AF73D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D210768-36CD-4F70-8062-9BD7B5AF73D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D210768-36CD-4F70-8062-9BD7B5AF73D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{570EB23E-FCA4-4031-8F00-CDD675B54976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{570EB23E-FCA4-4031-8F00-CDD675B54976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570EB23E-FCA4-4031-8F00-CDD675B54976}.Release|Any CPU.ActiveCfg = Release|Any CPU

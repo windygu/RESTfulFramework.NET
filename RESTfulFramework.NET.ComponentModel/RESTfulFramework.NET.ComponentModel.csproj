@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\binary\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,10 +47,8 @@
     <Compile Include="BaseUserInfo.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="ConfigInfo.cs" />
-    <Compile Include="IInfoApi.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="IServiceContext.cs" />
-    <Compile Include="IStreamApi.cs" />
-    <Compile Include="ITokenApi.cs" />
     <Compile Include="IConfigManager.cs" />
     <Compile Include="IDBHelper.cs" />
     <Compile Include="IJsonSerialzer.cs" />

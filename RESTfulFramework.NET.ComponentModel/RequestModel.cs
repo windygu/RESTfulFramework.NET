@@ -5,7 +5,7 @@ namespace RESTfulFramework.NET.ComponentModel
 {
     [DataContract]
     public class RequestModel<TUserInfo>
-        where TUserInfo : BaseUserInfo
+        where TUserInfo : IBaseUserInfo
     {
         [DataMember]
         public object Body { get; set; }
@@ -17,8 +17,6 @@ namespace RESTfulFramework.NET.ComponentModel
         public string Timestamp { get; set; }
         [DataMember]
         public string Sign { get; set; }
-        //[DataMember]
-        //public object Tag { get; set; }
         [DataMember]
         public TUserInfo UserInfo { get; set; }
         [DataMember]

@@ -3,14 +3,15 @@ using System;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class SecurityService<TConfigManager, TUserCache, TUserInfoModel> : ISecurity<RequestModel<BaseUserInfo>>
-        where TConfigManager : IConfigManager<SysConfigModel>, new()
-       where TUserCache : IUserCache<TUserInfoModel>, new()
-        where TUserInfoModel : BaseUserInfo, new()
+    public class SecurityService<TConfigManager, TConfigModel, TUserCache, TUserInfoModel> : ISecurity<RequestModel<TUserInfoModel>>
+        where TConfigManager : IConfigManager<TConfigModel>, new()
+        where TConfigModel : IConfigModel, new()
+        where TUserCache : IUserCache<TUserInfoModel>, new()
+        where TUserInfoModel : IBaseUserInfo, new()
     {
-        public Tuple<bool, string,int> SecurityCheck(RequestModel<BaseUserInfo> requestModel)
+        public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
-            var dataCheck = new DataCheck();
+            var dataCheck = new DataCheck<TUserInfoModel>();
             var securityCheckResult = dataCheck.SecurityCheck(requestModel);
             if (!securityCheckResult.Item1) return securityCheckResult;
 
@@ -18,11 +19,11 @@ namespace RESTfulFramework.NET.Security
             var userSecurityCheckResult = userSecurity.SecurityCheck(requestModel);
             if (!userSecurityCheckResult.Item1) return userSecurityCheckResult;
 
-            var dataSecurity = new DataSecurity<TConfigManager>();
+            var dataSecurity = new DataSecurity<TConfigManager, TConfigModel, TUserInfoModel>();
             var dataSecurityCheckResult = dataSecurity.SecurityCheck(requestModel);
             if (!dataSecurityCheckResult.Item1) return dataSecurityCheckResult;
 
-            return new Tuple<bool, string,int>(true,"通过安全检查",Code.Sucess);
+            return new Tuple<bool, string, int>(true, "通过安全检查", Code.Sucess);
         }
     }
 }

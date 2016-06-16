@@ -5,15 +5,15 @@ namespace RESTfulFramework.NET.ComponentModel
     /// <summary>
     /// 用户缓存
     /// </summary>
-    public interface IUserCache<T>
-        where T : BaseUserInfo, new()
+    public interface IUserCache<TUserInfoModel>
+        where TUserInfoModel : IBaseUserInfo
     {
         /// <summary>
         /// 获取Redis缓存的用户信息
         /// </summary>
         /// <param name="key">key</param>
         /// <returns>返回用户信息</returns>
-        T GetUserInfo(string key);
+        TUserInfoModel GetUserInfo(string key);
 
         /// <summary>
         /// 将用户信息保存在Redis缓存
@@ -21,7 +21,7 @@ namespace RESTfulFramework.NET.ComponentModel
         /// <param name="userInfo">用户信息</param>
         /// <param name="key">key</param>
         /// <returns>成功返回true,失败返回false</returns>
-        bool SetUserInfo(T userInfo, string key);
+        bool SetUserInfo(TUserInfoModel userInfo, string key);
 
         /// <summary>
         /// 删除用户缓存信息

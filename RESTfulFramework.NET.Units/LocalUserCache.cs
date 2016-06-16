@@ -6,29 +6,30 @@ using System.Collections.Generic;
 
 namespace RESTfulFramework.NET.Units
 {
-    public class LocalUserCache : IUserCache<BaseUserInfo>
+    public class LocalUserCache : IUserCache<UserInfo>
+
     {
 
         public LocalUserCache() { }
 
-        //用一定的性能损失，后期优化
+        //有一定的性能损失，后期优化
         private static Dictionary<string, object> Client { get; set; } = new Dictionary<string, object>();
 
         static LocalUserCache()
         {
-            //所有用户基本信息缓存redis
+
             Refresh();
         }
         public bool ContainsUserInfo(string key) => Client.ContainsKey(key);
 
 
-        public BaseUserInfo GetUserInfo(string key) => (BaseUserInfo)Client[key];
+        public UserInfo GetUserInfo(string key) => (UserInfo)Client[key];
 
 
         public bool RemoveUserInfo(string key) => Client.Remove(key);
 
 
-        public bool SetUserInfo(BaseUserInfo userInfo, string key)
+        public bool SetUserInfo(UserInfo userInfo, string key)
         {
             if (!ContainsUserInfo(key))
             {
@@ -88,7 +89,7 @@ namespace RESTfulFramework.NET.Units
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {
-                var redisuser = new BaseUserInfo
+                var redisuser = new UserInfo
                 {
                     account_name = user["account_name"]?.ToString(),
                     account_type_id = user["account_type"]?.ToString(),

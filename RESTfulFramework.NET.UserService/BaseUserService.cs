@@ -18,11 +18,12 @@ namespace RESTfulFramework.NET.UserService
     /// <typeparam name="TConfigManager">配置管理</typeparam>
     /// <typeparam name="TUserInfoModel">用户信息</typeparam>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class BaseUserService<TConfigManager, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
-        : IUserService, IServiceContext<TUserInfoModel>
-         where TConfigManager : IConfigManager<SysConfigModel>, new()
+    public class BaseUserService<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+        : IUserService, IServiceContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+          where TConfigManager : IConfigManager<TConfigModel>, new()
+         where TConfigModel : IConfigModel, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()
-         where TUserInfoModel : BaseUserInfo, new()
+         where TUserInfoModel : IBaseUserInfo, new()
          where TJsonSerialzer : IJsonSerialzer, new()
          where TDBHelper : IDBHelper, new()
          where TSmsManager : ISmsManager, new()
@@ -78,11 +79,11 @@ namespace RESTfulFramework.NET.UserService
 
         #endregion
 
-        public ApiContext<TUserInfoModel> ApiContext
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> ApiContext
         {
             get
             {
-                return new ApiContext<TUserInfoModel>
+                return new ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
                 {
                     ConfigInfo = ConfigInfo,
                     ConfigManager = ConfigManager,
@@ -126,7 +127,7 @@ namespace RESTfulFramework.NET.UserService
                 var token = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.QueryParameters["token"];
                 if (!string.IsNullOrEmpty(token))
                 {
-                    CurrUserInfo = UserCache?.GetUserInfo(token);
+                    CurrUserInfo = UserCache.GetUserInfo(token);
                     Token = token;
                 }
             }
@@ -136,7 +137,15 @@ namespace RESTfulFramework.NET.UserService
             #region 获取基础配置信息
             try
             {
-                ConfigInfo = ConfigManager?.GetConfigInfo();
+                ConfigInfo = new ConfigInfo
+                {
+                    AccountSecretKey = ConfigManager?.GetValue("account_secret_key")?.value,
+                    SmsAccount = ConfigManager?.GetValue("sms_account")?.value,
+                    SmsPassword = ConfigManager?.GetValue("sms_password")?.value,
+                    SmsCodeContent = ConfigManager?.GetValue("sms_code_content")?.value,
+                    RedisAddress = ConfigManager?.GetValue("redis_address")?.value,
+                    RedisPort = ConfigManager?.GetValue("redis_port")?.value,
+                }; 
             }
             catch (Exception)
             {
@@ -349,7 +358,7 @@ namespace RESTfulFramework.NET.UserService
 
         }
 
-        public ApiContext<TUserInfoModel> Context
+        public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
         {
             get
             {

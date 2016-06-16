@@ -3,9 +3,10 @@ using System;
 
 namespace RESTfulFramework.NET.Security
 {
-    public class DataCheck : ISecurity<RequestModel<BaseUserInfo>>
+    public class DataCheck<TUserInfoModel> : ISecurity<RequestModel<TUserInfoModel>>
+        where TUserInfoModel : IBaseUserInfo
     {
-        public Tuple<bool, string, int> SecurityCheck(RequestModel<BaseUserInfo> requestModel)
+        public Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel)
         {
             long timestamp;
             try
