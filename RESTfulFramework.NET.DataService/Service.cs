@@ -210,12 +210,11 @@ namespace RESTfulFramework.NET.DataService
         /// <param name="timestamp">时间戳</param>
         /// <param name="sign">签名</param>
         /// <returns>返回流</returns>
+        [RecordLog]
         public virtual Stream Get(string body, string token, string api, string timestamp, string sign)
         {
-
             try
             {
-                LogManager?.Info($"接收请求：body={body}&token={token}&api={api}&timestamp={timestamp}&sign={sign}");
                 object bodyObejct;
                 try
                 {
@@ -256,7 +255,6 @@ namespace RESTfulFramework.NET.DataService
             }
             catch (Exception ex)
             {
-
                 return ResponseModelToStream(new ResponseModel { Code = Code.SystemException, Msg = ex.Message });
 
             }

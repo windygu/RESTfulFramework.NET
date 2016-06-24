@@ -9,14 +9,14 @@ namespace RESTfulFramework.NET.ComponentModel
         where TUserInfoModel : IBaseUserInfo
     {
         /// <summary>
-        /// 获取Redis缓存的用户信息
+        /// 获取缓存的用户信息
         /// </summary>
         /// <param name="key">key</param>
         /// <returns>返回用户信息</returns>
         TUserInfoModel GetUserInfo(string key);
 
         /// <summary>
-        /// 将用户信息保存在Redis缓存
+        /// 将用户信息保存在缓存
         /// </summary>
         /// <param name="userInfo">用户信息</param>
         /// <param name="key">key</param>

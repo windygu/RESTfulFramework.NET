@@ -58,3 +58,5 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binar
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.dll
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.pdb

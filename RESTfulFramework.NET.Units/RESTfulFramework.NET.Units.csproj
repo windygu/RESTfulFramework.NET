@@ -96,6 +96,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmsManager.cs" />
     <Compile Include="SqliteDBHelper.cs" />
+    <Compile Include="TableUserCache.cs" />
     <Compile Include="UserCache.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -81,28 +81,20 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 输出的对像转换成流
         /// </summary>
-
+        [RecordLog]
         public override Stream ResponseModelToStream(ResponseModel responseModel)
         {
             var resultStr = ObjectToString(responseModel);
-            try { WriteLog($"输出结果：{resultStr}", "输出"); } catch { }
             return new MemoryStream(Encoding.UTF8.GetBytes(resultStr));
         }
         #endregion
 
         #region ====== 日志记录 ======
         [RecordLog]
-        protected override ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
-        {
-            try
-            {
-                WriteLog($"接收请求：body={requestModel?.BodyString}&token={requestModel?.Token}&api={requestModel?.Api}&timestamp={requestModel?.Timestamp}&sign={requestModel?.Sign}", "请求");
-            }
-            catch { }
-            return base.ApiHandler(requestModel);
-        }
+        protected override ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)=>base.ApiHandler(requestModel);
 
-        public virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
+
+        //public virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
 
         #endregion
 

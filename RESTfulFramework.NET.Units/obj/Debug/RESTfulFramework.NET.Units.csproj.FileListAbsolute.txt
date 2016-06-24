@@ -72,3 +72,7 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTf
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.dll.config
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.dll
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.pdb
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.dll.config
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.dll
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Units.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Units\obj\Debug\RESTfulFramework.NET.Units.csproj.App.config

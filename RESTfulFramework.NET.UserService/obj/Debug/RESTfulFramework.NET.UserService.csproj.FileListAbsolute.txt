@@ -124,3 +124,7 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTf
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
+D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csproj.App.config

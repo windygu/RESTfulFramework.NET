@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+
+</head>
+<body>
+    <section id="loginArea">
+        <div>
+            <input id="userName" type="text" placeholder="帐号" v-model="user_name" />
+            <input id="password" type="text" placeholder="密码" v-model="password" />
+            <input id="login" type="button" value="测试登陆" @click="LoginAction(user_name,password)" />
+        </div>
+        <div>
+            <p><span>用户token:</span><span>{{token}}</span></p>
+            <p><span>用户id:</span><span>{{user_id}}</span></p>
+        </div>
+
+    </section>
+
+    <section id="dataArea">
+        <div>
+            <input id="token" type="text" placeholder="用户token" v-model="token" />
+            <input id="requestData" type="button" value="查询" @click="RequestAction" />
+        </div>
+        <div>
+            <p><span>请求结果:</span><span></span></p>
+        </div>
+
+    </section>
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.md5.js"></script>
+    <script src="scripts/json2.min.js"></script>
+    <script src="scripts/underscore.js"></script>
+    <script src="scripts/vue.js"></script>
+    <script src="core/ConfigInfo.js"></script>
+    <script src="core/Sign.js"></script>
+    <script src="core/HttpHelper.js"></script>
+    <script src="core/UserHttpHelper.js"></script>
+    <script src="core/DataHttpHelper.js"></script>
+    <!--数据服务-->
+    <script src="core/Tool.js"></script>
+    <script src="vm/login_vm.js"></script>
+
+    <script>
+        new Vue({
+            el: "#dataArea",
+            data: {
+                token: "", user_id: ""
+            },
+            methods: {
+                //登陆
+                RequestAction: function () {
+                    var context = this;
+                    var dataHttp = new DataHttpHelper();
+                    dataHttp.GetJson({
+                        Entity: {
+                            Main: {
+                                user_info: true
+                            }
+                        },
+                        Condition: {
+                            Equ: {
+                                user_info: {
+                                    id: "58ceb838-a0bf-49f0-a181-3a909c206fdb"
+                                }
+                            }
+                        }
+                    }, "select", this.token, function (data, textStatus, jqmXHR) {
+                        alert(data);
+
+                    }, function () {
+
+
+                    })
+                    var userHttp = new UserHttpHelper();
+                    userHttp.Login(userName, password, function (data, textStatus, jqXHR) {
+                        if (data.Code > 0) {
+                            //登陆成功
+                            localStorage.token = data.Msg.Token;
+                            localStorage.user_id = data.Msg.UserId;
+                            localStorage.password = password;
+                            context.token = data.Msg.Token;
+                            context.user_id = data.Msg.UserId;
+                            //登陆成功
+                            this.is_login = true;
+
+
+                        }
+                        else {
+                            //登陆失败
+
+                        }
+
+                    });
+                }
+            },
+            created: function () {
+                //初始化
+            }
+        });
+    </script>
+</body>
+</html>

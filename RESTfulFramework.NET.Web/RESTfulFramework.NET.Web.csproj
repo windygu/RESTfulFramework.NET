@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -20,6 +21,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,6 +98,21 @@
   <ItemGroup>
     <Content Include="DataService.svc" />
     <Content Include="Global.asax" />
+    <Content Include="NLog.config" />
+    <None Include="Page\scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Page\scripts\jquery-1.8.0.js" />
+    <Content Include="Page\scripts\jquery-1.8.0.min.js" />
+    <Content Include="Page\scripts\jquery.md5.js" />
+    <Content Include="Page\scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="Page\scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Page\scripts\json2.js" />
+    <Content Include="Page\scripts\json2.min.js" />
+    <Content Include="Page\scripts\sqlite.js" />
+    <Content Include="Page\scripts\then.js" />
+    <Content Include="Page\scripts\underscore.js" />
+    <Content Include="Page\scripts\vue.js" />
+    <Content Include="Page\Test.html" />
+    <Content Include="Page\vm\login_vm.js" />
     <Content Include="UserService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -114,6 +131,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Page\scripts\jquery.mobile-1.4.5.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,6 +144,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -185,6 +204,22 @@
       <Project>{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}</Project>
       <Name>RESTfulFramework.NET.UserService</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Page\core\ConfigInfo.ts" />
+    <TypeScriptCompile Include="Page\core\DataHttpHelper.ts" />
+    <TypeScriptCompile Include="Page\core\DBHelper.ts" />
+    <TypeScriptCompile Include="Page\core\HttpHelper.ts" />
+    <TypeScriptCompile Include="Page\core\jquery.d.ts" />
+    <TypeScriptCompile Include="Page\core\Sign.ts" />
+    <TypeScriptCompile Include="Page\core\sqlite.d.ts" />
+    <TypeScriptCompile Include="Page\core\TestSqlite.ts" />
+    <TypeScriptCompile Include="Page\core\thenjs.d.ts" />
+    <TypeScriptCompile Include="Page\core\Tool.ts" />
+    <TypeScriptCompile Include="Page\core\UserHttpHelper.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
 </Project>
