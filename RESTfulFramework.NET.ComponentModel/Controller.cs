@@ -16,7 +16,7 @@ namespace RESTfulFramework.NET.ComponentModel
     /// <typeparam name="TDBHelper">数据库操作</typeparam>
     /// <typeparam name="TSmsManager">短信管理</typeparam>
     /// <typeparam name="TLogManager">日志</typeparam>
-    public class Controller<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
+    public abstract  class Controller<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager>
           where TConfigManager : IConfigManager<TConfigModel>, new()
          where TConfigModel : IConfigModel, new()
          where TUserCache : IUserCache<TUserInfoModel>, new()

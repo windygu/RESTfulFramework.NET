@@ -9,6 +9,7 @@ namespace RESTfulFramework.NET.Units
         where TConfigManager : IConfigManager<TConfigModel>, new()
         where TConfigModel : IConfigModel
     {
+        private static string ConnectionString { get; set; }
         private static IDatabase RedisDataBase { get; set; }
         private static IServer RedisServer { get; set; }
         private static List<string> Keys { get; set; }
@@ -17,6 +18,7 @@ namespace RESTfulFramework.NET.Units
             //所有用户基本信息缓存redis
             Refresh();
             var configManager = new TConfigManager();
+            ConnectionString = configManager.GetConnectionString();
             var accountSecretKey = configManager.GetValue("account_secret_key")?.value;
             var smsAccount = configManager.GetValue("sms_account")?.value;
             var smsPassword = configManager.GetValue("sms_password")?.value;
@@ -164,7 +166,8 @@ namespace RESTfulFramework.NET.Units
         private static void Refresh()
         {
             //所有用户基本信息缓存redis
-            var dbHelper = new DBHelper();
+            var dbHelper = new DBHelper(ConnectionString);
+
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user_view`;");
             foreach (var user in users)
             {

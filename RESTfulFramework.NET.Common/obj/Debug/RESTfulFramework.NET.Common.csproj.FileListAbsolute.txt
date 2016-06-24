@@ -62,3 +62,8 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFra
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.dll
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb

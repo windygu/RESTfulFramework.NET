@@ -28,7 +28,7 @@ namespace RESTfulFramework.NET.Units
         }
 
 
-        public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"].ToString();
+        public string ConnectionString { get; set; } 
 
         public int ExcuteSql(string sql) => ExcuteSql(sql, ConnectionString);
 

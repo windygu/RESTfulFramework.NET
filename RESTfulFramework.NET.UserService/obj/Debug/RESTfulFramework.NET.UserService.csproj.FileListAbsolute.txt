@@ -117,3 +117,10 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTf
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csproj.App.config
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb

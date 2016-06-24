@@ -6,6 +6,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.ServiceModel.Activation;
 using System.Linq;
+using System.Dynamic;
+using System.Linq.Expressions;
+
 
 namespace RESTfulFramework.NET.DataService
 {
@@ -78,6 +81,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 输出的对像转换成流
         /// </summary>
+
         public override Stream ResponseModelToStream(ResponseModel responseModel)
         {
             var resultStr = ObjectToString(responseModel);
@@ -87,7 +91,7 @@ namespace RESTfulFramework.NET.DataService
         #endregion
 
         #region ====== 日志记录 ======
-
+        [RecordLog]
         protected override ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             try
@@ -98,7 +102,11 @@ namespace RESTfulFramework.NET.DataService
             return base.ApiHandler(requestModel);
         }
 
-        protected virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
+        public virtual void WriteLog(string logInfo, string title) => LogManager?.WriteLog(logInfo);
+
+        #endregion
+
+        #region ====== 用于AOP ======
 
         #endregion
     }

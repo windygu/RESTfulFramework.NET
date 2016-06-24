@@ -156,12 +156,12 @@ namespace RESTfulFramework.NET.DataService
         public Service()
         {
             Serialzer = new TJsonSerialzer();
-            DbHelper = new TDBHelper();
             UserCache = new TUserCache();
             SmsManager = new TSmsManager();
             ConfigManager = new TConfigManager();
             LogManager = new TLogManager();
-
+            DbHelper = new TDBHelper();
+            DbHelper.ConnectionString = ConfigManager.GetConnectionString();
             SecurityFactoryContext = new SecurityFactory<TConfigManager, TConfigModel, TUserCache, TUserInfoModel>();
             RequestHeader = new Dictionary<string, string>();
             #region 获取用户基本信息
@@ -330,7 +330,7 @@ namespace RESTfulFramework.NET.DataService
         /// <param name="requestModel">请求的模型</param>
         /// <returns>验证成功返回true,失败返回false</returns>
         public virtual Tuple<bool, string, int> SecurityCheck(RequestModel<TUserInfoModel> requestModel) => SecurityFactoryContext.GetSecurityService().SecurityCheck(requestModel);
-       
+
         /// <summary>
         /// 将要输出的对像转为流
         /// </summary>

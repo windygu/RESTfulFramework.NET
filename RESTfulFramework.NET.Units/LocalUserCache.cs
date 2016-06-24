@@ -86,6 +86,7 @@ namespace RESTfulFramework.NET.Units
             //所有用户基本信息缓存redis
 
             var dbHelper = new DBHelper();
+            dbHelper.ConnectionString = new ConfigManager().GetConnectionString();
             var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
             foreach (var user in users)
             {

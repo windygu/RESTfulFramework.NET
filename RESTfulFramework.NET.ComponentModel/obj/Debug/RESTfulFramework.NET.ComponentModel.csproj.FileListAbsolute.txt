@@ -39,3 +39,7 @@ F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RE
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.csprojResolveAssemblyReference.cache
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.dll
 F:\Project\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.pdb
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
+F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb

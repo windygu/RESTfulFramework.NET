@@ -8,7 +8,7 @@ namespace RESTfulFramework.NET.Units
 {
     public class ConfigManager : IConfigManager<ConfigModel>
     {
-        public string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"]?.ToString();
+        public string ConnectionString { get; set; }
         private static List<ConfigModel> ConfigModels { get; set; }
         public ConfigManager() { }
         public ConfigManager(string connectionString)
@@ -20,8 +20,7 @@ namespace RESTfulFramework.NET.Units
         {
             if (ConfigModels == null)
             {
-                var dbHelper = new DBHelper();
-                dbHelper.ConnectionString = ConnectionString;
+                var dbHelper = new DBHelper(ConnectionString);
                 var result = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM sys_config");
                 if (result != null && result.Any())
                 {
@@ -66,6 +65,12 @@ namespace RESTfulFramework.NET.Units
                 RedisPort = this.GetValue("redis_port")?.value,
             };
 
+        }
+
+        public string GetConnectionString()
+        {
+            ConnectionString = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"]?.ToString();
+            return ConnectionString;
         }
     }
 }

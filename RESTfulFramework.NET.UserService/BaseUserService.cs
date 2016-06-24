@@ -83,12 +83,13 @@ namespace RESTfulFramework.NET.UserService
         public BaseUserService()
         {
             #region 实例化基础组件
-            DbHelper = new TDBHelper();
             UserCache = new TUserCache();
             SmsManager = new TSmsManager();
             ConfigManager = new TConfigManager();
             Serialzer = new TJsonSerialzer();
             LogManager = new TLogManager();
+            DbHelper = new TDBHelper();
+            DbHelper.ConnectionString = ConfigManager.GetConnectionString();
             #endregion
 
             #region 设置头部信息
