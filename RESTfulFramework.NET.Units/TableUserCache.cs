@@ -6,8 +6,22 @@ using System.Text;
 
 namespace RESTfulFramework.NET.Units
 {
-    public class TableUserCache : IUserCache<UserInfo>
+    public class TableUserCache<TConfigManager, TConfigModel> : IUserCache<UserInfo>
+        where TConfigManager : IConfigManager<TConfigModel>, new()
+        where TConfigModel : IConfigModel
     {
+        private string ConnectionString { get; set; }
+        public TableUserCache()
+        {
+            //检查缓存表是否存在
+            
+
+            //如果不存在，则自动创建
+
+
+
+        }
+
         public bool Contains(string key)
         {
             throw new NotImplementedException();
