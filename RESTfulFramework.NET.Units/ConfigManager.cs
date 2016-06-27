@@ -10,7 +10,13 @@ namespace RESTfulFramework.NET.Units
     {
         public string ConnectionString { get; set; }
         private static List<ConfigModel> ConfigModels { get; set; }
-        public ConfigManager() { }
+        public ConfigManager()
+        {
+            if (string.IsNullOrEmpty(ConnectionString))
+            {
+                ConnectionString = GetConnectionString();
+            }
+        }
         public ConfigManager(string connectionString)
             : this()
         {
@@ -67,7 +73,7 @@ namespace RESTfulFramework.NET.Units
 
         }
 
-        public string GetConnectionString()
+        public virtual string GetConnectionString()
         {
             ConnectionString = ConfigurationManager.ConnectionStrings["RESTfulFrameworkConnection"]?.ToString();
             return ConnectionString;

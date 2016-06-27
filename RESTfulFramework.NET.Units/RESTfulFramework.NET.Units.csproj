@@ -37,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DynamicDapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicDapper.1.0.1\lib\DynamicDapper.dll</HintPath>
+      <HintPath>..\packages\DynamicDapper.1.0.2\lib\DynamicDapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Json2KeyValue, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">

@@ -41,9 +41,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulF
 D:\GitHub\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.dll
 F:\Project\RESTfulFramework.NET\RESTfulConsoleService\bin\Debug\Security\RESTfulFramework.NET.Security.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.pdb
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.Security.dll
@@ -60,3 +57,6 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTf
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.dll
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb

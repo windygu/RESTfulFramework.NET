@@ -104,9 +104,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTful
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.UserService.pdb
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.dll
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.dll
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.UserService.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
@@ -124,7 +121,10 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTf
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csproj.App.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csproj.App.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb

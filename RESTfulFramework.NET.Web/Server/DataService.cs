@@ -11,7 +11,7 @@ namespace RESTfulFramework.NET.Web.Server
     /// 正式的数据接口服务，请在MyBusiness控制器处理Http请求
     /// </summary>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class DataService : BaseDataService<ConfigManager, ConfigModel, LocalUserCache, UserInfo, JsonSerialzer, DBHelper, SmsManager, LogManager, MyBusiness>
+    public class DataService : BaseDataService<ConfigManager, ConfigModel, TableUserCache<ConfigManager,ConfigModel>, UserInfo, JsonSerialzer, DBHelper, SmsManager, LogManager, MyBusiness>
     {
     }
 

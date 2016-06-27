@@ -133,3 +133,8 @@ RESTfulFramework.NET.Units/obj/Debug/RESTfulFramework.NET.Units.pdb
 RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
 RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.dll
 RESTfulFramework.NET.UserService/obj/Debug/RESTfulFramework.NET.UserService.pdb
+RESTfulFramework.NET.Common/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+RESTfulFramework.NET.Common/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.pdb
+*.dll
+*.cache
