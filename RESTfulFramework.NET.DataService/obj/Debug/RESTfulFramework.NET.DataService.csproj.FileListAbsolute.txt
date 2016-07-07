@@ -69,9 +69,6 @@ D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTful
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ConsoleWCF\bin\Debug\RESTfulFramework.NET.DataService.pdb
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll
 D:\GitHub\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.dll
 F:\Project\RESTfulFramework.NET\bin\RESTfulFramework.NET.DataService.pdb
 F:\Project\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
@@ -89,7 +86,10 @@ F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTf
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll.config
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll
 F:\Project\EFunor.JianQu\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.pdb
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csproj.App.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll.config
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.dll
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.DataService.pdb
-D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.csproj.App.config
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.dll
+D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.DataService\obj\Debug\RESTfulFramework.NET.DataService.pdb

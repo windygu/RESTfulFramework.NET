@@ -61,7 +61,7 @@ namespace RESTfulFramework.NET.UserService
         /// </summary>
         public TUserCache UserCache { get; set; }
 
-        public ConfigInfo ConfigInfo { get; set; }
+        public RESTfulFramework.NET.ComponentModel.ConfigInfo ConfigInfo { get; set; }
 
 
 
@@ -126,7 +126,7 @@ namespace RESTfulFramework.NET.UserService
                     RedisPort = ConfigManager?.GetValue("redis_port")?.value,
                 };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
             #endregion

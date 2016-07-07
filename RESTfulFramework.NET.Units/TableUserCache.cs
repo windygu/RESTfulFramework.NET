@@ -24,7 +24,10 @@ namespace RESTfulFramework.NET.Units
 
                 tmpUserCacheTableName = "tmp_user_cache";
 
-                if (entityModelFactory.ExistModelMeta(tmpUserCacheTableName)) return;
+                if (entityModelFactory.ExistModelMeta(tmpUserCacheTableName))
+                {
+                    return;
+                }
 
                 var entityModelMeta = new EntityModelMeta();
                 entityModelMeta.EntityName = tmpUserCacheTableName;
@@ -78,7 +81,11 @@ namespace RESTfulFramework.NET.Units
             catch (Exception)
             {
             }
+            finally
+            {
 
+                Refresh();
+            }
         }
         public TableUserCache()
         {
@@ -90,7 +97,7 @@ namespace RESTfulFramework.NET.Units
             {
                 var entityModelFactory = new EntityModelFactory();
                 entityModelFactory.ConnectionString = ConnectionString;
-                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where key='{key}'", "id");
+                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where `key`='{key}'", "id");
                 if (entityModels != null && entityModels.Any())
                 {
                     return true;
@@ -138,7 +145,7 @@ namespace RESTfulFramework.NET.Units
             }
         }
 
-        public UserInfo GetUserInfo(string key)
+        public UserInfo GetUserInfo(string key) 
         {
             return Json2KeyValue.JsonConvert.DeserializeObject<UserInfo>(GetValue(key));
         }
@@ -149,7 +156,7 @@ namespace RESTfulFramework.NET.Units
             {
                 var entityModelFactory = new EntityModelFactory();
                 entityModelFactory.ConnectionString = ConnectionString;
-                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where key='{key}'", "id");
+                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where `key`='{key}'", "id");
                 if (entityModels != null && entityModels.Any())
                 {
                     foreach (var item in entityModels)
@@ -169,12 +176,39 @@ namespace RESTfulFramework.NET.Units
             }
         }
 
+        private static void Refresh()
+        {
+            try
+            {
+                var dbHelper = new DBHelper();
+                dbHelper.ConnectionString = new TConfigManager().GetConnectionString();
+                var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
+                foreach (var user in users)
+                {
+                    var redisuser = new UserInfo
+                    {
+                        account_name = user["account_name"]?.ToString(),
+                        account_type_id = user["account_type"]?.ToString(),
+                        create_time = Convert.ToDateTime(user["create_time"]?.ToString()).ToString("yyyy-MM-dd HH:mm:ss"),
+                        id = Guid.Parse(user["id"]?.ToString()),
+                        passwrod = user["passwrod"]?.ToString(),
+                        real_name = user["realname"]?.ToString()
+                    };
+                    StaticSetUserInfo(redisuser, redisuser.id.ToString());
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public bool RefreshCache()
         {
             try
             {
                 var dbHelper = new DBHelper();
-                dbHelper.ConnectionString = new ConfigManager().GetConnectionString();
+                dbHelper.ConnectionString = new TConfigManager().GetConnectionString();
                 var users = dbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user`;");
                 foreach (var user in users)
                 {
@@ -200,7 +234,7 @@ namespace RESTfulFramework.NET.Units
         public bool RemoveUserInfo(string key)
         {
             var connection = new MySql.Data.MySqlClient.MySqlConnection(ConnectionString);
-            return connection.Execute($"delete from {tmpUserCacheTableName} where key='{key}'") > 0;
+            return connection.Execute($"delete from {tmpUserCacheTableName} where `key`='{key}'") > 0;
         }
 
         public bool SetUserInfo(UserInfo userInfo, string key)
@@ -210,11 +244,21 @@ namespace RESTfulFramework.NET.Units
 
         public bool SetValue(string value, string key)
         {
+            return StaticSetValue(value, key);
+        }
+
+        public static bool StaticSetUserInfo(UserInfo userInfo, string key)
+        {
+            return StaticSetValue(Json2KeyValue.JsonConvert.SerializeObject(userInfo), key);
+        }
+
+        public static bool StaticSetValue(string value, string key)
+        {
             try
             {
                 var entityModelFactory = new EntityModelFactory();
                 entityModelFactory.ConnectionString = ConnectionString;
-                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where key='{key}';", "id");
+                var entityModels = entityModelFactory.GetEntityModels<EntityModel>(tmpUserCacheTableName, $"select * from {tmpUserCacheTableName} where `key`='{key}';", "id");
                 if (entityModels != null && entityModels.Any() && entityModels.Count > 0)
                 {
                     foreach (var item in entityModels)
@@ -237,7 +281,7 @@ namespace RESTfulFramework.NET.Units
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

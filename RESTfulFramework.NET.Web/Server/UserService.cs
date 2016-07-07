@@ -13,7 +13,7 @@ namespace RESTfulFramework.NET.Web.Server
     /// 正式的用户接口基础服务
     /// </summary>
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class UserService : BaseUserService<ConfigManager, ConfigModel, LocalUserCache, UserInfo, JsonSerialzer, DBHelper, SmsManager, LogManager>
+    public class UserService : BaseUserService<ConfigManager, ConfigModel, TableUserCache<ConfigManager, ConfigModel>, UserInfo, JsonSerialzer, DBHelper, SmsManager, LogManager>
     {
     }
 }
