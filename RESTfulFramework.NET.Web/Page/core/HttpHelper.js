@@ -4,8 +4,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
-* 该类主要用于生成URL地址
-*/
+ * 该类主要用于生成URL地址
+ */
 var HttpHelper = (function (_super) {
     __extends(HttpHelper, _super);
     function HttpHelper() {

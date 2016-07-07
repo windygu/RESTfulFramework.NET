@@ -356,6 +356,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 处理TOKEN请求
         /// </summary>
+        [RecordLog]
         protected virtual ResponseModel ApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             var business = new TController();
@@ -373,6 +374,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 取信息请求(不用验证)
         /// </summary>
+        [RecordLog]
         protected virtual ResponseModel InfoApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             var business = new TController();
@@ -390,6 +392,7 @@ namespace RESTfulFramework.NET.DataService
         /// <summary>
         /// 获 取流数据
         /// </summary>
+        [RecordLog]
         protected virtual Stream StreamApiHandler(RequestModel<TUserInfoModel> requestModel)
         {
             var business = new TController();
