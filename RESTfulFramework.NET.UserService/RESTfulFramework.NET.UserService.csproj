@@ -73,20 +73,6 @@
     <Compile Include="BaseUserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj">
-      <Project>{f153ab9f-269d-4269-96f1-45455eb6dad9}</Project>
-      <Name>RESTfulFramework.NET.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
-      <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
-      <Name>RESTfulFramework.NET.ComponentModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj">
-      <Project>{d203bb50-4a56-4b9d-b341-9928b09e822d}</Project>
-      <Name>RESTfulFramework.NET.Units</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

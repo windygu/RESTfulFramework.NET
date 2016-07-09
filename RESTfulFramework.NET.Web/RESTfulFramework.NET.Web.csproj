@@ -184,28 +184,6 @@
   </Target>
   -->
   <ItemGroup>
-    <ProjectReference Include="..\RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj">
-      <Project>{F153AB9F-269D-4269-96F1-45455EB6DAD9}</Project>
-      <Name>RESTfulFramework.NET.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
-      <Project>{AC3C5127-74CB-4D39-8D60-2609217A272E}</Project>
-      <Name>RESTfulFramework.NET.ComponentModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.DataService\RESTfulFramework.NET.DataService.csproj">
-      <Project>{25786102-BC9E-4779-BD15-035573334E6C}</Project>
-      <Name>RESTfulFramework.NET.DataService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj">
-      <Project>{d203bb50-4a56-4b9d-b341-9928b09e822d}</Project>
-      <Name>RESTfulFramework.NET.Units</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.UserService\RESTfulFramework.NET.UserService.csproj">
-      <Project>{5CD53A33-9AE8-4DE1-849C-6D8C846E1708}</Project>
-      <Name>RESTfulFramework.NET.UserService</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Page\core\ConfigInfo.ts" />
     <TypeScriptCompile Include="Page\core\DataHttpHelper.ts" />
     <TypeScriptCompile Include="Page\core\DBHelper.ts" />

@@ -49,7 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\TFS\Diary.Service.Web\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -84,14 +84,6 @@
     <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj">
-      <Project>{f153ab9f-269d-4269-96f1-45455eb6dad9}</Project>
-      <Name>RESTfulFramework.NET.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
-      <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
-      <Name>RESTfulFramework.NET.ComponentModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RESTfulFramework.NET.Security\RESTfulFramework.NET.Security.csproj">
       <Project>{239D7260-0B2A-46B7-B931-C2954E33A0F2}</Project>
       <Name>RESTfulFramework.NET.Security</Name>

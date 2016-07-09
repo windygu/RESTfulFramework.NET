@@ -145,7 +145,7 @@ namespace RESTfulFramework.NET.Units
             }
         }
 
-        public UserInfo GetUserInfo(string key) 
+        public UserInfo GetUserInfo(string key)
         {
             return Json2KeyValue.JsonConvert.DeserializeObject<UserInfo>(GetValue(key));
         }
@@ -263,8 +263,12 @@ namespace RESTfulFramework.NET.Units
                 {
                     foreach (var item in entityModels)
                     {
-                        item[key] = value;
-                        item.SaveChange();
+                        if (item["key"].ToString() == key)
+                        {
+                            item["value"] = value;
+                            item.SaveChange("value");
+                        }
+              
                     }
                     return true;
                 }
@@ -276,8 +280,8 @@ namespace RESTfulFramework.NET.Units
                     entityModel.PrimaryKey = new KeyValuePair<string, object>("id", Guid.NewGuid());
                     entityModel.Add("key", key);
                     entityModel.Add("value", value);
-                    entityModelFactory.AddEntityModel(entityModel);
-                    return true;
+                    return entityModelFactory.AddEntityModel(entityModel);
+
 
                 }
             }
