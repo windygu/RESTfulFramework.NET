@@ -84,6 +84,10 @@
     <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
+      <Project>{ac3c5127-74cb-4d39-8d60-2609217a272e}</Project>
+      <Name>RESTfulFramework.NET.ComponentModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RESTfulFramework.NET.Security\RESTfulFramework.NET.Security.csproj">
       <Project>{239D7260-0B2A-46B7-B931-C2954E33A0F2}</Project>
       <Name>RESTfulFramework.NET.Security</Name>

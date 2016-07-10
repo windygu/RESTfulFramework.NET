@@ -311,6 +311,32 @@ namespace RESTfulFramework.NET.UserService
         }
 
         /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="password">密码</param>
+        /// <param name="smscode">短信验证码</param>
+        /// <returns>返回结果</returns>
+        public virtual UserResponseModel<string> ForgetPassword(string username, string password, string smscode)
+        {
+            ////判断验证码
+            if (!(UserCache.Contains(username) && UserCache.GetValue(username) == smscode))
+                return new UserResponseModel<string> { Code = Code.ValCodeError, Msg = "验证码错误" };
+            var result = DbHelper.QuerySql<List<Dictionary<string, object>>>($"SELECT * FROM `user` WHERE account_name='{username}'");
+            if (result == null) return new UserResponseModel<string> { Code = Code.AccountExsit, Msg = "帐号不存在" };
+
+            var userid = Guid.NewGuid();
+            var resultInt = DbHelper.ExcuteSql($"UPDATE `user` SET passwrod='{password.Replace("'", "''")}' WHERE  account_name='{username.Replace("'", "''")}'; ");
+            if (resultInt > 0)
+            {
+                UserCache.RefreshCache();
+                return new UserResponseModel<string> { Code = Code.Sucess, Msg = "更改成功" };
+            }
+            return new UserResponseModel<string> { Code = Code.SystemException, Msg = "更改失败" };
+        }
+
+
+        /// <summary>
         /// 请求短信验证码
         /// </summary>
         /// <param name="phone">手机号</param>

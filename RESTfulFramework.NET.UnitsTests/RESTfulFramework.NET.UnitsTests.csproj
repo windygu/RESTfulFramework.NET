@@ -85,6 +85,20 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RESTfulFramework.NET.Common\RESTfulFramework.NET.Common.csproj">
+      <Project>{f153ab9f-269d-4269-96f1-45455eb6dad9}</Project>
+      <Name>RESTfulFramework.NET.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.NET.ComponentModel\RESTfulFramework.NET.ComponentModel.csproj">
+      <Project>{AC3C5127-74CB-4D39-8D60-2609217A272E}</Project>
+      <Name>RESTfulFramework.NET.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RESTfulFramework.NET.Units\RESTfulFramework.NET.Units.csproj">
+      <Project>{d203bb50-4a56-4b9d-b341-9928b09e822d}</Project>
+      <Name>RESTfulFramework.NET.Units</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

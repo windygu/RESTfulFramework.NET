@@ -27,7 +27,11 @@ namespace RESTfulFramework.NET.ComponentModel
         [WebGet(UriTemplate = "/register?username={username}&password={password}&smscode={smscode}&realname={realname}", ResponseFormat = WebMessageFormat.Json)]
         UserResponseModel<string> Register(string username, string password, string smscode, string realname);
 
+        [OperationContract]
+        [WebGet(UriTemplate = "/forget?username={username}&password={password}&smscode={smscode}", ResponseFormat = WebMessageFormat.Json)]
+        UserResponseModel<string> ForgetPassword(string username, string password, string smscode);
 
+        
         [OperationContract]
         [WebGet(UriTemplate = "/getuserinfo?token={token}", ResponseFormat = WebMessageFormat.Json)]
         UserResponseModel<BaseUserInfo> GetUserInfo(string token);

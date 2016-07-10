@@ -15,10 +15,11 @@ namespace RESTfulFramework.NET.Units.Tests
         public void StaticSetValueTest()
         {
 
-            var result = TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值6", "键2");
-            TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值6", "键3");
-            TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值5234", "键5");
-            TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值623", "键2");
+            var tableUserCache = new TableUserCache<ConfigManager, ConfigModel>();
+            var result = tableUserCache.SetValue("234568", "13088855548");
+            //TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值6", "键3");
+            //TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值5234", "键5");
+            //TableUserCache<ConfigManager, ConfigModel>.StaticSetValue("值623", "键2");
 
             if (!result) Assert.Fail();
         }
