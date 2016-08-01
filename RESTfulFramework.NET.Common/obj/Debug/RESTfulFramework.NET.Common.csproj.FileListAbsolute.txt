@@ -69,3 +69,8 @@ D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Common.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.csprojResolveAssemblyReference.cache
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Common\obj\Debug\RESTfulFramework.NET.Common.pdb

@@ -118,6 +118,7 @@ namespace RESTfulFramework.NET.DataService
                     RequestHeader = RequestHeader
                 };
             }
+            set { }
         }
 
         /// <summary>
@@ -129,6 +130,7 @@ namespace RESTfulFramework.NET.DataService
             {
                 return ApiContext;
             }
+            set { }
         }
         #endregion
 

@@ -44,3 +44,7 @@ D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.ComponentModel.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.ComponentModel\obj\Debug\RESTfulFramework.NET.ComponentModel.pdb

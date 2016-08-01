@@ -171,7 +171,8 @@ namespace RESTfulFramework.NET.UserService
                 };
 
             }
-            private set { }
+            set { }
+          
         }
         public ApiContext<TConfigManager, TConfigModel, TUserCache, TUserInfoModel, TJsonSerialzer, TDBHelper, TSmsManager, TLogManager> Context
         {
@@ -179,6 +180,7 @@ namespace RESTfulFramework.NET.UserService
             {
                 return ApiContext;
             }
+            set { }
         }
         #endregion
 

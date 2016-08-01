@@ -60,3 +60,8 @@ D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.Security.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.csprojResolveAssemblyReference.cache
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.Security\obj\Debug\RESTfulFramework.NET.Security.pdb

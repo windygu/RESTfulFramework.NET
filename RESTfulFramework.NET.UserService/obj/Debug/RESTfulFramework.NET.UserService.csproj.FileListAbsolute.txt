@@ -128,3 +128,10 @@ D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
 D:\GitHub\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
 D:\GitHub\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll.config
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\binary\RESTfulFramework.NET.UserService.pdb
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csproj.App.config
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.csprojResolveAssemblyReference.cache
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.dll
+F:\JianquProject\jianquContentService\EFunor.JianQu\OtherProject\EFunor.JianQu.Core.Framework\RESTfulFramework.NET\RESTfulFramework.NET.UserService\obj\Debug\RESTfulFramework.NET.UserService.pdb
